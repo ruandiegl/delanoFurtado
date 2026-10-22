@@ -1,7 +1,7 @@
 {
-  "verifiedAt": "2026-10-22T18:08:15.114Z",
+  "verifiedAt": "2026-10-22T18:16:00.512Z",
   "origin": "https://delano-furtado.netlify.app",
-  "applicationCommit": "f3d1ad0",
+  "applicationCommit": "1be05ab",
   "documents": [
     {
       "path": "/",
@@ -40,10 +40,10 @@
       "cache": "public,max-age=0,must-revalidate"
     },
     {
-      "path": "/assets/index-BVBzCxQK.js",
+      "path": "/assets/index-ZvM8cJSd.js",
       "status": 200,
       "type": "application/javascript; charset=UTF-8",
-      "bytes": 390187,
+      "bytes": 390264,
       "cache": "public,max-age=31536000,immutable"
     },
     {

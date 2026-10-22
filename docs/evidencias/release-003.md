@@ -28,8 +28,20 @@ Foram reproduzidas **11 falhas** em testes de renderização, hidratação e pre
 
 Após o ajuste: **46 testes aprovados em 12 arquivos**, além de lint, build e `verify:build`. A versão corrigida foi enviada em `f3d1ad0`; o smoke test público passou nos **onze documentos e três redirects**. Também foram conferidos quatro documentos, nove recursos referenciados, headers, cache, sitemap e robots; o bundle corrigido estava ativo. [Registro HTTP](netlify-http-003.json).
 
-Na inspeção desktop, a plataforma adicionou um iframe de selo de 64 px no rodapé que sobrepunha parte do WhatsApp flutuante. O layout passou a reservar espaço acima desse iframe quando ele existe, sem alterar a posição local quando o selo está ausente. Conferir o espaçamento no navegador após a publicação desse ajuste.
+Na inspeção desktop, a plataforma adicionou um iframe de selo de 64 px no rodapé que sobrepunha parte do WhatsApp flutuante. O layout passou a reservar espaço acima desse iframe quando ele existe, sem alterar a posição local quando o selo está ausente. A versão publicada deixou **20 px de separação** entre o botão e o iframe, conferidos no navegador.
 
 O log do primeiro CI exibiu avisos de plugin GSAP em testes jsdom que montam o aplicativo sem passar pelo entry point; o build foi aprovado. A inspeção do console no navegador público é registrada separadamente, sem tratar esses avisos de teste como evidência de erro em produção.
+
+## Entrega verificada
+
+- Código final do aplicativo: [`1be05ab`](https://github.com/ruandiegl/delanoFurtado/commit/1be05ab7b8d34af4b9916a7a30329f1ea82d45c2), publicado automaticamente no [deploy 6ada51a0bde976d8fbc2f0df](https://app.netlify.com/projects/delano-furtado/deploys/6ada51a0bde976d8fbc2f0df). O painel confirmou `Published` e publicação automática ativada para `main`.
+- Repetição final de `verify:preview` no Netlify: onze documentos e três redirects aprovados. Respostas desconhecidas têm status HTTP 404 e `noindex,follow`.
+- Repetição final de recursos/headers: quatro documentos e nove recursos aprovados; bundle `index-ZvM8cJSd.js` ativo, arquivos com conteúdo e cache esperado, sitemap e robots acessíveis. [Registro HTTP](netlify-http-003.json).
+- Navegador em **1280 × 720**: Home, localização com caixa diferente, contato com alias `INDEX.HTML` e tela de não encontrado renderizaram corretamente. Sem overflow horizontal ou imagem quebrada observados. O Imobiliário abriu seus treze itens, terminou com opacidade 1 e removeu a altura temporária. [Registro do navegador](netlify-navegador-003.json).
+- Os metadados continuam usando o domínio profissional como canonical. Nenhuma troca de domínio, DNS, plano pago ou integração de envio foi feita.
+
+Limites da inspeção: o console da ferramenta registrou uma mensagem `MutationObserver.observe` sem URL/arquivo de origem. A fonte não pôde ser atribuída pela interface de logs disponível; as navegações e interações acima foram concluídas. O registro conserva a mensagem, sem declarar console livre de erros. A prévia HTTP local não foi validada nesta etapa porque as conexões a localhost foram bloqueadas pelo ambiente; os testes de build/hidratação e as verificações HTTP no provedor foram aprovados. A inspeção visual deste release foi desktop; a matriz responsiva anterior está nas evidências do MVP.
+
+![Página inicial publicada, com WhatsApp acima do selo da hospedagem](capturas/netlify-home-publicada.jpg)
 
 Procedimento e restauração: [Deploy e operação](../deploy-e-operacao.md).

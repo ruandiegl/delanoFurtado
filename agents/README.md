@@ -22,7 +22,7 @@ Perfis especializados para o desenvolvimento do site WEB, baseados em [docs/READ
 
 ## Contexto comum
 
-O MVP está implementado em React/TypeScript/Vite/Router/styled, com shadcn/Base UI/Tailwind e GSAP React/ScrollTrigger. Existem scripts, testes e HTML por rota; veja [as evidências](../docs/evidencias/mvp-001.md). Git está vinculado ao remoto e o Netlify tem configuração versionada; conferir o [estado do release](../docs/evidencias/release-003.md). Backend permanece fora do escopo. Confirmar sempre o estado real dos arquivos antes de agir.
+O MVP está implementado em React/TypeScript/Vite/Router/styled, com shadcn/Base UI/Tailwind e GSAP React/ScrollTrigger. Existem scripts, testes e HTML por rota; veja [as evidências](../docs/evidencias/mvp-001.md). Git está vinculado ao remoto e o Netlify publica a branch `main` automaticamente; conferir o [estado do release](../docs/evidencias/release-003.md). Backend permanece fora do escopo. Confirmar sempre o estado real dos arquivos antes de agir.
 
 A referência visual é o Behance; os fatos profissionais e imagens são do Delano. A auditoria de caldeiraria registra as práticas técnicas, não conteúdo a ser publicado neste site.
 

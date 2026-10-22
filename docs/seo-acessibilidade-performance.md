@@ -35,4 +35,4 @@ Práticas do projeto:
 - Código de movimento e páginas com separação de chunks quando a medição justificar.
 - Ausência de tarefas longas recorrentes geradas por scroll, filtros ou renderizações.
 
-Antes da publicação, registrar medições no build de produção, rota, viewport, condições de teste e ferramenta. Depois da publicação, usar dados de campo quando disponíveis. Ainda não há medições deste frontend porque ele não foi construído.
+Antes da publicação, registrar medições no build de produção, rota, viewport, condições de teste e ferramenta. As medições locais do MVP constam nas [evidências](evidencias/mvp-001.md). Depois da publicação, usar dados de campo quando disponíveis; os registros locais não substituem essas métricas.
