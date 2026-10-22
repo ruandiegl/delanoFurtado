@@ -3,10 +3,16 @@ import { describe, expect, it } from 'vitest'
 import { renderPage } from '@/entry-server'
 import { services } from '@/content/services'
 describe('renderPage without browser APIs', () => {
-  it('treats non-canonical letter case consistently as not found', () => {
-    const page = renderPage('/LOCALIZACAO')
-    expect(page.html).toContain('Página não encontrada')
-    expect(page.seo.noindex).toBe(true)
+  it.each([
+    ['/LOCALIZACAO', '/localizacao', 'Escritório em Volta Redonda'],
+    ['/LoCaLiZaCaO/', '/localizacao', 'Escritório em Volta Redonda'],
+    ['/CONTATE-NOS/INDEX.HTML', '/contate-nos', 'Vamos conversar sobre o seu caso?'],
+    ['/INDEX.HTML', '/', 'Advocacia e consultoria jurídica em Volta Redonda'],
+  ])('accepts the static host alias %s with a canonical URL', (alias, canonical, heading) => {
+    const page = renderPage(alias)
+    expect(page.html).toContain(heading)
+    expect(page.seo.canonical).toBe(`https://www.delanofurtado.adv.br${canonical}`)
+    expect(page.seo.noindex).toBe(false)
   })
   it.each([
     ['/', 'Advocacia e consultoria jurídica em Volta Redonda'],

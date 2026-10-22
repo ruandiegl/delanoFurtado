@@ -1,6 +1,8 @@
 export const publicRoutes = ['/', '/localizacao', '/contate-nos'] as const
 export type PublicRoute = typeof publicRoutes[number]
 export function resolvePublicRoute(pathname: string): PublicRoute | null {
-  const path = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
+  // Netlify also serves static HTML for letter-case and index.html aliases.
+  const normalized = pathname.toLowerCase().replace(/\/index\.html$/, '/')
+  const path = normalized.length > 1 ? normalized.replace(/\/+$/, '') : normalized
   return publicRoutes.find((route) => route === path) ?? null
 }

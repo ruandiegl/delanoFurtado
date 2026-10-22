@@ -17,19 +17,21 @@ Registro atualizado: **22/10/2026**. D01–D11 estão aplicadas ao MVP. A implem
 | D09 | Movimento condicionado ao requisito e com cleanup | Referência visual estática não comprova animações; [GSAP](movimento-e-gsap.md) |
 | D10 | HTML público por rota via pré-renderização de build | Tornar SEO e compartilhamento verificáveis na resposta direta; [SEO](seo-acessibilidade-performance.md) |
 | D11 | Skills documentadas sem instalação implícita | Disponibilidade e invocação são fatos diferentes; [Skills](skills-e-fluxo-de-ia.md) |
+| D12 | Netlify conectado à branch `main` | Publicação solicitada em 22/10/2026; [Deploy](deploy-e-operacao.md) |
+| D13 | Resolver aliases estáticos com o manifest compartilhado | O CDN atende variações de caixa e `index.html`; alinhar SSR/Router/SEO para preservar a hidratação; [Rotas](rotas-e-conteudo.md) |
 
 ## Decisões futuras delimitadas
 
 | Item | Quem conduz | Momento e tratamento até lá |
 | --- | --- | --- |
-| Publicação do artefato local | Arquitetura + SEO + Release | HTML por rota e hidratação já implementados; validar regras do provedor na publicação |
+| Migração do domínio profissional | SEO + Release | Netlify publicado em URL própria; canonical e DNS do domínio profissional preservados até migração autorizada |
 | Migração do Router para linha corrigida | Arquitetura + Segurança | Antes de ampliar destinos dinâmicos/Data Mode; [análise atual](seguranca-e-privacidade.md) registra dois apontamentos moderados |
 | Áreas adicionais divergentes entre páginas/SEO | Produto + conteúdo | Antes de criar afirmações novas; manter os sete blocos principais |
 | Etapas próprias de atendimento e FAQ | Produto + conteúdo | Se esses blocos entrarem no escopo; omitir na publicação enquanto ausentes |
 | Depoimentos, nota e quantidade de avaliações | Conteúdo/SEO | Se houver fonte acessível correspondente; usar apenas o convite existente até lá |
 | Formulário com envio e destino | Integrações + Segurança | Se o envio for solicitado; canais oficiais continuam disponíveis |
 | Prazo operacional de resposta e horários | Responsável pelo produto | Antes de prometer SLA/horário novo; não deduzir da coleta |
-| Provedor, domínio e pipeline | DevOps/Release | Na preparação de publicação; não há configuração aplicada |
+| Domínio personalizado no Netlify | DevOps/Release | Configuração de build aplicada; transferência de DNS é uma etapa separada |
 | Privacidade, terceiros e eventual analytics | Produto + Segurança | Antes de ativar nova coleta/incorporação; analytics não é requisito inicial |
 
 Esses itens delimitam evoluções posteriores ao MVP local. Não preencher conteúdo ausente nem criar infraestrutura apenas para encerrar uma pendência que não pertence ao escopo.

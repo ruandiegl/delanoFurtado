@@ -17,7 +17,7 @@ Ao transformar a transcrição em conteúdo runtime, manter uma única definiç�
 
 Âncoras implementadas na Home: `#areas`, `#sobre`, `#atendimento` e `#contato`. Correspondem às seções renderizadas e não substituem as rotas existentes. Os sete serviços preservam seus itens completos no HTML, com details/summary nativo; isso não é um FAQ.
 
-Política de URL: rotas sensíveis a maiúsculas; `/LOCALIZACAO` é desconhecida. O preview redireciona aliases `/index.html` e `/<rota>/index.html` aos caminhos canônicos. Navegação nova vai ao topo/foca o h1; histórico restaura a posição por entrada; selecionar a mesma âncora novamente repete a rolagem. O servidor de produção deve reproduzir o contrato de documentos/status, conforme [Deploy](deploy-e-operacao.md).
+Política de URL: os caminhos canônicos usam minúsculas. O manifest também reconhece variações de caixa, barra final e `index.html` das três páginas existentes, acompanhando a entrega de arquivos estáticos do Netlify. Router, HTML e SEO usam a mesma resolução; caminhos realmente desconhecidos continuam em 404. O preview redireciona aliases de documento para os caminhos canônicos; no Netlify, aliases com caixa diferente podem ser atendidos como 200, preservando o conteúdo e o canonical corretos. Navegação nova vai ao topo/foca o h1; histórico restaura a posição por entrada; selecionar a mesma âncora novamente repete a rolagem. Consulte o contrato em [Deploy](deploy-e-operacao.md).
 
 Páginas individuais de serviços, blog, política de privacidade ou agendamento são evoluções. Uma rota nova só entra na navegação e no sitemap quando existir. Se uma URL antiga mudar, registrar redirecionamento 301 específico na hospedagem, sem transformar todas as URLs em redirecionamentos para a Home.
 

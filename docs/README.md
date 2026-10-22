@@ -14,7 +14,7 @@ Atualização: **22 de outubro de 2026**. Este é o índice principal das guidel
 | Gerenciador | npm 11.21.1, com `package-lock.json` próprio |
 | Estado real desta pasta | MVP implementado, HTML por rota, scroll GSAP e testes; [evidências](evidencias/mvp-001.md) |
 | Backend, banco e autenticação | Fora do escopo inicial; nenhuma integração de envio configurada |
-| Publicação | Netlify definido, configuração versionada; [estado do release](evidencias/release-003.md) |
+| Publicação | [Netlify](https://delano-furtado.netlify.app/), deploy automático de `main`; [evidências do release](evidencias/release-003.md) |
 
 A stack foi definida a partir do código dos projetos de caldeiraria, conforme a [auditoria de referência](03-auditoria-referencia-caldeiraria.md). Uma decisão documentada não significa que a dependência esteja instalada neste projeto. Consulte [Stack e decisões técnicas](stack-e-decisoes-tecnicas.md) para as versões observadas e adaptações.
 

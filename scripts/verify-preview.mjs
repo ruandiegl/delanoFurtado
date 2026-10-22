@@ -5,7 +5,11 @@ const cases = [
   ['/localizacao', 200, 'Escritório em Volta Redonda'],
   ['/localizacao/', 200, 'Escritório em Volta Redonda'],
   ['/contate-nos', 200, 'Vamos conversar sobre o seu caso?'],
-  ['/LOCALIZACAO', 404, 'Página não encontrada'],
+  ['/contate-nos/', 200, 'Vamos conversar sobre o seu caso?'],
+  ['/LOCALIZACAO', 200, 'Escritório em Volta Redonda'],
+  ['/LoCaLiZaCaO/', 200, 'Escritório em Volta Redonda'],
+  ['/CONTATE-NOS', 200, 'Vamos conversar sobre o seu caso?'],
+  ['/ROTA-INEXISTENTE', 404, 'Página não encontrada'],
   ['/pagina-inexistente', 404, 'Página não encontrada'],
   ['/pagina-inexistente.html', 404, 'Página não encontrada'],
 ]
@@ -26,4 +30,4 @@ for (const [path, canonical] of [['/index.html', '/'], ['/localizacao/index.html
   assert.equal(response.status, 308)
   assert.equal(response.headers.get('location'), canonical)
 }
-console.log('Preview verified: 7 document requests and 3 canonical redirects.')
+console.log(`Documents verified: ${cases.length} document requests and 3 canonical redirects.`)

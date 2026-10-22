@@ -2,7 +2,7 @@
 
 ## Estado e destino
 
-O destino escolhido é **Netlify**, com código em [ruandiegl/delanoFurtado](https://github.com/ruandiegl/delanoFurtado), branch de produção `main` e configuração em `netlify.toml`. O artefato `dist/` contém três HTMLs públicos e 404. A configuração está preparada; a criação do projeto e o primeiro deploy precisam ser confirmados pelas [evidências do release](evidencias/release-003.md).
+O destino escolhido é **Netlify**, com código em [ruandiegl/delanoFurtado](https://github.com/ruandiegl/delanoFurtado), branch de produção `main` e configuração em `netlify.toml`. O artefato `dist/` contém três HTMLs públicos e 404. O projeto foi publicado em [delano-furtado.netlify.app](https://delano-furtado.netlify.app/), conectado ao GitHub para publicação automática após os checks. Datas, versão e smoke tests ficam nas [evidências do release](evidencias/release-003.md).
 
 O domínio atual continua como origem canônica registrada. Publicar uma URL `netlify.app` não troca DNS nem substitui automaticamente o site existente no domínio profissional.
 
@@ -46,7 +46,7 @@ Antes de publicar, conferir o artefato com `npm run preview` e a configuração 
 
 Servir arquivos reais e HTMLs específicos antes de aplicar fallback. URLs antigas devem seguir o mapa de migração, e URLs desconhecidas devem ter resposta definida. Evitar reescrever tudo para a Home com status de sucesso.
 
-Contrato do provedor: `/` → index.html; `/localizacao` → localizacao/index.html; `/contate-nos` → contate-nos/index.html; caminhos desconhecidos → 404.html com status 404. Normalizar barra final de forma consistente. Servir mídia/assets existentes antes das regras. O middleware de preview serve explicitamente os três HTMLs, 404 para desconhecidos (inclusive com extensão) e redirect de aliases index.html. A política de rotas é sensível a maiúsculas em todas as camadas. O provedor precisa implementar o mesmo contrato; o middleware local não é configuração de produção.
+Contrato do provedor: `/` → index.html; `/localizacao` → localizacao/index.html; `/contate-nos` → contate-nos/index.html; caminhos desconhecidos → 404.html com status 404. Servir mídia/assets existentes antes das regras. O middleware de preview serve os três HTMLs e 404 para desconhecidos, inclusive com extensão. Na publicação, verificou-se que o CDN do Netlify atende variações de caixa e aliases estáticos com o mesmo HTML. O manifest compartilhado resolve essas variações para a página canônica também no Router e no SEO, evitando divergência na hidratação. Os aliases `index.html` em minúsculas redirecionam com 308; variantes de caixa podem receber 200 do CDN e continuam renderizando a mesma página. O middleware local não substitui a validação HTTP no provedor.
 
 Assets com nome versionado podem ter cache longo; HTML e arquivos de política exigem revalidação compatível com a frequência de atualização. Conferir também favicon, imagem social e fontes após a troca de release.
 

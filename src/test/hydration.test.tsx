@@ -7,10 +7,14 @@ import { expect, it, vi } from 'vitest'
 import App from '@/App'
 import { renderPage } from '@/entry-server'
 import { registerClientMotion } from '@/motion/gsap'
-it.each(['/', '/localizacao', '/contate-nos'])('hydrates %s without recoverable errors and retains interaction', async route => {
+it.each([
+  ['/', '/'], ['/localizacao', '/localizacao'], ['/contate-nos', '/contate-nos'],
+  ['/LOCALIZACAO', '/localizacao'], ['/LoCaLiZaCaO/', '/localizacao'],
+  ['/CONTATE-NOS/INDEX.HTML', '/contate-nos'], ['/INDEX.HTML', '/'],
+])('hydrates %s without recoverable errors and retains interaction', async (route, canonical) => {
   const root = document.createElement('div')
   document.body.appendChild(root)
-  root.innerHTML = renderPage(route).html
+  root.innerHTML = renderPage(canonical).html
   const recoverableError = vi.fn()
   const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
   registerClientMotion()
@@ -21,7 +25,7 @@ it.each(['/', '/localizacao', '/contate-nos'])('hydrates %s without recoverable 
     expect(consoleError).not.toHaveBeenCalled()
     expect(within(root).getByRole('heading', { level: 1 })).toBeVisible()
     // The first service is targeted by its accessible title, not visual order.
-    if (route === '/') {
+    if (canonical === '/') {
       const control = root.querySelector('summary[aria-label="Ver atuações — Direito de Família"]')!
       await userEvent.setup().click(control)
       expect(control.closest('details')).toHaveAttribute('open')

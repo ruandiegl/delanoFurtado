@@ -4,7 +4,7 @@
 
 O projeto possui scripts e suíte próprios. A execução do MVP e seus limites estão em [mvp-001](evidencias/mvp-001.md). Não declarar checks aprovados apenas por estarem documentados ou por passarem em caldeiraria; validar a alteração real no Delano.
 
-Além de test:run/lint/build/verify:build, `npm run verify:preview` confere o HTML inicial e status de sete URLs mais três redirects. Exige uma prévia em execução na porta 4173; aceita outra origem como argumento. Isso detecta fallback que só parece correto depois de o JavaScript substituir a página.
+Além de test:run/lint/build/verify:build, `npm run verify:preview` confere o HTML inicial e status de onze URLs mais três redirects, incluindo variações de caixa nas páginas conhecidas. Usa uma prévia na porta 4173 por padrão e aceita outra origem como argumento, inclusive a URL pública do Netlify. Isso detecta fallback que só parece correto depois de o JavaScript substituir a página. Testes de hidratação defendem os aliases de documento atendidos diretamente pelo CDN.
 
 ## Matriz por mudança
 

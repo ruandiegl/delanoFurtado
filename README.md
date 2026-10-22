@@ -2,7 +2,7 @@
 
 Projeto WEB para renovar o frontend de Delano Furtado, usando uma referência visual própria e preservando os conteúdos e materiais coletados do site atual.
 
-**Estado em 22/10/2026:** MVP implementado, com três páginas, HTML por rota, imagens otimizadas, GSAP React e testes. Configuração de publicação no Netlify preparada; consulte o [estado do release](docs/evidencias/release-003.md).
+**Estado em 22/10/2026:** MVP implementado e [publicado no Netlify](https://delano-furtado.netlify.app/), com três páginas, HTML por rota, imagens otimizadas, GSAP React e testes. Consulte as [evidências do release](docs/evidencias/release-003.md).
 
 **Stack definida:** React 19, TypeScript 6, Vite 8, React Router 6 e styled-components 6, com shadcn/Base UI/Tailwind para primitives e GSAP conforme a necessidade. Consulte a documentação para versões de referência, limites e etapas futuras.
 

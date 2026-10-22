@@ -14,6 +14,20 @@ Data: 22 de outubro de 2026. Escopo autorizado: enviar o projeto ao remoto infor
 
 ## Envio e publicação
 
-Preparação local concluída. Registrar aqui o commit enviado, o projeto Netlify, a URL, o deploy e o resultado dos testes HTTP após a publicação efetiva. O domínio profissional e seus registros DNS não foram alterados.
+- Primeiro envio confirmado: [`31c019a`](https://github.com/ruandiegl/delanoFurtado/commit/31c019a64b7d8dc6893200d0d4032badaa7f256d), branch `main` com upstream `origin/main`.
+- Projeto `delano-furtado`, equipe `unifoa` (`ruandiegl33`), importado do GitHub.
+- Primeira publicação aprovada: [deploy 6ada4f1c1f2c9960c32fc851](https://app.netlify.com/projects/delano-furtado/deploys/6ada4f1c1f2c9960c32fc851), em 42 segundos. Netlify processou seis regras de redirect e dois grupos de headers sem erros.
+- URL pública: **https://delano-furtado.netlify.app/**. Pushes em `main` acionam os checks e o deploy automático.
+- O domínio profissional e seus registros DNS não foram alterados. Canonical e sitemap continuam apontando para `www.delanofurtado.adv.br` até a migração desse domínio; a URL Netlify permite conferir a nova versão.
+
+## Compatibilidade observada no CDN
+
+O primeiro smoke test HTTP detectou `/LOCALIZACAO` com status 200 e HTML da localização, enquanto o cliente esperava 404. Requisições adicionais confirmaram o mesmo comportamento em caixa mista e aliases `INDEX.HTML`. O conteúdo de rotas desconhecidas continuou em 404.
+
+Foram reproduzidas **11 falhas** em testes de renderização, hidratação e preview antes da correção. O manifest passou a resolver somente os aliases das três páginas conhecidas para seus caminhos canônicos. Router e SEO utilizam essa mesma resolução, evitando trocar o HTML servido pelo CDN por uma tela de erro na hidratação. Nenhuma rota de serviço nova, backend ou função de borda foi acrescentada.
+
+Após o ajuste: **46 testes aprovados em 12 arquivos**, além de lint e build. A verificação HTTP foi ampliada para onze documentos e três redirects. O smoke test final da versão corrigida deve ser registrado após o deploy automático.
+
+O log do primeiro CI exibiu avisos de plugin GSAP em testes jsdom que montam o aplicativo sem passar pelo entry point; o build foi aprovado. A inspeção do console no navegador público é registrada separadamente, sem tratar esses avisos de teste como evidência de erro em produção.
 
 Procedimento e restauração: [Deploy e operação](../deploy-e-operacao.md).
