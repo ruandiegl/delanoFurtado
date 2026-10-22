@@ -15,6 +15,7 @@ const FloatingContact = styled.a`
   display: grid; place-items: center; width: 54px; height: 54px; background: var(--primary); color: white;
   border: 1px solid #ffffff50; border-radius: 50%; box-shadow: 0 5px 24px #20382f25; transition: background .2s;
   &:hover { background: #426653; } svg { width: 23px; height: 23px; }
+  body:has(#nl-badge-frame) & { bottom: calc(84px + env(safe-area-inset-bottom)); }
 `
 export function SiteLayout({ children }: { children: ReactNode }) {
   const scope = useRef<HTMLElement>(null)

@@ -1,0 +1,93 @@
+{
+  "verifiedAt": "2026-10-22T18:08:15.114Z",
+  "origin": "https://delano-furtado.netlify.app",
+  "applicationCommit": "f3d1ad0",
+  "documents": [
+    {
+      "path": "/",
+      "status": 200,
+      "cache": "public,max-age=0,must-revalidate"
+    },
+    {
+      "path": "/localizacao",
+      "status": 200,
+      "cache": "public,max-age=0,must-revalidate"
+    },
+    {
+      "path": "/contate-nos",
+      "status": 200,
+      "cache": "public,max-age=0,must-revalidate"
+    },
+    {
+      "path": "/pagina-inexistente",
+      "status": 404,
+      "cache": "public,max-age=0,must-revalidate"
+    }
+  ],
+  "resources": [
+    {
+      "path": "/media/favicon-32.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1183,
+      "cache": "public,max-age=0,must-revalidate"
+    },
+    {
+      "path": "/media/favicon-180.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 10426,
+      "cache": "public,max-age=0,must-revalidate"
+    },
+    {
+      "path": "/assets/index-BVBzCxQK.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8",
+      "bytes": 390187,
+      "cache": "public,max-age=31536000,immutable"
+    },
+    {
+      "path": "/assets/motion-CHfANB6y.js",
+      "status": 200,
+      "type": "application/javascript; charset=UTF-8",
+      "bytes": 112783,
+      "cache": "public,max-age=31536000,immutable"
+    },
+    {
+      "path": "/assets/index-DiMlk6IQ.css",
+      "status": 200,
+      "type": "text/css; charset=UTF-8",
+      "bytes": 27694,
+      "cache": "public,max-age=31536000,immutable"
+    },
+    {
+      "path": "/media/logo-delano.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 100783,
+      "cache": "public,max-age=0,must-revalidate"
+    },
+    {
+      "path": "/media/monograma-df.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16892,
+      "cache": "public,max-age=0,must-revalidate"
+    },
+    {
+      "path": "/media/delano-800.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 58276,
+      "cache": "public,max-age=0,must-revalidate"
+    },
+    {
+      "path": "/media/google-maps.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 5536,
+      "cache": "public,max-age=0,must-revalidate"
+    }
+  ],
+  "sitemapAndRobots": 200
+}

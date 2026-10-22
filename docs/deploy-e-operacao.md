@@ -26,6 +26,8 @@ Os HTMLs de localização e contato são atendidos por regras explícitas. Alias
 
 Headers definem revalidação do conteúdo, cache imutável apenas para `/assets/` com nomes versionados, proteção contra framing, `nosniff` e política de referrer. Mídia de nome estável permanece com revalidação. Não há variáveis secretas obrigatórias, banco ou função de envio neste release.
 
+O projeto público recebe o selo do Netlify no canto inferior. Quando esse iframe está presente, o botão flutuante de WhatsApp reserva espaço acima dele, preservando a área de clique e o safe area do dispositivo.
+
 Referências: [configuração por arquivo](https://docs.netlify.com/build/configure-builds/file-based-configuration/), [regras de redirect e 404](https://docs.netlify.com/manage/routing/redirects/redirect-options/) e [prioridade dos arquivos estáticos](https://docs.netlify.com/manage/routing/redirects/rewrites-proxies/).
 
 ## Pipeline

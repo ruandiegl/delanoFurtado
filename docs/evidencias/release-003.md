@@ -26,7 +26,9 @@ O primeiro smoke test HTTP detectou `/LOCALIZACAO` com status 200 e HTML da loca
 
 Foram reproduzidas **11 falhas** em testes de renderização, hidratação e preview antes da correção. O manifest passou a resolver somente os aliases das três páginas conhecidas para seus caminhos canônicos. Router e SEO utilizam essa mesma resolução, evitando trocar o HTML servido pelo CDN por uma tela de erro na hidratação. Nenhuma rota de serviço nova, backend ou função de borda foi acrescentada.
 
-Após o ajuste: **46 testes aprovados em 12 arquivos**, além de lint e build. A verificação HTTP foi ampliada para onze documentos e três redirects. O smoke test final da versão corrigida deve ser registrado após o deploy automático.
+Após o ajuste: **46 testes aprovados em 12 arquivos**, além de lint, build e `verify:build`. A versão corrigida foi enviada em `f3d1ad0`; o smoke test público passou nos **onze documentos e três redirects**. Também foram conferidos quatro documentos, nove recursos referenciados, headers, cache, sitemap e robots; o bundle corrigido estava ativo. [Registro HTTP](netlify-http-003.json).
+
+Na inspeção desktop, a plataforma adicionou um iframe de selo de 64 px no rodapé que sobrepunha parte do WhatsApp flutuante. O layout passou a reservar espaço acima desse iframe quando ele existe, sem alterar a posição local quando o selo está ausente. Conferir o espaçamento no navegador após a publicação desse ajuste.
 
 O log do primeiro CI exibiu avisos de plugin GSAP em testes jsdom que montam o aplicativo sem passar pelo entry point; o build foi aprovado. A inspeção do console no navegador público é registrada separadamente, sem tratar esses avisos de teste como evidência de erro em produção.
 
