@@ -18,6 +18,17 @@
   --ring: #426653;
   --destructive: #a52c2c;
   --brand-gold: #ad955f;
+  --hero-bg-deep: #071914;
+  --hero-bg-ambient: #0f2921;
+  --hero-gold-light: #e5cf9d;
+  --hero-gold-mid: #c6a767;
+  --hero-gold-dark: #9c7c3e;
+  --hero-gold-title: #d8bd84;
+  --hero-text-primary: #f7f6f2;
+  --hero-text-muted: #c9d4ce;
+  --hero-border: #ffffff18;
+  --hero-cta-bg: #1e824c;
+  --hero-cta-hover: #249659;
   --radius: .5rem;
   --brand-font: 'Manrope Variable', Manrope, Arial, sans-serif;
 }

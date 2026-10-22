@@ -12,8 +12,8 @@ const Portrait = styled.div`
   &::before { content: ''; position: absolute; top: -16px; right: 20px; width: 50px; height: 5px; background: var(--primary); border-radius: 3px; }
 `
 export function AboutSection() {
-  return <Section id="sobre"><Container><TwoColumns><Copy data-reveal="section"><SmallLabel>Conheça o advogado</SmallLabel><h2>Proximidade para entender.<br />Estratégia para atuar.</h2>
-    {siteData.biography.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<ContactCta label="Converse sobre o seu caso" />
+  return <Section id="sobre"><Container><TwoColumns><Copy><div data-reveal="text"><SmallLabel>Conheça o advogado</SmallLabel><h2>Proximidade para entender.<br />Estratégia para atuar.</h2></div>
+    {siteData.biography.map(paragraph => <p key={paragraph} data-reveal="section">{paragraph}</p>)}<div data-reveal="card"><ContactCta label="Converse sobre o seu caso" /></div>
     </Copy><Portrait data-reveal="section"><img {...media.portrait} className="photo" loading="lazy" sizes="(max-width: 767px) 100vw, 530px" /><span className="seal"><img {...media.monogram} alt="" loading="lazy" /></span></Portrait>
   </TwoColumns></Container></Section>
 }

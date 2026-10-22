@@ -8,6 +8,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         brand: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-md font-medium border-primary",
+        hero: "bg-[linear-gradient(135deg,#218c53_0%,#16653b_100%)] text-white hover:bg-[linear-gradient(135deg,#279e5e_0%,#1c7a47_100%)] rounded-md font-semibold border border-[#52c484]/40 shadow-[0_12px_32px_rgba(0,0,0,0.36)] focus-visible:ring-[#d8bd84]/80 focus-visible:border-[#d8bd84] [&_.cta-arrow]:bg-white [&_.cta-arrow]:text-[#134e2e]",
         default: "bg-primary text-primary-foreground hover:bg-primary/80",
         outline:
           "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",

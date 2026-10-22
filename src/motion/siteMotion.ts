@@ -1,20 +1,80 @@
-import { gsap, ScrollTrigger } from './gsap'
+import { gsap, ScrollTrigger, registerClientMotion } from './gsap'
 
 export function createPageMotion(root: HTMLElement, { isDesktop }: { isDesktop: boolean }): () => void {
+  registerClientMotion()
   let active = true
   let refreshFrame = 0
   const targets = Array.from(root.querySelectorAll<HTMLElement>('[data-reveal]'))
   const tweens = new Map<HTMLElement, gsap.core.Tween>()
-  targets.forEach((target, index) => {
+  let heroOrder = 0
+  let cardOrder = 0
+
+  targets.forEach(target => {
     const kind = target.dataset.reveal
     const hero = kind === 'hero'
-    const y = kind === 'section' ? (isDesktop ? 16 : 8) : kind === 'contact' ? 10 : 12
-    const tween = gsap.fromTo(target,
-      { y, ...(kind === 'text' ? { opacity: .65 } : {}) },
-      { y: 0, ...(kind === 'text' ? { opacity: 1 } : {}), duration: hero ? .5 : .4, ease: 'power2.out',
-        delay: kind === 'card' ? (index % 3) * (isDesktop ? .05 : .03) : 0,
-        ...(hero ? {} : { scrollTrigger: { trigger: target, start: kind === 'contact' ? 'top 90%' : 'top 88%', once: true } }),
-      })
+    const isPortrait = target.classList.contains('portrait-stage')
+    const isCard = kind === 'card'
+    const isText = kind === 'text'
+    const isContact = kind === 'contact'
+
+    const y = hero
+      ? isPortrait
+        ? isDesktop ? 32 : 22
+        : isDesktop ? 26 : 18
+      : isText
+        ? isDesktop ? 18 : 12
+        : isCard
+          ? isDesktop ? 22 : 14
+          : isContact
+            ? isDesktop ? 20 : 12
+            : isDesktop ? 24 : 16
+
+    const fromVars: gsap.TweenVars = {
+      y,
+      opacity: 0.001,
+      ...(isPortrait ? { scale: 0.968 } : isCard ? { scale: 0.985 } : {}),
+    }
+
+    const delay = hero
+      ? isPortrait
+        ? 0.06
+        : heroOrder++ * (isDesktop ? 0.085 : 0.06)
+      : isCard
+        ? (cardOrder++ % 3) * (isDesktop ? 0.04 : 0.025)
+        : 0
+
+    const duration = hero
+      ? isPortrait
+        ? 1.2
+        : 1.05
+      : isText
+        ? 0.34
+        : isCard
+          ? 0.36
+          : 0.4
+
+    const tween = gsap.fromTo(
+      target,
+      fromVars,
+      {
+        y: 0,
+        opacity: 1,
+        ...(isPortrait || isCard ? { scale: 1 } : {}),
+        duration,
+        ease: hero ? 'power2.out' : 'power3.out',
+        delay,
+        overwrite: 'auto',
+        ...(hero
+          ? {}
+          : {
+              scrollTrigger: {
+                trigger: target,
+                start: isContact ? 'top 92%' : 'top 90%',
+                once: true,
+              },
+            }),
+      },
+    )
     tweens.set(target, tween)
   })
   const scheduleRefresh = () => {

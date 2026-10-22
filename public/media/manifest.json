@@ -1,5 +1,29 @@
 [
   {
+    "file": "delano-hero-480.webp",
+    "width": 480,
+    "height": 546,
+    "bytes": 53164
+  },
+  {
+    "file": "delano-hero-686.webp",
+    "width": 686,
+    "height": 780,
+    "bytes": 108648
+  },
+  {
+    "file": "delano-hero-1024.webp",
+    "width": 1024,
+    "height": 1164,
+    "bytes": 251816
+  },
+  {
+    "file": "hero-office-bg.webp",
+    "width": 1440,
+    "height": 804,
+    "bytes": 89424
+  },
+  {
     "file": "delano-480.webp",
     "width": 480,
     "height": 720,

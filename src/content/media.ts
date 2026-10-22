@@ -1,5 +1,14 @@
 export const media = {
   logo: { src: '/media/logo-delano.png', width: 1200, height: 400, alt: 'Delano Furtado — advocacia e consultoria' },
+  heroPortrait: {
+    src: '/media/delano-hero-686.webp',
+    srcSet: '/media/delano-hero-480.webp 480w, /media/delano-hero-686.webp 686w, /media/delano-hero-1024.webp 1024w',
+    width: 686, height: 780, alt: 'Delano Santos Furtado, advogado',
+  },
+  heroBackdrop: {
+    src: '/media/hero-office-bg.webp',
+    width: 1440, height: 804, alt: '',
+  },
   portrait: {
     src: '/media/delano-800.webp',
     srcSet: '/media/delano-480.webp 480w, /media/delano-800.webp 800w, /media/delano-1200.webp 1200w',

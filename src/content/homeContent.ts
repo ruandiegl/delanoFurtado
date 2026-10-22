@@ -1,5 +1,10 @@
 export const homeContent = {
+  heroBadge: 'Delano Furtado · Advocacia · OAB/RJ 235.314',
   heroTitle: 'Advocacia e consultoria jurídica em Volta Redonda',
+  heroTitleParts: {
+    lead: 'Advocacia e consultoria',
+    accent: 'jurídica em Volta Redonda',
+  },
   heroDescription: 'Soluções jurídicas construídas com estratégia, transparência e atenção às particularidades de cada caso. Atendimento para pessoas físicas e empresas, no Rio de Janeiro e online em todo o Brasil.',
   sectionOrder: ['hero', 'credentials', 'areas', 'sobre', 'atendimento', 'differentials', 'google', 'contato'],
   differentials: [

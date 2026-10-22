@@ -5,6 +5,7 @@ Planos detalhados de implementação, baseados em [docs/README.md](../docs/READM
 | Plano | Estado | Responsável principal | Escopo |
 | --- | --- | --- | --- |
 | [plan-001 — MVP da landing page](plan-001-mvp-landing-page-delano-furtado.md) | Concluído localmente; verificado e revisado em 22/10/2026 | Software Architect | Frontend inspirado no Behance, conteúdo real do Delano, três rotas e scroll com GSAP React |
+| [plan-002 — Redesign da Hero com recorte e fundo escuro](plan-002-redesign-hero-recorte-fundo-escuro.md) | Concluído localmente; verificado em 22/10/2026 | UX/UI Designer | Nova Hero em verde-floresta profundo, retrato recortado com bordas suavizadas, fundo fotográfico de escritório e tipografia bicolor |
 
 ## Numeração e execução
 

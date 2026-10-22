@@ -20,6 +20,12 @@ Valores vivem uma única vez em `src/styles/tokens.css`. styled-components usa e
 | `--muted-foreground` | `#5C655F` | Texto secundário sujeito a teste de contraste |
 | `--border` | `#D5D6D1` | Contornos suaves |
 | `--brand-gold` | `#AD955F` | Aproximação decorativa do dourado; não substitui as cores do arquivo |
+| `--hero-bg-deep` | `#071914` | Fundo verde-floresta profundo da Hero |
+| `--hero-bg-ambient` | `#0F2921` | Camada esmeralda de ambientação na Hero |
+| `--hero-gold-title` | `#D8BD84` | Destaque dourado no título principal sobre fundo escuro |
+| `--hero-text-primary` | `#F7F6F2` | Texto principal claro na superfície escura da Hero |
+| `--hero-text-muted` | `#C9D4CE` | Texto secundário claro na superfície escura da Hero |
+| `--hero-cta-bg` | `#1E824C` | Base luminosa do botão CTA na Hero escura |
 
 Conferir contraste na combinação real e nos estados de foco, hover e disabled. Dourado e cinza claro não devem ser o único sinal de ação ou estado. O preset de caldeiraria não transporta suas cores para este tema.
 
@@ -58,9 +64,9 @@ O caminho sinuoso do processo vira uma lista vertical no mobile. Selos e marcas-
 
 ## Mídia
 
-Os originais ficam preservados em `docs/assets/delano-furtado/`, conforme [manifesto](assets/delano-furtado/manifesto.json). Não reduzir ou substituir esses originais para otimizar o frontend.
+Os originais ficam preservados em `docs/assets/delano-furtado/`, conforme [manifesto](assets/delano-furtado/manifesto.json). Não reduzir ou substituir esses originais para otimizar o frontend. O recorte fornecido para a Hero (`retrato-delano-furtado-sem-fundo.jpg`) é mantido como ativo adicional verificado por hash na mesma pasta.
 
-Criar derivados em `src/assets/` ou `public/`, registrar origem, dimensão e uso. Usar `srcset`/`sizes` quando necessário, dimensões explícitas e recorte apropriado por viewport. A imagem principal deve carregar cedo; mídia abaixo da dobra pode usar lazy loading.
+Criar derivados em `src/assets/` ou `public/`, registrar origem, dimensão e uso (`delano-hero-480.webp`, `delano-hero-686.webp` e `delano-hero-1024.webp` com transparência e super-resolução para a Hero; `hero-office-bg.webp` para o cenário de fundo da Hero; `delano-480/800/1200.webp` para a seção Sobre). Usar `srcset`/`sizes` quando necessário, dimensões explícitas e recorte apropriado por viewport. A imagem principal deve carregar cedo; mídia abaixo da dobra pode usar lazy loading.
 
 Corrigir os textos alternativos incorretos encontrados no site antigo. Imagem decorativa usa alt vazio; retrato e logo recebem descrição adequada ao contexto. Uma imagem temática de Justiça não representa uma fotografia do escritório.
 

@@ -29,7 +29,7 @@ Páginas individuais de serviços, blog, política de privacidade ou agendamento
 | Credenciais | Graduação e duas pós-graduações publicadas | Não converter em mestrado, docência ou títulos de outra pessoa |
 | Serviços | Sete blocos publicados | Preservar todos; organizar sínteses e leitura detalhada |
 | Processo | Sem sete etapas confirmadas | Omitir na versão publicada até existir conteúdo próprio |
-| Avaliações | Convite e link de avaliação Google | Não atribuir nota, quantidade, nome ou depoimento ausente |
+| Avaliações | Avaliações reais coletadas da ficha oficial do Google Maps (`0x9e99fc2d9fe615:0x119797af8c4f7077`) em 22/10/2026 e links de avaliação/consulta | Exibir apenas depoimentos reais coletados da fonte oficial, sem inventar avaliações |
 | Perfil | Texto Sobre e um retrato original | Reusar recortes da mesma foto quando adequado, sem fingir novos retratos |
 | Abrangência | Cidades do RJ e atendimento online nacional | Ponto de referência do Delano, não Campinas |
 | Diferenciais | Formação e atributos já descritos no site | Descrições vinculadas à fonte |

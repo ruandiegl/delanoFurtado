@@ -55,7 +55,7 @@ O novo site combina **a linguagem de frontend da referência do Behance** com **
 | [Evidências do MVP](evidencias/mvp-001.md) | Resultados dos checks, navegador, capturas e limitações |
 | [Cascata nas áreas de atuação](evidencias/motion-areas-002.md) | Expansão suave dos serviços, interrupções e movimento reduzido |
 | [Publicação no Netlify](evidencias/release-003.md) | Remoto, validação e resultado real da publicação |
-| [Planos detalhados](../plans/README.md) | Para consultar o plan-001 do MVP, sequência de tarefas, contratos e aceite |
+| [Planos detalhados](../plans/README.md) | Para consultar o plan-001 (MVP) e o plan-002 (redesign da Hero), sequência de tarefas, contratos e aceite |
 | [Agentes de IA](../agents/README.md) | Para escolher a função de desenvolvimento adequada à tarefa |
 
 ## Por onde começar

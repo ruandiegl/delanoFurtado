@@ -8,14 +8,18 @@ const headings = ['Advocacia e consultoria jur√≠dica em Volta Redonda', 'Escrit√
 for (const [index, route] of [...publicRoutes, '/404'].entries()) {
   const path = route === '/' ? 'index.html' : route === '/404' ? '404.html' : `${route.slice(1)}/index.html`
   const html = await readFile(resolve(dist, path), 'utf8')
-  assert(html.includes(headings[index]), `${route}: heading`)
+  const plainText = html.replace(/<[^>]+>/g, '')
+  assert(plainText.includes(headings[index]), `${route}: heading`)
   assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1, `${route}: one canonical`)
   assert(html.includes(getSeo(route).canonical), `${route}: correct canonical`)
   assert(html.includes('data-styled'), `${route}: collected styles`)
   assert.equal((html.match(/<main/g) ?? []).length, 1)
   assert(!html.includes('<!--app-'), `${route}: no unresolved injection`)
   assert(!html.includes('aggregateRating'), 'No invented ratings')
-  if (route === '/') for (const service of services) for (const item of service.items) assert(html.includes(item), `Missing service item: ${item}`)
+  if (route === '/') {
+    assert(html.includes('/media/delano-hero-686.webp'), 'Hero cutout image present')
+    for (const service of services) for (const item of service.items) assert(html.includes(item), `Missing service item: ${item}`)
+  }
   if (route === '/localizacao') assert(html.includes(siteData.addressLine))
   if (route === '/404') assert(html.includes('noindex,follow'))
   for (const match of html.matchAll(/(?:src|href)="(\/(?:assets|media)\/[^"?]+)"/g)) await access(resolve(dist, `.${match[1]}`))

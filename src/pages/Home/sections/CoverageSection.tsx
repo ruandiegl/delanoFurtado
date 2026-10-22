@@ -18,7 +18,7 @@ const Wrap = styled(Section)`
 `
 export function CoverageSection() {
   return <Wrap id="atendimento"><Container><TwoColumns><div className="geography" data-reveal="section"><MapPin aria-hidden="true" /><div className="place">Volta<br />Redonda.</div><p className="state">Rio de Janeiro · Brasil</p></div>
-    <Copy data-reveal="section"><SmallLabel>Onde posso atender você</SmallLabel><h2>Presença no Rio.<br />Conexão com todo o Brasil.</h2><p>Atendimento presencial no estado do Rio de Janeiro e online para clientes de todo o Brasil, com proximidade e atenção em cada etapa da sua demanda.</p>
-      <ul className="regions" aria-label="Regiões de atendimento presencial">{siteData.regions.map(region => <li key={region}>{region}</li>)}</ul><Link className="location-link" to="/localizacao">Conheça a localização do escritório<ArrowUpRight aria-hidden="true" /></Link>
+    <Copy><div data-reveal="text"><SmallLabel>Onde posso atender você</SmallLabel><h2>Presença no Rio.<br />Conexão com todo o Brasil.</h2></div><p data-reveal="section">Atendimento presencial no estado do Rio de Janeiro e online para clientes de todo o Brasil, com proximidade e atenção em cada etapa da sua demanda.</p>
+      <ul className="regions" aria-label="Regiões de atendimento presencial" data-reveal="card">{siteData.regions.map(region => <li key={region}>{region}</li>)}</ul><div data-reveal="section"><Link className="location-link" to="/localizacao">Conheça a localização do escritório<ArrowUpRight aria-hidden="true" /></Link></div>
     </Copy></TwoColumns></Container></Wrap>
 }
