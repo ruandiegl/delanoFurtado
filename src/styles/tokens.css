@@ -1,0 +1,23 @@
+:root {
+  --background: #ffffff;
+  --foreground: #263a31;
+  --primary: #20382f;
+  --primary-foreground: #ffffff;
+  --secondary: #f0efeb;
+  --secondary-foreground: #263a31;
+  --muted: #f5f4f0;
+  --muted-foreground: #5c655f;
+  --accent: #e6ebe6;
+  --accent-foreground: #20382f;
+  --card: #ffffff;
+  --card-foreground: #263a31;
+  --popover: #ffffff;
+  --popover-foreground: #263a31;
+  --border: #d5d6d1;
+  --input: #a5aea7;
+  --ring: #426653;
+  --destructive: #a52c2c;
+  --brand-gold: #ad955f;
+  --radius: .5rem;
+  --brand-font: 'Manrope Variable', Manrope, Arial, sans-serif;
+}

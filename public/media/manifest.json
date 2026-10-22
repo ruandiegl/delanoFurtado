@@ -1,0 +1,50 @@
+[
+  {
+    "file": "delano-480.webp",
+    "width": 480,
+    "height": 720,
+    "bytes": 22864
+  },
+  {
+    "file": "delano-800.webp",
+    "width": 800,
+    "height": 1201,
+    "bytes": 58276
+  },
+  {
+    "file": "delano-1200.webp",
+    "width": 1200,
+    "height": 1801,
+    "bytes": 138730
+  },
+  {
+    "file": "logo-delano.png",
+    "width": 1200,
+    "height": 400,
+    "bytes": 100783
+  },
+  {
+    "file": "monograma-df.png",
+    "width": 240,
+    "height": 240,
+    "bytes": 16892
+  },
+  {
+    "file": "social-delano.png",
+    "width": 1200,
+    "height": 630,
+    "bytes": 423339
+  },
+  {
+    "file": "google-maps.png",
+    "width": 96,
+    "height": 96,
+    "bytes": 5536
+  },
+  {
+    "file": "justica.webp",
+    "width": 512,
+    "height": 342,
+    "bytes": 21106
+  }
+]

@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "installed_on": "2026-10-22",
+  "timezone": "America/Sao_Paulo",
+  "scope": "user-global",
+  "destination": "C:\\Users\\Rv22\\.agents\\skills",
+  "installer": "Codex skill-installer/scripts/install-skill-from-github.py",
+  "skills": [
+    {
+      "name": "gsap-core",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "ref": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "source_path": "skills/gsap-core",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\gsap-core",
+      "file_count": 1,
+      "skill_md_sha256": "3887b47e050ab5afbe2a9a820f23d39fa02ab785e06a343be44c6f91d84d12b3"
+    },
+    {
+      "name": "gsap-frameworks",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "ref": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "source_path": "skills/gsap-frameworks",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\gsap-frameworks",
+      "file_count": 1,
+      "skill_md_sha256": "842d9d3659ec3ddc8abbdc524708f8facf81f468ac25d0577f48c759c4fa31e6"
+    },
+    {
+      "name": "gsap-performance",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "ref": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "source_path": "skills/gsap-performance",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\gsap-performance",
+      "file_count": 1,
+      "skill_md_sha256": "cb5408d6fba707aabcbfe3320317a14c1f8fca6070074e5261047930f50d441e"
+    },
+    {
+      "name": "gsap-plugins",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "ref": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "source_path": "skills/gsap-plugins",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\gsap-plugins",
+      "file_count": 1,
+      "skill_md_sha256": "5838b856c74c07fbc9fa99b6dfd1eee34ea554c3e530c30e0d58014b707d70a4"
+    },
+    {
+      "name": "gsap-react",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "ref": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "source_path": "skills/gsap-react",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\gsap-react",
+      "file_count": 1,
+      "skill_md_sha256": "88e2a5312b45e8cc7b3c496637ff5bc9af2ae9c925b555c8b235b34cbc989d74"
+    },
+    {
+      "name": "gsap-scrolltrigger",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "ref": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "source_path": "skills/gsap-scrolltrigger",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\gsap-scrolltrigger",
+      "file_count": 1,
+      "skill_md_sha256": "9351b6666a4749c0740406ea363aaccb99a087ff45cc5e8b99a0f367facf3ef4"
+    },
+    {
+      "name": "gsap-timeline",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "ref": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "source_path": "skills/gsap-timeline",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\gsap-timeline",
+      "file_count": 1,
+      "skill_md_sha256": "1a8b0f39cc4be3ed3d834b89672e4ae2f151b901dc3450bebf10bbc45379fe02"
+    },
+    {
+      "name": "gsap-utils",
+      "repository": "https://github.com/greensock/gsap-skills",
+      "ref": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "source_path": "skills/gsap-utils",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\gsap-utils",
+      "file_count": 1,
+      "skill_md_sha256": "1927bcc4ea95b38203404ad5ea1d060b15c4a886c65ae53e885ff1793aabe0ba"
+    },
+    {
+      "name": "frontend-design",
+      "repository": "https://github.com/anthropics/skills",
+      "ref": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "source_path": "skills/frontend-design",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\frontend-design",
+      "file_count": 2,
+      "skill_md_sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "ref": "623a9a9037d006ea727f8213f084d02a6b6f11b5",
+      "source_path": ".claude/skills/ui-ux-pro-max",
+      "installed_path": "C:\\Users\\Rv22\\.agents\\skills\\ui-ux-pro-max",
+      "file_count": 73,
+      "skill_md_sha256": "17b8de682e6f755d436ce813f0aab98a41ce74126daff2e29727f67d4c6beaf6",
+      "adaptation": {
+        "from": "${CLAUDE_PLUGIN_ROOT}/.claude/skills/ui-ux-pro-max/scripts/search.py",
+        "to": "C:/Users/Rv22/.agents/skills/ui-ux-pro-max/scripts/search.py",
+        "replacements": 11
+      },
+      "upstream_skill_md_sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9"
+    }
+  ],
+  "verification": {
+    "manifests": {
+      "status": "passed",
+      "count": 10
+    },
+    "checks": [
+      {
+        "check": "UI UX Pro Max: busca de movimento",
+        "status": "passed",
+        "results": 1
+      },
+      {
+        "check": "UI UX Pro Max: consulta React",
+        "status": "passed",
+        "results": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+[build]
+  command = "npm run test:run && npm run lint && npm run build && npm run verify:build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22.15.0"
+  NPM_VERSION = "11.21.1"
+
+[build.processing.html]
+  pretty_urls = false
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/localizacao/index.html"
+  to = "/localizacao"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/contate-nos/index.html"
+  to = "/contate-nos"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/localizacao"
+  to = "/localizacao/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contate-nos"
+  to = "/contate-nos/index.html"
+  status = 200
+  force = true
+
+# Existing assets take priority. Unknown paths retain an actual 404 response.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

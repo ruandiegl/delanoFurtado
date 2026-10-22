@@ -1,0 +1,81 @@
+{
+  "backState": {
+    "canonical": "https://www.delanofurtado.adv.br/localizacao",
+    "path": "/localizacao",
+    "title": "Localização | Delano Furtado — Volta Redonda"
+  },
+  "refreshState": {
+    "canonicalCount": 1,
+    "h1": "Vamos conversar sobre o seu caso?",
+    "path": "/contate-nos",
+    "rootChildren": 5
+  },
+  "prodErrors": [
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:05.639Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:05.803Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:06.247Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:06.410Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:06.850Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:07.015Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:07.449Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:07.618Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:08.060Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index-DJPJkD6C.js:1:10302)",
+      "timestamp": "2026-10-22T17:04:08.224Z",
+      "url": "http://127.0.0.1:4173/assets/index-DJPJkD6C.js"
+    },
+    {
+      "level": "error",
+      "message": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at Ri (http://127.0.0.1:4173/assets/index--FG2J3BR.js:8:31176)\n    at zi (http://127.0.0.1:4173/assets/index--FG2J3BR.js:8:32180)\n    at Rc (http://127.0.0.1:4173/assets/index--FG2J3BR.js:8:85710)\n    at Fu (http://127.0.0.1:4173/assets/index--FG2J3BR.js:8:116470)\n    at Mu (http://127.0.0.1:4173/assets/index--FG2J3BR.js:8:115743)\n    at ku (http://127.0.0.1:4173/assets/index--FG2J3BR.js:8:114763)\n    at Ou (http://127.0.0.1:4173/assets/index--FG2J3BR.js:8:114601)\n    at gu (http://127.0.0.1:4173/assets/index--FG2J3BR.js:8:111128)\n    at cd (http://127.0.0.1:4173/assets/index--FG2J3BR.js:8:122986)\n    at MessagePort.E (http://127.0.0.1:4173/assets/index--FG2J3BR.js:1:10302)",
+      "timestamp": "2026-10-22T17:14:15.871Z",
+      "url": "http://127.0.0.1:4173/assets/index--FG2J3BR.js"
+    }
+  ]
+}

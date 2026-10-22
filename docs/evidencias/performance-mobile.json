@@ -1,0 +1,13 @@
+{
+  "lcp": 172,
+  "cls": 0,
+  "longTasks": 1,
+  "maxLongTask": 66,
+  "events": [],
+  "navigation": {
+    "response": 11,
+    "domContent": 144,
+    "load": 182
+  },
+  "paint": []
+}

@@ -1,0 +1,18 @@
+{
+  "back": {
+    "before": 2144,
+    "after": 2144,
+    "method": "clique direto no header fixo"
+  },
+  "anchor": {
+    "first": 825,
+    "away": 2265,
+    "after": 825
+  },
+  "caseProof": {
+    "h1": "Página não encontrada",
+    "robots": "noindex,follow",
+    "title": "Página não encontrada | Delano Furtado"
+  },
+  "cleanErrors": []
+}

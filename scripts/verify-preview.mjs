@@ -1,0 +1,29 @@
+import assert from 'node:assert/strict'
+const origin = process.argv[2] ?? 'http://127.0.0.1:4173'
+const cases = [
+  ['/', 200, 'Advocacia e consultoria jurídica em Volta Redonda'],
+  ['/localizacao', 200, 'Escritório em Volta Redonda'],
+  ['/localizacao/', 200, 'Escritório em Volta Redonda'],
+  ['/contate-nos', 200, 'Vamos conversar sobre o seu caso?'],
+  ['/LOCALIZACAO', 404, 'Página não encontrada'],
+  ['/pagina-inexistente', 404, 'Página não encontrada'],
+  ['/pagina-inexistente.html', 404, 'Página não encontrada'],
+]
+for (const [path, status, heading] of cases) {
+  const response = await fetch(`${origin}${path}`, { redirect: 'manual' })
+  assert.equal(response.status, status, `${path}: status`)
+  const html = await response.text()
+  assert.match(html, /<h1[^>]*>/, `${path}: real HTML`)
+  const mainHeading = html.match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1]
+  assert.equal(mainHeading, heading, `${path}: initial heading before JavaScript`)
+  assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1)
+  assert(html.includes('data-styled'), `${path}: collected CSS`)
+  if (status === 404) assert(html.includes('noindex,follow'))
+  console.log(`${status} ${path}: initial HTML/CSS/SEO correct`)
+}
+for (const [path, canonical] of [['/index.html', '/'], ['/localizacao/index.html', '/localizacao'], ['/contate-nos/index.html', '/contate-nos']]) {
+  const response = await fetch(`${origin}${path}`, { redirect: 'manual' })
+  assert.equal(response.status, 308)
+  assert.equal(response.headers.get('location'), canonical)
+}
+console.log('Preview verified: 7 document requests and 3 canonical redirects.')

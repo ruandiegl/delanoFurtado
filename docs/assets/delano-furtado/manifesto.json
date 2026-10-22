@@ -1,0 +1,108 @@
+{
+  "collected_on": "2026-10-22",
+  "timezone": "America/Sao_Paulo",
+  "site": "https://www.delanofurtado.adv.br/",
+  "notes": "Arquivos originais acessados pelos endereços publicados no DOM, CSS e metadados. Sem edição ou compressão adicional.",
+  "assets": [
+    {
+      "file": "logo-delano-furtado-original.png",
+      "source_url": "https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/230/916230/pM9yihY2/d44bdee7ee5b483abb032b82b4de69ca",
+      "source_pages": [
+        "https://www.delanofurtado.adv.br/",
+        "https://www.delanofurtado.adv.br/localizacao",
+        "https://www.delanofurtado.adv.br/contate-nos"
+      ],
+      "usage": "Logo de cabeçalho e rodapé",
+      "mime_type": "image/png",
+      "width": 2172,
+      "height": 724,
+      "bytes": 286828,
+      "sha256": "d7856b12204e3ea7786afafd1c8b0b939ee528d47ed80b41e08fe60a4514428a",
+      "modified_by_agent": false
+    },
+    {
+      "file": "retrato-delano-furtado-original.jpg",
+      "source_url": "https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/230/916230/pM9yihY2/a17f3fd71bb24ffd914d5418fff16c53",
+      "source_pages": [
+        "https://www.delanofurtado.adv.br/"
+      ],
+      "usage": "Retrato profissional na seção Sobre",
+      "mime_type": "image/jpeg",
+      "width": 2784,
+      "height": 4179,
+      "bytes": 3620750,
+      "sha256": "8bde7864e34146f80261752c876b8746e607fc9a087e723b2b46ff926e0fdcce",
+      "modified_by_agent": false
+    },
+    {
+      "file": "favicon-monograma-df.png",
+      "source_url": "https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/230/916230/pM9yihY2/6b702da6d8de4e9284dfde4cb6c24843",
+      "source_pages": [
+        "https://www.delanofurtado.adv.br/"
+      ],
+      "usage": "Monograma DF e shortcut icon",
+      "mime_type": "image/png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 304929,
+      "sha256": "d3b2ac038576df79f6cb8b6fb94dd4c0e1c11cf147c249e4792b7c5e778f9cf8",
+      "modified_by_agent": false
+    },
+    {
+      "file": "imagem-compartilhamento-delano-furtado.png",
+      "source_url": "https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/230/916230/pM9yihY2/9a1443b6755449c1a7fdb7f08b0df240",
+      "source_pages": [
+        "https://www.delanofurtado.adv.br/"
+      ],
+      "usage": "Imagem Open Graph e Twitter",
+      "mime_type": "image/png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1128471,
+      "sha256": "090056eeda9d4bda13a66ea0bd847ff4bbfa95ba9c9b383a954563ebdfbc6687",
+      "modified_by_agent": false
+    },
+    {
+      "file": "icone-google-maps.png",
+      "source_url": "https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/230/916230/pM9yihY2/1afd0cee0efc4a93bbb209aa325d1fcd",
+      "source_pages": [
+        "https://www.delanofurtado.adv.br/"
+      ],
+      "usage": "Ilustração Google Maps na seção de avaliações",
+      "mime_type": "image/png",
+      "width": 512,
+      "height": 512,
+      "bytes": 21291,
+      "sha256": "73a3ec1940255e218c839452e47b9b2102e203af6222e3c20d2fe8f99cffb754",
+      "modified_by_agent": false
+    },
+    {
+      "file": "estatua-justica-localizacao.jpg",
+      "source_url": "https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/230/916230/pM9yihY2/011e47b5a4f44d6a9c686d50ecdf8d66",
+      "source_pages": [
+        "https://www.delanofurtado.adv.br/localizacao"
+      ],
+      "usage": "Fotografia temática da Justiça",
+      "mime_type": "image/jpeg",
+      "width": 512,
+      "height": 342,
+      "bytes": 44289,
+      "sha256": "be4eefe2d8325dcffe7351211888a4f1fc61daf57917a0a50160ab7f0d2cf9b4",
+      "modified_by_agent": false
+    },
+    {
+      "file": "textura-fundo-cinza.png",
+      "source_url": "https://storage.googleapis.com/production-hostgator-brasil-v1-0-0/230/916230/pM9yihY2/fa0c3ae40f894f8489a06920e73054e7",
+      "source_pages": [
+        "https://www.delanofurtado.adv.br/"
+      ],
+      "usage": "Fundo CSS da página inicial",
+      "mime_type": "image/png",
+      "width": 1600,
+      "height": 900,
+      "bytes": 1610629,
+      "sha256": "7ced9719f05c99c1bcbd43ccb75409cd511810fd6a8de740c2407da247d8669a",
+      "modified_by_agent": false
+    }
+  ]
+}
