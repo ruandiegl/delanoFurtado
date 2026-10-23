@@ -61,9 +61,26 @@ const Hero = styled.section`
       linear-gradient(180deg, #05130fa6 0%, #0a231b40 28%, #0a231b33 70%, var(--hero-bg-deep) 100%);
   }
 
+  .hero-bottom-fade {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 248px;
+    pointer-events: none;
+    z-index: 2;
+    background: linear-gradient(
+      180deg,
+      #07191400 0%,
+      #0719141f 22%,
+      #0719145c 44%,
+      #071914ad 66%,
+      #071914eb 82%,
+      var(--hero-bg-deep) 94%,
+      var(--hero-bg-deep) 100%
+    );
+  }
+
   ${Container} {
     position: relative;
-    z-index: 2;
   }
 
   .hero-grid {
@@ -74,6 +91,8 @@ const Hero = styled.section`
   }
 
   .hero-copy {
+    position: relative;
+    z-index: 3;
     padding-block: 28px 68px;
   }
 
@@ -142,37 +161,13 @@ const Hero = styled.section`
 
   .portrait-stage {
     position: relative;
+    z-index: 1;
     align-self: end;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     min-height: 580px;
     padding-top: 0;
-  }
-
-  .portrait-stage::before {
-    content: '';
-    position: absolute;
-    width: 84%;
-    height: 80%;
-    bottom: 8%;
-    left: 52%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    background: radial-gradient(circle, #2b614b55 0%, #c6a76718 42%, transparent 72%);
-    filter: blur(18px);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .portrait-stage::after {
-    content: '';
-    position: absolute;
-    inset: auto -24px 0 -24px;
-    height: 140px;
-    background: linear-gradient(180deg, #07191400 0%, #071914bd 62%, var(--hero-bg-deep) 100%);
-    pointer-events: none;
-    z-index: 2;
   }
 
   .hero-photo {
@@ -185,9 +180,6 @@ const Hero = styled.section`
     object-fit: contain;
     object-position: bottom center;
     display: block;
-    filter: drop-shadow(0 18px 38px #020a0799) contrast(1.02);
-    mask-image: linear-gradient(180deg, #000 74%, #000000a6 88%, transparent 100%);
-    -webkit-mask-image: linear-gradient(180deg, #000 74%, #000000a6 88%, transparent 100%);
   }
 
   .scroll-hint {
@@ -238,6 +230,7 @@ const Hero = styled.section`
     .hero-copy { padding-block: 16px 48px; }
     .portrait-stage { min-height: 480px; }
     .hero-photo { width: min(108%, 560px); }
+    .hero-bottom-fade { height: 210px; }
   }
 
   @media (max-width: 47.99rem) {
@@ -251,6 +244,9 @@ const Hero = styled.section`
     .hero-vignette {
       background:
         linear-gradient(180deg, #071914eb 0%, #071914cc 48%, #0a221b8c 76%, var(--hero-bg-deep) 100%);
+    }
+    .hero-bottom-fade {
+      height: 168px;
     }
     .hero-grid {
       grid-template-columns: 1fr;
@@ -282,9 +278,6 @@ const Hero = styled.section`
     .hero-photo {
       width: 100%;
     }
-    .portrait-stage::after {
-      height: 92px;
-    }
     .scroll-hint {
       font-size: 9px;
       padding-block: 14px;
@@ -303,6 +296,7 @@ export function HeroSection() {
         </div>
         <div className="hero-vignette" />
       </div>
+      <div className="hero-bottom-fade" aria-hidden="true" />
       <Container>
         <div className="hero-grid">
           <div className="hero-copy">

@@ -10,7 +10,7 @@ export const PageSection = styled(Section)`
   .address { font-style: normal; font-size: 16px; line-height: 1.9; margin-block: 24px; }
   .map-link, .return-link { display: inline-flex; align-items: center; gap: 24px; min-height: 48px; font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--primary); }
   .map-link svg { width: 17px; height: 17px; }
-  .socials { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; } .socials a { min-height: 44px; display: inline-flex; align-items: center; font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
+  .socials { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; } .socials a { min-height: 44px; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; text-decoration: underline; text-underline-offset: 4px; } .socials a svg { width: 16px; height: 16px; flex-shrink: 0; }
   .small-copy { font-size: 14px; line-height: 1.9; color: var(--muted-foreground); margin-bottom: 24px; }
   @media (max-width: 63.99rem) { .page-grid { gap: 40px; } }
   @media (max-width: 47.99rem) { .page-grid { grid-template-columns: 1fr; } .info-panel { padding: 28px 24px; } }

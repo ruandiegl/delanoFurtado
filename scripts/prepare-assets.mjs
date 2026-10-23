@@ -82,11 +82,6 @@ async function buildHeroCutoutRgba(cutoutPath, studioOriginalPath) {
     .raw()
     .toBuffer()
 
-  const orig2xSmooth = await sharp(orig2xSharp, { raw: { width: w2, height: h2, channels: 3 } })
-    .blur(2.6)
-    .raw()
-    .toBuffer()
-
   // 1. Continuous sub-pixel alpha recovery by inverting C = alpha * O + (1 - alpha) * 255
   const rawAlpha1x = new Float32Array(cw * ch)
   const hardBg = new Uint8Array(cw * ch)
@@ -196,26 +191,26 @@ async function buildHeroCutoutRgba(cutoutPath, studioOriginalPath) {
       } else if (distBg[i] > maxFeatherDist) {
         a = 1
       } else {
-        if (y < 235 && distBg[i] <= 9) {
+        if (y < 245 && distBg[i] <= 11) {
           const or = orig1x[i * 3], og = orig1x[i * 3 + 1], ob = orig1x[i * 3 + 2]
           const oLum = or * 0.299 + og * 0.587 + ob * 0.114
           const chroma = or - ob
-          if (chroma < 16 && oLum > 85) {
-            const wallFade = Math.max(0, Math.min(1, (152 - oLum) / (152 - 85)))
-            a *= wallFade
+          if (chroma < 18 && oLum > 78) {
+            const wallFade = Math.max(0, Math.min(1, (118 - oLum) / (118 - 78)))
+            a *= wallFade * wallFade
           }
-        } else if (distBg[i] >= 4 && a > 0.45) {
-          a = Math.max(a, 0.95)
+        } else if (distBg[i] >= 3 && a > 0.45) {
+          a = Math.max(a, 0.96)
         }
       }
       alpha1x[i] = a
     }
   }
 
-  // 3. Multi-scale 2x contour smoothing & anti-aliasing
-  const alpha1xPreSmooth = blurFloat2D(alpha1x, cw, ch, 1.15)
+  // 3. Sub-pixel 2x contour anti-aliasing without wide halo
+  const alpha1xPreSmooth = blurFloat2D(alpha1x, cw, ch, 0.85)
   for (let y = 0; y < ch; y++) {
-    const maxD = y < 230 ? 9 : 6
+    const maxD = y < 245 ? 9 : 4
     for (let x = 0; x < cw; x++) {
       const i = y * cw + x
       if (distBg[i] > maxD) alpha1xPreSmooth[i] = 1
@@ -244,8 +239,8 @@ async function buildHeroCutoutRgba(cutoutPath, studioOriginalPath) {
     }
   }
 
-  const alpha2xFine = blurFloat2D(alpha2xBase, w2, h2, 2.0)
-  const alpha2xSmooth = blurFloat2D(alpha2xBase, w2, h2, 4.5)
+  const alpha2xFine = blurFloat2D(alpha2xBase, w2, h2, 1.5)
+  const alpha2xSmooth = blurFloat2D(alpha2xBase, w2, h2, 2.2)
 
   const cropTop2 = 160 * 2
   const cropW2 = 584 * 2
@@ -260,129 +255,66 @@ async function buildHeroCutoutRgba(cutoutPath, studioOriginalPath) {
       const mFine = alpha2xFine[idx2]
       const mSmooth = alpha2xSmooth[idx2]
       const m = mFine * (1 - bodyWeight) + mSmooth * bodyWeight
-      const low = 0.30 + 0.05 * bodyWeight
-      const high = 0.88
+      const low = 0.38 + 0.06 * bodyWeight
+      const high = 0.86
       let t = Math.max(0, Math.min(1, (m - low) / (high - low)))
       t = t * t * (3 - 2 * t)
 
       const dBg = distBg2x[idx2]
-      if (y1x < 265 && dBg <= 9 && t > 0) {
+      if (y1x < 265 && dBg <= 10 && t > 0) {
         const srcIdx = idx2 * 3
         const r = orig2xSharp[srcIdx], g = orig2xSharp[srcIdx + 1], b = orig2xSharp[srcIdx + 2]
-        const warmChromaWeight = Math.max(0, Math.min(1, ((r - b) - 13) / 10))
+        const warmChromaWeight = Math.max(0, Math.min(1, ((r - b) - 14) / 10))
         const lum = r * 0.299 + g * 0.587 + b * 0.114
-        const strandAlpha = Math.max(0, Math.min(1, (158 - lum) / (158 - 75)))
-        const edgeZone = (1 - warmChromaWeight) * Math.max(0, Math.min(1, (9 - dBg) / 4.5))
+        const strandAlpha = Math.max(0, Math.min(1, (125 - lum) / (125 - 68)))
+        const edgeZone = (1 - warmChromaWeight) * Math.max(0, Math.min(1, (10 - dBg) / 4.5))
         t *= (1 - edgeZone) + edgeZone * strandAlpha
       }
 
+      // Smooth alpha-only feather on the abrupt bottom-left sleeve cut and bottom arm edge
       const x1x = x * 0.5
-      const sleeveMask = Math.max(0, Math.min(1, (95 - x1x) / 10))
-      if (sleeveMask > 0 && y1x > 705) {
-        const sFade = Math.max(0, Math.min(1, (755 - y1x) / (755 - 705)))
-        const sSmooth = sFade * sFade * (3 - 2 * sFade)
-        t *= (1 - sleeveMask) + sleeveMask * sSmooth
+      const leftSleeveWeight = Math.max(0, Math.min(1, (114 - x1x) / 22))
+      const leftSleeveSmooth = leftSleeveWeight * leftSleeveWeight * (3 - 2 * leftSleeveWeight)
+      const fadeStart = 776 - leftSleeveSmooth * 58 // 718 on left sleeve, 776 on hand/right arm
+      const fadeEnd = 820 - leftSleeveSmooth * 46   // 774 on left sleeve, 820 on hand/right arm
+      if (y1x > fadeStart) {
+        const bFade = Math.max(0, Math.min(1, (fadeEnd - y1x) / (fadeEnd - fadeStart)))
+        t *= bFade * bFade * (3 - 2 * bFade)
       }
-      if (y1x > 790) {
-        const botFade = Math.max(0, Math.min(1, (822 - y1x) / (822 - 790)))
-        t *= botFade * botFade * (3 - 2 * botFade)
-      }
+
       alphaFinal[y * cropW2 + x] = t
     }
   }
 
-  // 4. Studio retouching on 2x RGB (bilateral skin refinement, soft highlight roll-off, eye clarity, suit depth)
+  // 4. Natural 2x RGB from high-resolution original (zero artificial contrast or darkening)
   const rgb2 = new Float32Array(cropW2 * cropH2 * 3)
   for (let y = 0; y < cropH2; y++) {
     const sy = y + cropTop2
-    const y1x = sy * 0.5
     for (let x = 0; x < cropW2; x++) {
-      const x1x = x * 0.5
       const srcIdx = (sy * w2 + x) * 3
       const dstIdx = (y * cropW2 + x) * 3
-      let r = orig2xSharp[srcIdx]
-      let g = orig2xSharp[srcIdx + 1]
-      let b = orig2xSharp[srcIdx + 2]
-
-      const fdx = (x1x - 306) / 82
-      const fdy = (y1x - 298) / 105
-      const faceDist2 = fdx * fdx + fdy * fdy
-      const faceWeight = Math.max(0, Math.min(1, 1 - faceDist2))
-
-      const e1 = Math.pow((x1x - 278) / 24, 2) + Math.pow((y1x - 280) / 13, 2)
-      const e2 = Math.pow((x1x - 334) / 24, 2) + Math.pow((y1x - 282) / 13, 2)
-      const eyeWeight = Math.max(
-        Math.max(0, Math.min(1, 1 - e1)),
-        Math.max(0, Math.min(1, 1 - e2))
-      )
-
-      const lipDist2 = Math.pow((x1x - 305) / 32, 2) + Math.pow((y1x - 346) / 14, 2)
-      const lipWeight = Math.max(0, Math.min(1, 1 - lipDist2))
-
-      const skinMask = faceWeight * (1 - eyeWeight) * (1 - lipWeight)
-      if (skinMask > 0.01 && r > g && g > b && (r - b) > 16) {
-        const sr = orig2xSmooth[srcIdx]
-        const sg = orig2xSmooth[srcIdx + 1]
-        const sb = orig2xSmooth[srcIdx + 2]
-        const diff = Math.abs(r - sr) + Math.abs(g - sg) + Math.abs(b - sb)
-        const wSmooth = skinMask * Math.max(0, Math.min(0.38, (1 - diff / 44) * 0.38))
-        r = r * (1 - wSmooth) + sr * wSmooth
-        g = g * (1 - wSmooth) + sg * wSmooth
-        b = b * (1 - wSmooth) + sb * wSmooth
-      }
-
-      if (faceWeight > 0.01 && r > 206) {
-        const excess = (r - 206) * faceWeight
-        r -= excess * 0.30
-        g = Math.min(g, r * 0.87 + 12)
-        b = Math.min(b, r * 0.77 + 14)
-      }
-
-      if (eyeWeight > 0.01) {
-        const lum = r * 0.299 + g * 0.587 + b * 0.114
-        const delta = (lum - 95) * 0.08 * eyeWeight
-        r = Math.max(0, Math.min(255, r + delta))
-        g = Math.max(0, Math.min(255, g + delta))
-        b = Math.max(0, Math.min(255, b + delta))
-      }
-
-      const suitRamp = Math.max(0, Math.min(1, (y1x - 370) / 40))
-      const lum = r * 0.299 + g * 0.587 + b * 0.114
-      if (suitRamp > 0 && lum < 145) {
-        const t = lum / 145
-        const factor = 1 - suitRamp * (1 - (0.88 + 0.12 * (t * t)))
-        r *= factor
-        g *= factor * 0.99
-        b *= factor * 0.98
-      }
-
-      rgb2[dstIdx] = r
-      rgb2[dstIdx + 1] = g
-      rgb2[dstIdx + 2] = b
+      rgb2[dstIdx] = orig2xSharp[srcIdx]
+      rgb2[dstIdx + 1] = orig2xSharp[srcIdx + 1]
+      rgb2[dstIdx + 2] = orig2xSharp[srcIdx + 2]
     }
   }
 
-  // 5. Iterative inward-to-outward color propagation (24 passes) for zero edge halo
+  // 5. Sub-pixel edge decontamination (6 passes, only on the 1-2px anti-aliased edge)
   const seed = new Uint8Array(cropW2 * cropH2)
   for (let y = 0; y < cropH2; y++) {
     const sy = y + cropTop2
-    const y1x = sy * 0.5
     for (let x = 0; x < cropW2; x++) {
       const idx = y * cropW2 + x
       const idx2 = sy * w2 + x
       const a = alphaFinal[idx]
       const d = distBg2x[idx2]
-      if (a >= 0.96 && d >= 4.2) {
-        const r = rgb2[idx * 3], g = rgb2[idx * 3 + 1], b = rgb2[idx * 3 + 2]
-        const lum = r * 0.299 + g * 0.587 + b * 0.114
-        const isWarmSkin = r > 170 && (r - b) > 30
-        if (y1x < 290 && d < 11 && !isWarmSkin && lum > 62) continue
+      if (a >= 0.92 && d >= 2.0) {
         seed[idx] = 1
       }
     }
   }
 
-  for (let iter = 0; iter < 24; iter++) {
+  for (let iter = 0; iter < 6; iter++) {
     const nextSeed = new Uint8Array(seed)
     for (let y = 1; y < cropH2 - 1; y++) {
       for (let x = 1; x < cropW2 - 1; x++) {
@@ -417,46 +349,20 @@ async function buildHeroCutoutRgba(cutoutPath, studioOriginalPath) {
 
   const rgba = Buffer.alloc(cropW2 * cropH2 * 4)
   for (let y = 0; y < cropH2; y++) {
-    const sy = y + cropTop2
-    const y1x = sy * 0.5
     for (let x = 0; x < cropW2; x++) {
       const idx = y * cropW2 + x
       const a = alphaFinal[idx]
       const dst = idx * 4
-      if (a <= 0.002) {
+      if (a <= 0.01) {
         rgba[dst] = 0
         rgba[dst + 1] = 0
         rgba[dst + 2] = 0
         rgba[dst + 3] = 0
         continue
       }
-      let r = rgb2[idx * 3]
-      let g = rgb2[idx * 3 + 1]
-      let b = rgb2[idx * 3 + 2]
-
-      if (a < 0.96) {
-        const edgeShade = 0.50 + 0.50 * Math.pow(a, 0.50)
-        r *= edgeShade
-        g *= edgeShade
-        b *= edgeShade
-      }
-
-      const x1x = x * 0.5
-      const sleeveMask = Math.max(0, Math.min(1, (95 - x1x) / 12))
-      if (sleeveMask > 0 && y1x > 690) {
-        const sDark = Math.max(0, Math.min(1, (y1x - 690) / (755 - 690)))
-        const shade = 1 - sleeveMask * sDark * 0.65
-        r *= shade
-        g *= shade
-        b *= shade
-      }
-      if (y1x > 740) {
-        const darkT = Math.max(0, Math.min(1, (y1x - 740) / (822 - 740)))
-        const shade = 1 - darkT * 0.50
-        r *= shade
-        g *= shade
-        b *= shade
-      }
+      const r = rgb2[idx * 3]
+      const g = rgb2[idx * 3 + 1]
+      const b = rgb2[idx * 3 + 2]
 
       rgba[dst] = Math.round(Math.max(0, Math.min(255, r)))
       rgba[dst + 1] = Math.round(Math.max(0, Math.min(255, g)))
@@ -472,9 +378,24 @@ const cutout = await buildHeroCutoutRgba(
   input('retrato-delano-furtado-original.jpg'),
 )
 for (const width of [480, 686, 1024]) {
-  await sharp(cutout.rgba, { raw: { width: cutout.width, height: cutout.height, channels: 4 } })
+  const { data: resized, info: rInfo } = await sharp(cutout.rgba, {
+    raw: { width: cutout.width, height: cutout.height, channels: 4 },
+  })
     .resize({ width, kernel: 'lanczos3' })
-    .webp({ quality: 92, alphaQuality: 98, smartSubsample: true })
+    .raw()
+    .toBuffer({ resolveWithObject: true })
+
+  for (let i = 0; i < resized.length; i += 4) {
+    if (resized[i + 3] < 4) {
+      resized[i] = 0
+      resized[i + 1] = 0
+      resized[i + 2] = 0
+      resized[i + 3] = 0
+    }
+  }
+
+  await sharp(resized, { raw: { width: rInfo.width, height: rInfo.height, channels: 4 } })
+    .webp({ quality: 94, alphaQuality: 100, smartSubsample: true })
     .toFile(path.join(output, `delano-hero-${width}.webp`))
 }
 
