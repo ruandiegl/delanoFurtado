@@ -14,7 +14,7 @@ Atualização: **27 de outubro de 2026**. Este é o índice principal das guidel
 | Gerenciador | npm 11.21.1, com `package-lock.json` próprio |
 | Estado real desta pasta | MVP implementado, HTML por rota, scroll GSAP e testes; [evidências](evidencias/mvp-001.md) |
 | Backend, banco e autenticação | Ausentes do MVP; nenhuma integração de envio configurada. Área administrativa e CMS planejados no [plan-004](../plans/plan-004-area-administrativa-gestao-conteudo-e-secoes.md), sem implementação iniciada |
-| Publicação | [Netlify temporário para homologação](https://delano-furtado.netlify.app/), deploy automático de `main`; hospedagem e domínio finais pendentes; [ordem de lançamento e GA4](deploy-e-operacao.md#ordem-de-lançamento-e-analytics) e [evidências do release](evidencias/release-003.md) |
+| Publicação | [Netlify temporário para homologação](https://delano-furtado.netlify.app/), deploy automático de `main`; destino final confirmado: mesmo domínio na HostGator/cPanel via FileZilla. [Pacote local e guia FTP](publicacao-hostgator-filezilla.md) preparados, publicação pendente; [ordem de lançamento e GA4](deploy-e-operacao.md#ordem-de-lançamento-e-analytics) |
 
 A stack foi definida a partir do código dos projetos de caldeiraria, conforme a [auditoria de referência](03-auditoria-referencia-caldeiraria.md). Uma decisão documentada não significa que a dependência esteja instalada neste projeto. Consulte [Stack e decisões técnicas](stack-e-decisoes-tecnicas.md) para as versões observadas e adaptações.
 
@@ -46,10 +46,12 @@ O novo site combina **a linguagem de frontend da referência do Behance** com **
 | [Segurança e privacidade](seguranca-e-privacidade.md) | Para dados pessoais, segredos, terceiros e integrações |
 | [SEO, acessibilidade e performance](seo-acessibilidade-performance.md) | Para indexação, navegação assistiva, carregamento e metadados |
 | [Referências de SEO e busca por IA](referencias-seo-busca-ia.md) | Fontes primárias de crawlers, dados estruturados e limites de llms.txt consultadas para o plan-003 |
+| [Referências de migração Google](referencias-migracao-google-analytics-ads.md) | Continuidade de GA4/Ads, tags UA conectadas, conversões e parâmetros de campanha; [auditoria da cópia antiga](evidencias/auditoria-site-antigo-2026-10-27.json) e [plan-005 de migração/FTP](../plans/plan-005-migracao-google-e-publicacao-ftp.md) |
 | [Qualidade e validação](qualidade-e-validacao.md) | Para critérios de conclusão e evidências antes da entrega |
 | [Skills e fluxo de IA](skills-e-fluxo-de-ia.md) | Para selecionar habilidades, agentes e o contexto de cada tarefa |
 | [Git e contribuição](git-e-contribuicao.md) | Para branches, commits, revisões e manutenção conjunta de código/docs |
 | [Deploy e operação](deploy-e-operacao.md) | Para build, hospedagem, URLs diretas, publicação e rollback |
+| [Publicação HostGator/FileZilla](publicacao-hostgator-filezilla.md) | Gerar o pacote FTP, localizar a pasta do domínio, fazer backup, enviar e testar; [evidências locais](evidencias/ftp-hostgator-2026-10-27.md) |
 | [Solução de problemas](solucao-de-problemas.md) | Para diagnosticar ambiente, rotas, estilos, animações e contato |
 | [Decisões e pendências](decisoes-e-pendencias.md) | Para conhecer escolhas registradas e decisões futuras com seus impactos |
 | [Roteiro de implementação](roteiro-de-implementacao.md) | Para consultar os marcos do MVP e sua evolução |

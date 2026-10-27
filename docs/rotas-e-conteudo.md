@@ -12,6 +12,9 @@ Ao transformar a transcrição em conteúdo runtime, manter uma única definiç�
 | --- | --- | --- |
 | 23/10/2026 | O usuário solicitou explicitar que a graduação em Direito foi no **UniFOA — Centro Universitário de Volta Redonda** | Identificação da instituição no bloco de formação e menção a UniFOA na biografia, em `src/content/siteData.ts`. A transcrição histórica do documento 02 permanece preservada |
 | 27/10/2026 | O usuário definiu a apresentação do atendimento presencial como **Volta Redonda e região** | Legenda e descrição da Hero, biografia, abrangência, localização e descrições SEO alinhadas a essa redação. Atendimento online nacional mantido; endereço e inscrição OAB/RJ preservados |
+| 27/10/2026 | O usuário ampliou a identificação das instituições de pós-graduação, acrescentou seguros e problemas com companhias aéreas/agências de turismo ao catálogo de Direito do Consumidor e alterou o CTA para agendamento | Revisão pontual de grafia, pontuação, paralelismo e capitalização em `siteData.ts`, `services.ts` e `ContactCta.tsx`, preservando as informações acrescentadas. CTA padronizado como **Agendar atendimento**; destino WhatsApp mantido. Novos itens têm como origem as alterações fornecidas pelo usuário; a transcrição histórica não foi modificada |
+
+Validação da revisão textual de 27/10/2026: `npm run lint`, `npm run build`, `npm run verify:build` e os nove testes existentes de `src/test/prerender.test.tsx` aprovados. O HTML inicial mantém todos os itens de serviço, incluindo os dois acrescentados pelo usuário.
 
 ## Rotas iniciais
 

@@ -1,0 +1,129 @@
+{
+  "audited_on": "2026-10-27",
+  "timezone": "America/Sao_Paulo",
+  "source": "C:/Users/Rv22/Desktop/delanoAntigo",
+  "scope": "Cópia local baixada pelo usuário; arquivos lidos como dados, sem executar o JavaScript legado ou consultar contas",
+  "files": [
+    {
+      "file": ".ftpquota",
+      "bytes": 11,
+      "sha256": "bbf1fbe5af19c35fc90f43a36619e43289d499e5d22c2644619af69bd15cd018"
+    },
+    {
+      "file": ".htaccess",
+      "bytes": 450,
+      "sha256": "e5618ee83becc7e6ba0a7fb192ad8feab4e3220297e22c1c2f2c3cba3363b9aa"
+    },
+    {
+      "file": "contate-nos.f15520a5.js",
+      "bytes": 20758,
+      "sha256": "e90d8e8b9dbd629e213f12987a45afe409209508521c0be54315d53020bce74f"
+    },
+    {
+      "file": "contate-nos.html",
+      "bytes": 198777,
+      "sha256": "bfb7286fa394ebbfc02536426507806ce03806ece2d23cd8a600af84144dd26b"
+    },
+    {
+      "file": "express-editor-files.json",
+      "bytes": 219,
+      "sha256": "6b1d59393c403762fd1bb10a4a2e1b77f2372a42994c85373323ae0b4192958e"
+    },
+    {
+      "file": "galeria.3d7fa5f3.js",
+      "bytes": 6443,
+      "sha256": "8f018d674b6caaf2c63e2a9574c7ae858aa66ccfdceea05b384019320a337131"
+    },
+    {
+      "file": "galeria.html",
+      "bytes": 196363,
+      "sha256": "216e9c498d1238d6dc2cf2f10eaf2a470be6e6a2663fef06526090a5808fffcc"
+    },
+    {
+      "file": "index.html",
+      "bytes": 265177,
+      "sha256": "a31f429c0b701fc4bac71fed1851cd252fa48d76ccc326208d68534cd9d65dd5"
+    },
+    {
+      "file": "inicio.3b659648.js",
+      "bytes": 6443,
+      "sha256": "8f018d674b6caaf2c63e2a9574c7ae858aa66ccfdceea05b384019320a337131"
+    },
+    {
+      "file": "localizacao.795f1390.js",
+      "bytes": 17252,
+      "sha256": "bcc2261a811f1af9d77913e750251c43101c4ee34db61302fc62fc402f9a7108"
+    },
+    {
+      "file": "localizacao.html",
+      "bytes": 203620,
+      "sha256": "9ced92dd08bfe1dd125a3f584b5cebea0e8a7acae56d9771d17a793164167a34"
+    },
+    {
+      "file": "robots.txt",
+      "bytes": 26,
+      "sha256": "133e4db054e73a10017a1f429c80c35cd5bfa9c3a1aba581b364ecc459c48a4b"
+    },
+    {
+      "file": "sitemap.xml",
+      "bytes": 932,
+      "sha256": "bee2468f378cec1b211c35669f773d68608fe7e01cf9fc8283213fadeeb2a207"
+    }
+  ],
+  "html_files": [
+    "contate-nos.html",
+    "galeria.html",
+    "index.html",
+    "localizacao.html"
+  ],
+  "identifiers_found": [
+    "UA-199542592-1"
+  ],
+  "search_console_html_verification": [
+    "aJvM5PvYL0NSUMMisbX7quVzr7osdRBgEPqt8ufGNBE"
+  ],
+  "ga4_literal_found": false,
+  "ads_literal_found": false,
+  "gtm_literal_found": false,
+  "robots_txt": "User-agent: *\r\nDisallow: /",
+  "legacy_public_paths": [
+    "/",
+    "/localizacao",
+    "/contate-nos",
+    "/galeria"
+  ],
+  "notes": [
+    "A ausência de IDs G-/AW-/GTM- literais não comprova ausência de configuração remota ou de tags conectadas.",
+    "Tag UA encontrada não deve ser instalada no novo projeto como substituta de GA4.",
+    "Campanhas, ações de conversão e vínculos precisam ser inventariados nas contas Google.",
+    ".htaccess antigo usa reescritas para HTMLs planos e não deve substituir regras próprias para assets/media e páginas pré-renderizadas do novo site.",
+    "Diretórios de infraestrutura, como .well-known, devem ser preservados na migração."
+  ],
+  "current_project_verification": {
+    "date": "2026-10-27",
+    "commands": [
+      {
+        "command": "npm run build",
+        "exit_code": 0,
+        "result": "Três rotas públicas e 404 pré-renderizados"
+      },
+      {
+        "command": "npm run verify:build",
+        "exit_code": 0,
+        "result": "HTML, estilos, conteúdo completo dos serviços, assets locais, sitemap e robots verificados"
+      }
+    ],
+    "artifact": {
+      "directory": "dist",
+      "files": 31,
+      "bytes": 2694053,
+      "server_configuration_for_ftp_included": false
+    },
+    "documentation": {
+      "local_links_checked": 84,
+      "broken_links": 0
+    },
+    "remote_publication_performed": false,
+    "google_accounts_inspected": false
+  }
+}

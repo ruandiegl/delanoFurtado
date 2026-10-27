@@ -1,0 +1,4 @@
+# This directory contains only build assets with content hashes.
+<IfModule mod_headers.c>
+  Header set Cache-Control "public, max-age=31536000, immutable"
+</IfModule>

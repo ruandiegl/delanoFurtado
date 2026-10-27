@@ -16,6 +16,8 @@
 
 ## Global Constraints
 
+**Adendo de auditoria — 27/10/2026:** a cópia antiga disponibilizada pelo usuário contém `UA-199542592-1`, meta de verificação Search Console e regras próprias do construtor. Antes de escolher/criar GA4 ou instalar conversões, identificar nas contas se a tag UA já encaminha dados a uma propriedade GA4 conectada. O [plan-005](plan-005-migracao-google-e-publicacao-ftp.md) complementa este plano com inventário de campanhas/destinos e publicação por FTP. Ads direto/importação de conversões exige reconciliar as regras de consentimento e a sanitização de queries deste plano; não está implementado nem é liberado por copiar IDs. O gate de publicação definitiva antes do Marco B permanece vigente.
+
 - Preservar React/Vite/Router, a Hero escura do [plan-002](plan-002-redesign-hero-recorte-fundo-escuro.md), os sete serviços, mídia original e interações GSAP. Preservar a homologação no Netlify enquanto a hospedagem final não for confirmada; adaptar a publicação ao destino escolhido sem presumir Next.js/Vercel.
 - Fontes factuais: [transcrição](../docs/02-conteudo-site-delano-furtado.md), `src/content/siteData.ts`, `services.ts`, `homeContent.ts` e a procedência das avaliações registrada em [Rotas](../docs/rotas-e-conteudo.md). Não ampliar qualificações, regiões, serviços ou promessas por motivos de SEO.
 - O site tem três rotas públicas, sem API, painel, login, blog, cases ou formulário de envio. Serviços e biografia são seções da Home.

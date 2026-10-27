@@ -23,12 +23,14 @@ export const services: readonly Service[] = [
   {
     id: 'consumidor', title: 'Direito do Consumidor',
     summary: 'Atuação em conflitos de consumo, cobranças indevidas e falhas na prestação de serviços.',
-    sourceSection: '4.4 — Direito do Consumidor',
+    sourceSection: '4.4 — Direito do Consumidor; docs/rotas-e-conteudo.md (atualização editorial de 27/10/2026)',
     items: [
       'Cobranças indevidas e negativação indevida no SPC/Serasa e Registrato',
       'Atrasos ou falhas na entrega de produtos e serviços', 'Cláusulas abusivas em contratos de adesão',
       'Cancelamentos não realizados e estornos negados',
       'Problemas com bancos, operadoras de telefonia, planos de saúde e concessionárias de água e energia elétrica',
+      'Negativas indevidas de cobertura e de pagamento de indenizações por seguradoras, incluindo seguros de veículos, imóveis, vida, saúde e outras modalidades',
+      'Problemas com companhias aéreas e agências de turismo, incluindo cancelamentos e atrasos de voos, extravio de bagagens, negativa de reembolso, descumprimento de pacotes turísticos e falhas na prestação de serviços',
     ],
   },
   {

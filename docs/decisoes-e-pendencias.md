@@ -1,6 +1,6 @@
 # Decisões e pendências
 
-Registro atualizado: **23/10/2026**. D01–D11 estão aplicadas ao MVP; D14 registra a sequência de lançamento definida pelo responsável. A implementação, seus checks e limitações estão em [mvp-001](evidencias/mvp-001.md).
+Registro atualizado: **27/10/2026**. D01–D11 estão aplicadas ao MVP; D14 registra a sequência de lançamento e D16 o destino final confirmado pelo responsável. A implementação, seus checks e limitações estão em [mvp-001](evidencias/mvp-001.md) e [pacote HostGator](evidencias/ftp-hostgator-2026-10-27.md).
 
 ## Decisões registradas
 
@@ -21,12 +21,13 @@ Registro atualizado: **23/10/2026**. D01–D11 estão aplicadas ao MVP; D14 regi
 | D13 | Resolver aliases estáticos com o manifest compartilhado | O CDN atende variações de caixa e `index.html`; alinhar SSR/Router/SEO para preservar a hidratação; [Rotas](rotas-e-conteudo.md) |
 | D14 | Implementar GA4 somente após hospedagem definitiva, domínio final e publicação validada | Definição do responsável em 23/10/2026; evitar medir homologação como lançamento; [ordem de lançamento](deploy-e-operacao.md#ordem-de-lançamento-e-analytics) e [plan-003](../plans/plan-003-seo-previas-sociais-analytics-e-descoberta-ia.md) |
 | D15 | Planejar administração de conteúdo/mídia e reordenação dos blocos existentes, conservando o design | Escopo solicitado e esclarecido pelo usuário em 23/10/2026; [plan-004](../plans/plan-004-area-administrativa-gestao-conteudo-e-secoes.md). Não equivale à adoção de fornecedor ou implementação de CMS |
+| D16 | Substituir o site no mesmo domínio `www.delanofurtado.adv.br`, HostGator/cPanel via FileZilla | Confirmado pelo usuário em 27/10/2026. Pacote local gerado; raiz remota, backup, publicação e validação HTTP pendentes; [guia](publicacao-hostgator-filezilla.md) |
 
 ## Decisões futuras delimitadas
 
 | Item | Quem conduz | Momento e tratamento até lá |
 | --- | --- | --- |
-| Hospedagem definitiva e domínio final | SEO + Release | Netlify serve à homologação; confirmar provedor e destino canônico antes de preparar a migração. Não presumir permanência do Netlify nem confirmação do domínio final |
+| Publicação no destino confirmado | SEO + Release | HostGator/cPanel e mesmo domínio confirmados; conferir raiz, backup e regras remotas antes de enviar o pacote local. Netlify continua à homologação |
 | Migração do Router para linha corrigida | Arquitetura + Segurança | Antes de ampliar destinos dinâmicos/Data Mode; [análise atual](seguranca-e-privacidade.md) registra dois apontamentos moderados |
 | Áreas adicionais divergentes entre páginas/SEO | Produto + conteúdo | Antes de criar afirmações novas; manter os sete blocos principais |
 | Etapas próprias de atendimento e FAQ | Produto + conteúdo | Se esses blocos entrarem no escopo; omitir na publicação enquanto ausentes |

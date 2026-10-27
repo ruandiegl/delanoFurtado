@@ -4,7 +4,7 @@ import { siteData } from '@/content/siteData'
 import { buildWhatsAppUrl } from '@/lib/contactLinks'
 
 export function ContactCta({
-  label = 'Entre em contato via WhatsApp',
+  label = 'Agendar atendimento',
   className,
   tone = 'default',
 }: {

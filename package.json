@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "tsc -b && npm run build:client && npm run build:server && npm run prerender",
+    "build:ftp": "npm run build && npm run verify:build && node scripts/package-ftp.mjs",
     "lint": "eslint .",
     "test": "vitest",
     "test:run": "vitest run",
