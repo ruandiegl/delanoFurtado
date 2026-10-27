@@ -9,7 +9,7 @@ const originals = path.join(root, 'docs/assets/delano-furtado')
 const output = path.join(root, 'public/media')
 await mkdir(output, { recursive: true })
 const manifest = JSON.parse(await readFile(path.join(originals, 'manifesto.json'), 'utf8'))
-for (const asset of manifest.assets) {
+for (const asset of [...manifest.assets, ...(manifest.provided_assets ?? [])]) {
   const hash = createHash('sha256').update(await readFile(path.join(originals, asset.file))).digest('hex')
   if (hash !== asset.sha256) throw new Error(`Original alterado: ${asset.file}`)
 }
@@ -406,6 +406,7 @@ await sharp(input('fundo-escritorio-hero.jpg'))
 
 for (const width of [480, 800, 1200]) {
   await sharp(input('retrato-delano-furtado-original.jpg')).rotate().resize({ width }).webp({ quality: 84 }).toFile(path.join(output, `delano-${width}.webp`))
+  await sharp(input('retrato-delano-furtado-sobre-2026-10-27.jpg')).rotate().resize({ width }).webp({ quality: 84 }).toFile(path.join(output, `delano-sobre-${width}.webp`))
 }
 await sharp(input('logo-delano-furtado-original.png')).resize({ width: 1200 }).png().toFile(path.join(output, 'logo-delano.png'))
 for (const size of [32, 180]) {
@@ -416,10 +417,10 @@ await sharp(input('imagem-compartilhamento-delano-furtado.png')).resize(1200, 63
 await sharp(input('icone-google-maps.png')).resize(96, 96).png().toFile(path.join(output, 'google-maps.png'))
 await sharp(input('estatua-justica-localizacao.jpg')).resize({ width: 512 }).webp({ quality: 84 }).toFile(path.join(output, 'justica.webp'))
 const metadata = []
-for (const filename of ['delano-hero-480.webp','delano-hero-686.webp','delano-hero-1024.webp','hero-office-bg.webp','delano-480.webp','delano-800.webp','delano-1200.webp','logo-delano.png','monograma-df.png','social-delano.png','google-maps.png','justica.webp']) {
+for (const filename of ['delano-hero-480.webp','delano-hero-686.webp','delano-hero-1024.webp','hero-office-bg.webp','delano-480.webp','delano-800.webp','delano-1200.webp','delano-sobre-480.webp','delano-sobre-800.webp','delano-sobre-1200.webp','logo-delano.png','monograma-df.png','social-delano.png','google-maps.png','justica.webp']) {
   const data = await readFile(path.join(output, filename))
   const image = await sharp(data).metadata()
   metadata.push({ file: filename, width: image.width, height: image.height, bytes: data.length })
 }
 await writeFile(path.join(output, 'manifest.json'), `${JSON.stringify(metadata, null, 2)}\n`)
-console.log(`Prepared ${metadata.length + 2} optimized media files; ${manifest.assets.length} originals + ${extraAssets.length} hero assets verified.`)
+console.log(`Prepared ${metadata.length + 2} optimized media files; ${manifest.assets.length} collected originals + ${manifest.provided_assets?.length ?? 0} provided originals + ${extraAssets.length} hero assets verified.`)

@@ -10,8 +10,8 @@ export const media = {
     width: 1440, height: 804, alt: '',
   },
   portrait: {
-    src: '/media/delano-800.webp',
-    srcSet: '/media/delano-480.webp 480w, /media/delano-800.webp 800w, /media/delano-1200.webp 1200w',
+    src: '/media/delano-sobre-800.webp',
+    srcSet: '/media/delano-sobre-480.webp 480w, /media/delano-sobre-800.webp 800w, /media/delano-sobre-1200.webp 1200w',
     width: 800, height: 1201, alt: 'Delano Santos Furtado, advogado',
   },
   monogram: { src: '/media/monograma-df.png', width: 240, height: 240 },

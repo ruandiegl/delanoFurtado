@@ -66,7 +66,9 @@ O caminho sinuoso do processo vira uma lista vertical no mobile. Selos e marcas-
 
 Os originais ficam preservados em `docs/assets/delano-furtado/`, conforme [manifesto](assets/delano-furtado/manifesto.json). Não reduzir ou substituir esses originais para otimizar o frontend. O recorte fornecido para a Hero (`retrato-delano-furtado-sem-fundo.jpg`) é mantido como ativo adicional verificado por hash na mesma pasta.
 
-Criar derivados em `src/assets/` ou `public/`, registrar origem, dimensão e uso (`delano-hero-480.webp`, `delano-hero-686.webp` e `delano-hero-1024.webp` com transparência e super-resolução para a Hero; `hero-office-bg.webp` para o cenário de fundo da Hero; `delano-480/800/1200.webp` para a seção Sobre). Usar `srcset`/`sizes` quando necessário, dimensões explícitas e recorte apropriado por viewport. A imagem principal deve carregar cedo; mídia abaixo da dobra pode usar lazy loading.
+Em **27/10/2026**, o usuário forneceu o retrato `retrato-delano-furtado-sobre-2026-10-27.jpg` para a seção **Conheça o advogado**. O original está preservado integralmente e registrado em `provided_assets` no manifesto, separado da coleta histórica. A seção usa `delano-sobre-480/800/1200.webp`, preparados a partir desse arquivo; o recorte da Hero continua independente.
+
+Criar derivados em `src/assets/` ou `public/`, registrar origem, dimensão e uso (`delano-hero-480.webp`, `delano-hero-686.webp` e `delano-hero-1024.webp` com transparência e super-resolução para a Hero; `hero-office-bg.webp` para o cenário de fundo da Hero; `delano-sobre-480/800/1200.webp` para a seção Sobre). Os derivados anteriores `delano-480/800/1200.webp` permanecem preservados para as referências existentes, inclusive dados estruturados. Usar `srcset`/`sizes` quando necessário, dimensões explícitas e recorte apropriado por viewport. A imagem principal deve carregar cedo; mídia abaixo da dobra pode usar lazy loading.
 
 Corrigir os textos alternativos incorretos encontrados no site antigo. Imagem decorativa usa alt vazio; retrato e logo recebem descrição adequada ao contexto. Uma imagem temática de Justiça não representa uma fotografia do escritório.
 

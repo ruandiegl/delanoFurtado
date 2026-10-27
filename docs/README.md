@@ -1,6 +1,6 @@
 # Documentação do projeto — Delano Furtado
 
-Atualização: **26 de outubro de 2026**. Este é o índice principal das guidelines, decisões e padrões do projeto.
+Atualização: **27 de outubro de 2026**. Este é o índice principal das guidelines, decisões e padrões do projeto.
 
 ## Identificação e estado
 

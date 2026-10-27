@@ -312,7 +312,7 @@ export function HeroSection() {
             </div>
             <p className="hero-caption" data-reveal="hero">
               <MapPin aria-hidden="true" />
-              Presencial no RJ · Online em todo o Brasil
+              Presencial em Volta Redonda e região · Online em todo o Brasil
             </p>
           </div>
           <div className="portrait-stage" data-reveal="hero">

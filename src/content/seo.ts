@@ -6,13 +6,13 @@ export function getSeo(pathname: string): SeoMetadata {
   const route = resolvePublicRoute(pathname)
   const content = route === '/' ? {
     title: 'Delano Furtado | Advogado em Volta Redonda',
-    description: 'Advocacia e consultoria jurídica com Delano Furtado. Atendimento presencial no Rio de Janeiro e online em todo o Brasil. Conheça as áreas de atuação.',
+    description: 'Advocacia e consultoria jurídica com Delano Furtado. Atendimento presencial em Volta Redonda e região e online em todo o Brasil. Conheça as áreas de atuação.',
   } : route === '/localizacao' ? {
     title: 'Localização | Delano Furtado — Volta Redonda',
     description: 'Encontre o escritório de Delano Furtado na Vila Santa Cecília, em Volta Redonda, RJ. Consulte o endereço e abra a localização no Google Maps.',
   } : route === '/contate-nos' ? {
     title: 'Contato | Delano Furtado — Advocacia',
-    description: 'Entre em contato com Delano Furtado pelo WhatsApp, telefone ou e-mail. Atendimento jurídico presencial no Rio de Janeiro e online em todo o Brasil.',
+    description: 'Entre em contato com Delano Furtado pelo WhatsApp, telefone ou e-mail. Atendimento jurídico presencial em Volta Redonda e região e online em todo o Brasil.',
   } : { title: 'Página não encontrada | Delano Furtado', description: 'O endereço solicitado não está disponível. Conheça a atuação de Delano Furtado ou entre em contato.' }
   return { ...content, canonical: `${publicOrigin}${route === '/' ? '/' : route ?? '/404'}`, image: `${publicOrigin}/media/social-delano.png`, noindex: !route }
 }

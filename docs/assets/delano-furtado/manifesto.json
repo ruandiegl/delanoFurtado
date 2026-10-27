@@ -3,6 +3,21 @@
   "timezone": "America/Sao_Paulo",
   "site": "https://www.delanofurtado.adv.br/",
   "notes": "Arquivos originais acessados pelos endereços publicados no DOM, CSS e metadados. Sem edição ou compressão adicional.",
+  "provided_assets": [
+    {
+      "file": "retrato-delano-furtado-sobre-2026-10-27.jpg",
+      "provided_on": "2026-10-27",
+      "source": "Anexo fornecido diretamente pelo usuário nesta conversa",
+      "source_filename": "codex-clipboard-a21e093a-82cc-46e3-888b-b09bfae4297a.jpg",
+      "usage": "Retrato na seção Conheça o advogado (Sobre)",
+      "mime_type": "image/jpeg",
+      "width": 3016,
+      "height": 4528,
+      "bytes": 5220816,
+      "sha256": "e11148f13d191d768d796cd40ba68e52b81c215a3d2507fcb766269b7aa26b1f",
+      "modified_by_agent": false
+    }
+  ],
   "assets": [
     {
       "file": "logo-delano-furtado-original.png",

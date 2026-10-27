@@ -11,6 +11,7 @@ Ao transformar a transcrição em conteúdo runtime, manter uma única definiç�
 | Data | Informação e origem | Aplicação |
 | --- | --- | --- |
 | 23/10/2026 | O usuário solicitou explicitar que a graduação em Direito foi no **UniFOA — Centro Universitário de Volta Redonda** | Identificação da instituição no bloco de formação e menção a UniFOA na biografia, em `src/content/siteData.ts`. A transcrição histórica do documento 02 permanece preservada |
+| 27/10/2026 | O usuário definiu a apresentação do atendimento presencial como **Volta Redonda e região** | Legenda e descrição da Hero, biografia, abrangência, localização e descrições SEO alinhadas a essa redação. Atendimento online nacional mantido; endereço e inscrição OAB/RJ preservados |
 
 ## Rotas iniciais
 

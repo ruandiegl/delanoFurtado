@@ -20,10 +20,10 @@ export const siteData = {
     { title: 'Pós-graduação em Direito Civil', institution: 'Universidade Presbiteriana Mackenzie' },
   ],
   biography: [
-    'Sou Delano Santos Furtado, advogado inscrito na OAB/RJ sob o nº 235.314, com atuação presencial no estado do Rio de Janeiro e atendimento online para clientes de todo o Brasil.',
+    'Sou Delano Santos Furtado, advogado inscrito na OAB/RJ sob o nº 235.314, com atuação presencial em Volta Redonda e região e atendimento online para clientes de todo o Brasil.',
     'Graduado em Direito pelo Centro Universitário de Volta Redonda (UniFOA), pós-graduado em Direito Processual Civil pela PUC/RS e em Direito Civil pela Universidade Presbiteriana Mackenzie, atuo de forma estratégica e personalizada na condução de demandas judiciais e extrajudiciais.',
     'Meu trabalho é pautado pela transparência, proximidade e comprometimento com cada cliente, buscando soluções eficientes e alinhadas às particularidades de cada caso.',
     'Comprometido com uma atuação técnica, ética e personalizada, busco oferecer segurança, clareza e suporte jurídico qualificado em cada atendimento.',
   ],
-  source: 'docs/02-conteudo-site-delano-furtado.md; docs/rotas-e-conteudo.md (atualização editorial de 23/10/2026)',
+  source: 'docs/02-conteudo-site-delano-furtado.md; docs/rotas-e-conteudo.md (atualizações editoriais de 23/10/2026 e 27/10/2026)',
 } as const
