@@ -18,7 +18,7 @@ for (const [path, status, heading] of cases) {
   assert.equal(response.status, status, `${path}: status`)
   const html = await response.text()
   assert.match(html, /<h1[^>]*>/, `${path}: real HTML`)
-  const mainHeading = html.match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1]
+  const mainHeading = html.match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1]?.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
   assert.equal(mainHeading, heading, `${path}: initial heading before JavaScript`)
   assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1)
   assert(html.includes('data-styled'), `${path}: collected CSS`)

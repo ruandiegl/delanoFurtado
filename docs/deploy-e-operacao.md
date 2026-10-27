@@ -2,11 +2,20 @@
 
 ## Estado e destino
 
-O destino escolhido é **Netlify**, com código em [ruandiegl/delanoFurtado](https://github.com/ruandiegl/delanoFurtado), branch de produção `main` e configuração em `netlify.toml`. O artefato `dist/` contém três HTMLs públicos e 404. O projeto foi publicado em [delano-furtado.netlify.app](https://delano-furtado.netlify.app/), conectado ao GitHub para publicação automática após os checks. Datas, versão e smoke tests ficam nas [evidências do release](evidencias/release-003.md).
+O **Netlify é a hospedagem temporária de homologação**, conforme esclarecimento do responsável em **23/10/2026**. A hospedagem definitiva e o domínio final ainda precisam ser confirmados; a publicação atual não está no endereço de lançamento. O código está em [ruandiegl/delanoFurtado](https://github.com/ruandiegl/delanoFurtado), com deploy automático de `main` no Netlify e configuração em `netlify.toml`. O artefato `dist/` contém três HTMLs públicos e 404. A URL temporária é [delano-furtado.netlify.app](https://delano-furtado.netlify.app/). Datas, versão e smoke tests históricos ficam nas [evidências do release](evidencias/release-003.md).
 
 O domínio atual continua como origem canônica registrada. Publicar uma URL `netlify.app` não troca DNS nem substitui automaticamente o site existente no domínio profissional.
 
 O destino deve suportar o build estático Vite e a estratégia de HTML por rota definida em [SEO](seo-acessibilidade-performance.md). API de envio, se houver, tem ambiente e segredos próprios.
+
+## Ordem de lançamento e Analytics
+
+1. Confirmar hospedagem definitiva e domínio canônico final.
+2. Adaptar a configuração de publicação ao provedor escolhido, preservando HTML por rota, redirects, 404, headers e cache.
+3. Publicar no domínio final com HTTPS e validar navegação, contatos, mídia e metadados.
+4. Somente depois dessa validação, executar a implementação de consentimento, GA4 próprio e eventos dos botões, conforme o [Marco B do plan-003](../plans/plan-003-seo-previas-sociais-analytics-e-descoberta-ia.md#7-marco-b--consentimento-e-analytics-próprios).
+
+Até a conclusão das três primeiras etapas, Analytics permanece sem implementação e desativado. O dicionário de eventos pode continuar documentado. Nenhuma escolha de provedor, mudança de DNS ou publicação definitiva foi executada por este registro.
 
 ## Requisitos do provedor
 
@@ -18,7 +27,7 @@ O destino deve suportar o build estático Vite e a estratégia de HTML por rota 
 
 Apache é uma opção possível, não uma contratação confirmada. A regra `.htaccess` encontrada em caldeiraria não foi copiada: o fallback precisa considerar os HTMLs e as rotas reais do Delano.
 
-## Configuração do Netlify
+## Configuração da homologação no Netlify
 
 Importar o repositório acima no painel, selecionar `main` e manter a raiz como diretório base. O `netlify.toml` define instalação com npm 11.21.1/Node 22.15.0, publicação de `dist/` e o comando que executa testes, lint, build e verificação do artefato. O provedor instala as dependências antes desse comando; o lockfile é versionado.
 

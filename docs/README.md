@@ -1,6 +1,6 @@
 # Documentação do projeto — Delano Furtado
 
-Atualização: **22 de outubro de 2026**. Este é o índice principal das guidelines, decisões e padrões do projeto.
+Atualização: **26 de outubro de 2026**. Este é o índice principal das guidelines, decisões e padrões do projeto.
 
 ## Identificação e estado
 
@@ -13,8 +13,8 @@ Atualização: **22 de outubro de 2026**. Este é o índice principal das guidel
 | Qualidade | ESLint, Vitest, Testing Library e jsdom |
 | Gerenciador | npm 11.21.1, com `package-lock.json` próprio |
 | Estado real desta pasta | MVP implementado, HTML por rota, scroll GSAP e testes; [evidências](evidencias/mvp-001.md) |
-| Backend, banco e autenticação | Fora do escopo inicial; nenhuma integração de envio configurada |
-| Publicação | [Netlify](https://delano-furtado.netlify.app/), deploy automático de `main`; [evidências do release](evidencias/release-003.md) |
+| Backend, banco e autenticação | Ausentes do MVP; nenhuma integração de envio configurada. Área administrativa e CMS planejados no [plan-004](../plans/plan-004-area-administrativa-gestao-conteudo-e-secoes.md), sem implementação iniciada |
+| Publicação | [Netlify temporário para homologação](https://delano-furtado.netlify.app/), deploy automático de `main`; hospedagem e domínio finais pendentes; [ordem de lançamento e GA4](deploy-e-operacao.md#ordem-de-lançamento-e-analytics) e [evidências do release](evidencias/release-003.md) |
 
 A stack foi definida a partir do código dos projetos de caldeiraria, conforme a [auditoria de referência](03-auditoria-referencia-caldeiraria.md). Uma decisão documentada não significa que a dependência esteja instalada neste projeto. Consulte [Stack e decisões técnicas](stack-e-decisoes-tecnicas.md) para as versões observadas e adaptações.
 
@@ -45,6 +45,7 @@ O novo site combina **a linguagem de frontend da referência do Behance** com **
 | [Integrações e formulários](integracoes-e-formularios.md) | Para WhatsApp, contato, mapa e eventual envio por servidor |
 | [Segurança e privacidade](seguranca-e-privacidade.md) | Para dados pessoais, segredos, terceiros e integrações |
 | [SEO, acessibilidade e performance](seo-acessibilidade-performance.md) | Para indexação, navegação assistiva, carregamento e metadados |
+| [Referências de SEO e busca por IA](referencias-seo-busca-ia.md) | Fontes primárias de crawlers, dados estruturados e limites de llms.txt consultadas para o plan-003 |
 | [Qualidade e validação](qualidade-e-validacao.md) | Para critérios de conclusão e evidências antes da entrega |
 | [Skills e fluxo de IA](skills-e-fluxo-de-ia.md) | Para selecionar habilidades, agentes e o contexto de cada tarefa |
 | [Git e contribuição](git-e-contribuicao.md) | Para branches, commits, revisões e manutenção conjunta de código/docs |
@@ -54,8 +55,9 @@ O novo site combina **a linguagem de frontend da referência do Behance** com **
 | [Roteiro de implementação](roteiro-de-implementacao.md) | Para consultar os marcos do MVP e sua evolução |
 | [Evidências do MVP](evidencias/mvp-001.md) | Resultados dos checks, navegador, capturas e limitações |
 | [Cascata nas áreas de atuação](evidencias/motion-areas-002.md) | Expansão suave dos serviços, interrupções e movimento reduzido |
+| [Navegação sem fragmentos](evidencias/navegacao-sem-fragmentos-2026-10-26.md) | Links de seção com URL limpa, foco, histórico, compatibilidade e validação em 26/10/2026 |
 | [Publicação no Netlify](evidencias/release-003.md) | Remoto, validação e resultado real da publicação |
-| [Planos detalhados](../plans/README.md) | Para consultar o plan-001 (MVP) e o plan-002 (redesign da Hero), sequência de tarefas, contratos e aceite |
+| [Planos detalhados](../plans/README.md) | MVP (plan-001), redesign da Hero (plan-002), [SEO/Analytics/IA (plan-003)](../plans/plan-003-seo-previas-sociais-analytics-e-descoberta-ia.md) e [área administrativa/CMS (plan-004)](../plans/plan-004-area-administrativa-gestao-conteudo-e-secoes.md), com tarefas, contratos e aceite |
 | [Agentes de IA](../agents/README.md) | Para escolher a função de desenvolvimento adequada à tarefa |
 
 ## Por onde começar

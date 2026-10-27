@@ -81,7 +81,7 @@ export function createPageMotion(root: HTMLElement, { isDesktop }: { isDesktop: 
     if (!active || refreshFrame) return
     refreshFrame = window.requestAnimationFrame(() => {
       refreshFrame = 0
-      if (active) ScrollTrigger.refresh()
+      if (active) ScrollTrigger.refresh(true)
     })
   }
   // These callbacks update existing tweens only; they do not create GSAP resources.

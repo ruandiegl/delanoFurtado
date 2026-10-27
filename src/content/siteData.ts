@@ -15,15 +15,15 @@ export const siteData = {
   googleReviewUrl: 'https://g.page/r/CXdwT4yvl5cREBE/review',
   regions: ['Volta Redonda', 'Barra Mansa', 'Pinheiral', 'Barra do Piraí', 'Resende'],
   education: [
-    { title: 'Graduação em Direito', institution: 'Centro Universitário de Volta Redonda' },
+    { title: 'Graduação em Direito', institution: 'UniFOA — Centro Universitário de Volta Redonda' },
     { title: 'Pós-graduação em Direito Processual Civil', institution: 'PUC/RS' },
     { title: 'Pós-graduação em Direito Civil', institution: 'Universidade Presbiteriana Mackenzie' },
   ],
   biography: [
     'Sou Delano Santos Furtado, advogado inscrito na OAB/RJ sob o nº 235.314, com atuação presencial no estado do Rio de Janeiro e atendimento online para clientes de todo o Brasil.',
-    'Graduado em Direito pelo Centro Universitário de Volta Redonda, pós-graduado em Direito Processual Civil pela PUC/RS e em Direito Civil pela Universidade Presbiteriana Mackenzie, atuo de forma estratégica e personalizada na condução de demandas judiciais e extrajudiciais.',
+    'Graduado em Direito pelo Centro Universitário de Volta Redonda (UniFOA), pós-graduado em Direito Processual Civil pela PUC/RS e em Direito Civil pela Universidade Presbiteriana Mackenzie, atuo de forma estratégica e personalizada na condução de demandas judiciais e extrajudiciais.',
     'Meu trabalho é pautado pela transparência, proximidade e comprometimento com cada cliente, buscando soluções eficientes e alinhadas às particularidades de cada caso.',
     'Comprometido com uma atuação técnica, ética e personalizada, busco oferecer segurança, clareza e suporte jurídico qualificado em cada atendimento.',
   ],
-  source: 'docs/02-conteudo-site-delano-furtado.md',
+  source: 'docs/02-conteudo-site-delano-furtado.md; docs/rotas-e-conteudo.md (atualização editorial de 23/10/2026)',
 } as const

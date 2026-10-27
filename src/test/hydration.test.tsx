@@ -11,6 +11,7 @@ it.each([
   ['/', '/'], ['/localizacao', '/localizacao'], ['/contate-nos', '/contate-nos'],
   ['/LOCALIZACAO', '/localizacao'], ['/LoCaLiZaCaO/', '/localizacao'],
   ['/CONTATE-NOS/INDEX.HTML', '/contate-nos'], ['/INDEX.HTML', '/'],
+  ['/?utm_source=teste', '/'], ['/localizacao?utm_source=teste', '/localizacao'],
 ])('hydrates %s without recoverable errors and retains interaction', async (route, canonical) => {
   const root = document.createElement('div')
   document.body.appendChild(root)

@@ -9,6 +9,7 @@ import { RouteSeo } from './RouteSeo'
 import { siteData } from '@/content/siteData'
 import { buildWhatsAppUrl } from '@/lib/contactLinks'
 import { WhatsAppIcon } from '@/components/brand/SocialIcons'
+import { scrollToSection } from '@/lib/scrollToSection'
 
 const FloatingContact = styled.a`
   position: fixed; z-index: 30; right: max(22px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom));
@@ -21,7 +22,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const scope = useRef<HTMLElement>(null)
   const { pathname } = useLocation()
   usePageMotion(scope, pathname)
-  return <><RouteSeo /><a href="#main-content" className="skip-link">Pular para o conteúdo</a><Header /><RouteEffects />
+  return <><RouteSeo /><a href="#main-content" className="skip-link" onClick={event => { event.preventDefault(); scrollToSection('main-content') }}>Pular para o conteúdo</a><Header /><RouteEffects />
     <main id="main-content" ref={scope}>{children}</main><Footer />
     <FloatingContact href={buildWhatsAppUrl(siteData.phoneInternational, siteData.whatsappMessage)} target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp"><WhatsAppIcon aria-hidden="true" /></FloatingContact>
   </>

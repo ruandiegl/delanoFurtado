@@ -1,12 +1,22 @@
 import { useEffect, useLayoutEffect, useRef } from 'react'
-import { useLocation, useNavigationType } from 'react-router-dom'
+import { useLocation, useNavigate, useNavigationType } from 'react-router-dom'
+import { resolvePublicRoute } from '@/routes/routeManifest'
+import { readSectionNavigation, resolveSectionTarget } from '@/routes/sectionNavigation'
+import { scrollToSection } from '@/lib/scrollToSection'
 
 export function RouteEffects() {
-  const { pathname, hash, key } = useLocation()
+  const { pathname, search, hash, key, state } = useLocation()
+  const navigate = useNavigate()
+  const section = readSectionNavigation(state)
   const navigationType = useNavigationType()
   const previousEntry = useRef(key)
   const activeEntry = useRef(key)
   const positions = useRef(new Map<string, { top: number; left: number }>())
+  useEffect(() => {
+    if (!hash) return
+    const scrollTarget = resolveSectionTarget(hash.slice(1))
+    navigate({ pathname, search }, { replace: true, state: scrollTarget ? { scrollTarget } : state })
+  }, [pathname, search, hash, state, navigate])
   useEffect(() => {
     const originalRestoration = window.history.scrollRestoration
     if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual'
@@ -19,6 +29,7 @@ export function RouteEffects() {
     }
   }, [])
   useLayoutEffect(() => {
+    if (hash) return
     const positionMap = positions.current
     let frame = 0
     const changed = previousEntry.current !== key
@@ -27,9 +38,13 @@ export function RouteEffects() {
     const saved = positionMap.get(key)
     if (changed && navigationType === 'POP' && saved) {
       window.scrollTo({ ...saved, behavior: 'instant' })
-    } else if (hash) {
+    } else if (section) {
       frame = requestAnimationFrame(() => {
-        document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+        // Let the new page finish its layout/ScrollTrigger refresh before scrolling.
+        frame = requestAnimationFrame(() => {
+          if (section !== 'main-content' && resolvePublicRoute(pathname) !== '/') return
+          scrollToSection(section)
+        })
       })
     } else if (changed && navigationType !== 'POP') {
       window.scrollTo({ top: 0, behavior: 'instant' })
@@ -40,6 +55,6 @@ export function RouteEffects() {
       positionMap.set(key, { top: window.scrollY, left: window.scrollX })
       cancelAnimationFrame(frame)
     }
-  }, [pathname, hash, key, navigationType])
+  }, [pathname, hash, key, section, navigationType])
   return null
 }

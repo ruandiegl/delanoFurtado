@@ -4,6 +4,7 @@ import { Container } from '@/styles/primitives'
 import { media } from '@/content/media'
 import { homeContent } from '@/content/homeContent'
 import { ContactCta } from '@/components/brand/ContactCta'
+import { SectionLink } from '@/components/brand/SectionLink'
 
 const Hero = styled.section`
   position: relative;
@@ -325,10 +326,10 @@ export function HeroSection() {
         </div>
         <div className="scroll-hint" data-reveal="hero">
           <span>Atuação técnica. Atendimento próximo.</span>
-          <a href="#areas">
+          <SectionLink section="areas">
             Conheça a atuação
             <ArrowDown aria-hidden="true" />
-          </a>
+          </SectionLink>
         </div>
       </Container>
     </Hero>

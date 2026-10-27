@@ -87,3 +87,5 @@ Estados de envio só existem com integração real e distinguem edição, envio,
 ## Evolução
 
 CMS, API e novas páginas de serviços exigem decisão localizada em [Decisões](decisoes-e-pendencias.md). A pré-renderização já existe: build cliente → renderizador StaticRouter/ServerStyleSheet → HTML e metadados por rota → hidratação. `.prerender/` é intermediário e não deve ser publicado.
+
+O [plan-004](../plans/plan-004-area-administrativa-gestao-conteudo-e-secoes.md), de 23/10/2026, planeja a área administrativa para editar conteúdo/mídia e reordenar as seções existentes, mantendo o design. Propõe CMS gerenciado, entrada administrativa separada e snapshot publicado compartilhado pelo cliente/SSR, com rebuild e promoção do artefato. Fornecedor/plano e infraestrutura de publicação ainda precisam de confirmação; nenhum CMS, login, API ou banco foi implementado por esse planejamento. Os contratos estáticos acima continuam descrevendo o estado instalado.

@@ -52,6 +52,15 @@ it('does not refresh after unmount', async () => {
   expect(refresh).not.toHaveBeenCalled()
   expect(cancel).toHaveBeenCalledWith(55)
 })
+it('requests a safe refresh so layout updates do not interrupt scrolling', () => {
+  const { a } = fixture()
+  let queued: FrameRequestCallback | undefined
+  vi.spyOn(window, 'requestAnimationFrame').mockImplementation(callback => { queued = callback; return 55 })
+  dispose = createPageMotion(a, { isDesktop: false })
+  const refresh = vi.spyOn(ScrollTrigger, 'refresh').mockImplementation(() => {})
+  queued?.(0)
+  expect(refresh).toHaveBeenCalledWith(true)
+})
 it('staggers hero entrance without ScrollTrigger and animates scroll blocks with fast smooth opacity reveal', () => {
   document.body.innerHTML = '<div id="root"><span data-reveal="hero">Badge</span><h1 data-reveal="hero">Title</h1><div class="portrait-stage" data-reveal="hero"></div><section data-reveal="section">Content</section></div>'
   const root = document.querySelector<HTMLElement>('#root')!

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Container } from '@/styles/primitives'
 import { media } from '@/content/media'
 import { ContactCta } from '@/components/brand/ContactCta'
+import { SectionLink } from '@/components/brand/SectionLink'
 import { MobileMenu } from './MobileMenu'
 
 const Bar = styled.header`
@@ -22,7 +23,7 @@ export function Header() {
   return <Bar><Container>
     <Link to="/" className="brand" aria-label="Delano Furtado — início"><img {...media.logo} /></Link>
     <nav className="desktop-nav" aria-label="Navegação principal">
-      <Link to="/#areas">Áreas de atuação</Link><Link to="/#sobre">Sobre</Link>
+      <SectionLink section="areas">Áreas de atuação</SectionLink><SectionLink section="sobre">Sobre</SectionLink>
       <NavLink to="/localizacao">Localização</NavLink><NavLink to="/contate-nos">Contato</NavLink>
     </nav>
     <ContactCta label="Fale comigo" className="header-cta" />

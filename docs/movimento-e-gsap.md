@@ -48,7 +48,7 @@ Para cada efeito, registrar elemento, gatilho, duração, fallback e cleanup. Ve
 - usePageMotion utiliza useGSAP com scope no main, pathname como dependência e revertOnUpdate.
 - matchMedia diferencia desktop e movimento reduzido; neste último nenhum tween/trigger é criado.
 - siteMotion recebe apenas a raiz, usa transform e opacity mínima 0,65 somente em cabeçalhos não interativos; controles permanecem visíveis.
-- Focusin termina o tween do bloco focado. Imagens, fontes e details solicitam refresh coordenado; listeners e frame são removidos/cancelados no descarte.
+- Focusin termina o tween do bloco focado. Imagens, fontes e details solicitam refresh coordenado com `ScrollTrigger.refresh(true)`, para aguardar o momento seguro e não interromper a rolagem até uma seção. Listeners e frame são removidos/cancelados no descarte. A correção e sua verificação estão em [Navegação sem fragmentos](evidencias/navegacao-sem-fragmentos-2026-10-26.md).
 - mm.revert elimina os contextos locais. GSAP mantém um dispatcher de media compartilhado, que não pertence à instância; não o remover globalmente.
 
 Testes cobrem outra raiz intacta, teardown idempotente, foco, callback tardio, StrictMode, mudança de preferência e navegação repetida. O navegador conferiu o scroll real; os limites da ferramenta para emular preferência do sistema constam em [mvp-001](evidencias/mvp-001.md).

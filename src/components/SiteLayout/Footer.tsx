@@ -4,6 +4,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { Container } from '@/styles/primitives'
 import { siteData } from '@/content/siteData'
 import { FacebookIcon, InstagramIcon } from '@/components/brand/SocialIcons'
+import { SectionLink } from '@/components/brand/SectionLink'
 
 const Wrap = styled.footer`
   background: var(--primary); color: #e5ebe4; padding-block: 36px 26px;
@@ -26,6 +27,6 @@ export function Footer() {
         <a className="social-link" href={siteData.facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Delano Furtado"><FacebookIcon aria-hidden="true" /></a>
       </nav>
     </div>
-    <div className="footer-bottom"><span>© 2026 Delano Furtado. Todos os direitos reservados.</span><span>{siteData.oab} · CNPJ {siteData.cnpj}</span><Link to="/#contato">Entre em contato <ArrowUpRight style={{ display: 'inline', marginLeft: 3 }} /></Link></div>
+    <div className="footer-bottom"><span>© 2026 Delano Furtado. Todos os direitos reservados.</span><span>{siteData.oab} · CNPJ {siteData.cnpj}</span><SectionLink section="contato">Entre em contato <ArrowUpRight style={{ display: 'inline', marginLeft: 3 }} /></SectionLink></div>
   </Container></Wrap>
 }

@@ -1,6 +1,6 @@
 # Decisões e pendências
 
-Registro atualizado: **22/10/2026**. D01–D11 estão aplicadas ao MVP. A implementação, seus checks e limitações estão em [mvp-001](evidencias/mvp-001.md).
+Registro atualizado: **23/10/2026**. D01–D11 estão aplicadas ao MVP; D14 registra a sequência de lançamento definida pelo responsável. A implementação, seus checks e limitações estão em [mvp-001](evidencias/mvp-001.md).
 
 ## Decisões registradas
 
@@ -17,22 +17,25 @@ Registro atualizado: **22/10/2026**. D01–D11 estão aplicadas ao MVP. A implem
 | D09 | Movimento condicionado ao requisito e com cleanup | Referência visual estática não comprova animações; [GSAP](movimento-e-gsap.md) |
 | D10 | HTML público por rota via pré-renderização de build | Tornar SEO e compartilhamento verificáveis na resposta direta; [SEO](seo-acessibilidade-performance.md) |
 | D11 | Skills documentadas sem instalação implícita | Disponibilidade e invocação são fatos diferentes; [Skills](skills-e-fluxo-de-ia.md) |
-| D12 | Netlify conectado à branch `main` | Publicação solicitada em 22/10/2026; [Deploy](deploy-e-operacao.md) |
+| D12 | Netlify conectado à branch `main` para publicação temporária | Publicação solicitada em 22/10/2026; caráter temporário esclarecido em 23/10/2026; [Deploy](deploy-e-operacao.md) |
 | D13 | Resolver aliases estáticos com o manifest compartilhado | O CDN atende variações de caixa e `index.html`; alinhar SSR/Router/SEO para preservar a hidratação; [Rotas](rotas-e-conteudo.md) |
+| D14 | Implementar GA4 somente após hospedagem definitiva, domínio final e publicação validada | Definição do responsável em 23/10/2026; evitar medir homologação como lançamento; [ordem de lançamento](deploy-e-operacao.md#ordem-de-lançamento-e-analytics) e [plan-003](../plans/plan-003-seo-previas-sociais-analytics-e-descoberta-ia.md) |
+| D15 | Planejar administração de conteúdo/mídia e reordenação dos blocos existentes, conservando o design | Escopo solicitado e esclarecido pelo usuário em 23/10/2026; [plan-004](../plans/plan-004-area-administrativa-gestao-conteudo-e-secoes.md). Não equivale à adoção de fornecedor ou implementação de CMS |
 
 ## Decisões futuras delimitadas
 
 | Item | Quem conduz | Momento e tratamento até lá |
 | --- | --- | --- |
-| Migração do domínio profissional | SEO + Release | Netlify publicado em URL própria; canonical e DNS do domínio profissional preservados até migração autorizada |
+| Hospedagem definitiva e domínio final | SEO + Release | Netlify serve à homologação; confirmar provedor e destino canônico antes de preparar a migração. Não presumir permanência do Netlify nem confirmação do domínio final |
 | Migração do Router para linha corrigida | Arquitetura + Segurança | Antes de ampliar destinos dinâmicos/Data Mode; [análise atual](seguranca-e-privacidade.md) registra dois apontamentos moderados |
 | Áreas adicionais divergentes entre páginas/SEO | Produto + conteúdo | Antes de criar afirmações novas; manter os sete blocos principais |
 | Etapas próprias de atendimento e FAQ | Produto + conteúdo | Se esses blocos entrarem no escopo; omitir na publicação enquanto ausentes |
 | Depoimentos, nota e quantidade de avaliações | Conteúdo/SEO | Se houver fonte acessível correspondente; usar apenas o convite existente até lá |
 | Formulário com envio e destino | Integrações + Segurança | Se o envio for solicitado; canais oficiais continuam disponíveis |
 | Prazo operacional de resposta e horários | Responsável pelo produto | Antes de prometer SLA/horário novo; não deduzir da coleta |
-| Domínio personalizado no Netlify | DevOps/Release | Configuração de build aplicada; transferência de DNS é uma etapa separada |
-| Privacidade, terceiros e eventual analytics | Produto + Segurança | Antes de ativar nova coleta/incorporação; analytics não é requisito inicial |
+| Publicação na hospedagem definitiva | DevOps/Release | Adaptar regras ao provedor confirmado, planejar DNS/rollback e validar o domínio final antes de implementar GA4 |
+| CMS e operação da área administrativa | Arquitetura + Integrações + Segurança + Release | Proposta Sanity no plan-004; confirmar plano/custos, titularidade, papéis e publicação durável antes de implementar integrações externas |
+| Privacidade, terceiros e GA4 | Produto + Segurança | Implementação do consentimento e GA4 após publicação definitiva validada; até lá, manter somente o planejamento de eventos e coleta desativada |
 
 Esses itens delimitam evoluções posteriores ao MVP local. Não preencher conteúdo ausente nem criar infraestrutura apenas para encerrar uma pendência que não pertence ao escopo.
 

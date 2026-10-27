@@ -6,6 +6,12 @@ O [documento 02](02-conteudo-site-delano-furtado.md) preserva os textos publicad
 
 Ao transformar a transcrição em conteúdo runtime, manter uma única definição para cada dado em `src/content/`, conforme [Arquitetura](arquitetura.md). Sínteses podem apontar para a origem em vez de copiar grandes blocos para várias páginas.
 
+## Atualizações editoriais confirmadas
+
+| Data | Informação e origem | Aplicação |
+| --- | --- | --- |
+| 23/10/2026 | O usuário solicitou explicitar que a graduação em Direito foi no **UniFOA — Centro Universitário de Volta Redonda** | Identificação da instituição no bloco de formação e menção a UniFOA na biografia, em `src/content/siteData.ts`. A transcrição histórica do documento 02 permanece preservada |
+
 ## Rotas iniciais
 
 | URL | Responsabilidade | Estado |
@@ -15,9 +21,11 @@ Ao transformar a transcrição em conteúdo runtime, manter uma única definiç�
 | `/contate-nos` | WhatsApp, telefone, e-mail e redes | Implementada e pré-renderizada; sem formulário |
 | Outras URLs | Tela de não encontrado e retorno | 404.html gerado; status em produção depende do provedor |
 
-Âncoras implementadas na Home: `#areas`, `#sobre`, `#atendimento` e `#contato`. Correspondem às seções renderizadas e não substituem as rotas existentes. Os sete serviços preservam seus itens completos no HTML, com details/summary nativo; isso não é um FAQ.
+Seções identificadas na Home: `areas`, `sobre`, `atendimento` e `contato`. Desde **26/10/2026**, por escolha do usuário, os links internos rolam até esses blocos mantendo a URL da página inicial sem fragmentos (`#nome`). `SectionLink` usa a rota `/` e o estado de navegação `scrollTarget`; `RouteEffects` valida o destino, rola e leva o foco ao título da seção. Não foram criadas páginas individuais para esses blocos. Os sete serviços preservam seus itens completos no HTML, com details/summary nativo; isso não é um FAQ.
 
-Política de URL: os caminhos canônicos usam minúsculas. O manifest também reconhece variações de caixa, barra final e `index.html` das três páginas existentes, acompanhando a entrega de arquivos estáticos do Netlify. Router, HTML e SEO usam a mesma resolução; caminhos realmente desconhecidos continuam em 404. O preview redireciona aliases de documento para os caminhos canônicos; no Netlify, aliases com caixa diferente podem ser atendidos como 200, preservando o conteúdo e o canonical corretos. Navegação nova vai ao topo/foca o h1; histórico restaura a posição por entrada; selecionar a mesma âncora novamente repete a rolagem. Consulte o contrato em [Deploy](deploy-e-operacao.md).
+Links antigos como `/#areas` continuam funcionais: o cliente remove o fragmento substituindo a entrada atual do histórico, preserva a query e mantém a rolagem ao destino conhecido. O atalho de acessibilidade conserva `#main-content` como fallback nativo no HTML; com JavaScript, move rolagem/foco sem modificar a URL. Abrir um link de seção em outra aba ou copiar seu endereço leva à Home, pois a posição não é codificada no endereço limpo. Sem JavaScript, o conteúdo completo continua disponível na Home; o estado do Router não transporta uma posição para outra aba.
+
+Política de URL: os caminhos canônicos usam minúsculas. O manifest também reconhece variações de caixa, barra final e `index.html` das três páginas existentes, acompanhando a entrega de arquivos estáticos do Netlify. Router, HTML e SEO usam a mesma resolução; caminhos realmente desconhecidos continuam em 404. O preview redireciona aliases de documento para os caminhos canônicos; no Netlify, aliases com caixa diferente podem ser atendidos como 200, preservando o conteúdo e o canonical corretos. Navegação nova de página vai ao topo/foca o h1; histórico restaura a posição por entrada; selecionar a mesma seção novamente repete a rolagem. A rolagem respeita movimento reduzido. Consulte o contrato em [Deploy](deploy-e-operacao.md).
 
 Páginas individuais de serviços, blog, política de privacidade ou agendamento são evoluções. Uma rota nova só entra na navegação e no sitemap quando existir. Se uma URL antiga mudar, registrar redirecionamento 301 específico na hospedagem, sem transformar todas as URLs em redirecionamentos para a Home.
 
