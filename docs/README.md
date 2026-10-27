@@ -56,6 +56,7 @@ O novo site combina **a linguagem de frontend da referência do Behance** com **
 | [Evidências do MVP](evidencias/mvp-001.md) | Resultados dos checks, navegador, capturas e limitações |
 | [Cascata nas áreas de atuação](evidencias/motion-areas-002.md) | Expansão suave dos serviços, interrupções e movimento reduzido |
 | [Navegação sem fragmentos](evidencias/navegacao-sem-fragmentos-2026-10-26.md) | Links de seção com URL limpa, foco, histórico, compatibilidade e validação em 26/10/2026 |
+| [Teste do retrato sem fundo](evidencias/retrato-sobre-sem-fundo-2026-10-27.md) | Recorte da foto fornecida, integração na seção Conheça o advogado, origem e reversão |
 | [Publicação no Netlify](evidencias/release-003.md) | Remoto, validação e resultado real da publicação |
 | [Planos detalhados](../plans/README.md) | MVP (plan-001), redesign da Hero (plan-002), [SEO/Analytics/IA (plan-003)](../plans/plan-003-seo-previas-sociais-analytics-e-descoberta-ia.md) e [área administrativa/CMS (plan-004)](../plans/plan-004-area-administrativa-gestao-conteudo-e-secoes.md), com tarefas, contratos e aceite |
 | [Agentes de IA](../agents/README.md) | Para escolher a função de desenvolvimento adequada à tarefa |

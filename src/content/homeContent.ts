@@ -5,7 +5,7 @@ export const homeContent = {
     lead: 'Advocacia e consultoria',
     accent: 'jurídica em Volta Redonda',
   },
-  heroDescription: 'Soluções jurídicas construídas com estratégia, transparência e atenção às particularidades de cada caso. Atendimento presencial para pessoas físicas e empresas em Volta Redonda e região e online em todo o Brasil.',
+  heroDescription: 'Soluções jurídicas desenvolvidas com estratégia, transparência e atenção às particularidades de cada caso. Atendimento personalizado para pessoas físicas e empresas, com atuação presencial em Volta Redonda, Barra Mansa, Pinheiral e demais municípios do Estado do Rio de Janeiro, além de atendimento jurídico online em todo o Brasil.',
   sectionOrder: ['hero', 'credentials', 'areas', 'sobre', 'atendimento', 'differentials', 'google', 'contato'],
   differentials: [
     { title: 'Formação e conhecimento técnico', text: 'Pós-graduação em Direito Processual Civil pela PUC/RS e em Direito Civil pela Universidade Presbiteriana Mackenzie.' },

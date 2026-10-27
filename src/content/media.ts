@@ -9,6 +9,11 @@ export const media = {
     src: '/media/hero-office-bg.webp',
     width: 1440, height: 804, alt: '',
   },
+  portraitCutout: {
+    src: '/media/delano-sobre-recorte-800.webp',
+    srcSet: '/media/delano-sobre-recorte-480.webp 480w, /media/delano-sobre-recorte-800.webp 800w, /media/delano-sobre-recorte-1023.webp 1023w',
+    width: 800, height: 1202, alt: 'Delano Santos Furtado, advogado',
+  },
   portrait: {
     src: '/media/delano-sobre-800.webp',
     srcSet: '/media/delano-sobre-480.webp 480w, /media/delano-sobre-800.webp 800w, /media/delano-sobre-1200.webp 1200w',
