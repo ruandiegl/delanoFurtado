@@ -14,7 +14,7 @@ Atualização: **27 de outubro de 2026**. Este é o índice principal das guidel
 | Gerenciador | npm 11.21.1, com `package-lock.json` próprio |
 | Estado real desta pasta | MVP implementado, HTML por rota, scroll GSAP e testes; [evidências](evidencias/mvp-001.md) |
 | Backend, banco e autenticação | Ausentes do MVP; nenhuma integração de envio configurada. Área administrativa e CMS planejados no [plan-004](../plans/plan-004-area-administrativa-gestao-conteudo-e-secoes.md), sem implementação iniciada |
-| Publicação | [Netlify temporário para homologação](https://delano-furtado.netlify.app/), deploy automático de `main`; destino final confirmado: mesmo domínio na HostGator/cPanel via FileZilla. [Pacote local e guia FTP](publicacao-hostgator-filezilla.md) preparados, publicação pendente; [ordem de lançamento e GA4](deploy-e-operacao.md#ordem-de-lançamento-e-analytics) |
+| Publicação | [Netlify temporário para homologação](https://delano-furtado.netlify.app/), deploy automático de `main`; usuário publicou no mesmo domínio na HostGator/cPanel via FileZilla em 27/10/2026. [Conferência pública](evidencias/publicacao-hostgator-2026-10-27.md): 31 arquivos conferidos. [Correções de URLs/rodapé preparadas](evidencias/urls-footer-2026-10-27.md), com envio e teste Apache pendentes; [guia FTP](publicacao-hostgator-filezilla.md) e [ordem de lançamento e GA4](deploy-e-operacao.md#ordem-de-lançamento-e-analytics) |
 
 A stack foi definida a partir do código dos projetos de caldeiraria, conforme a [auditoria de referência](03-auditoria-referencia-caldeiraria.md). Uma decisão documentada não significa que a dependência esteja instalada neste projeto. Consulte [Stack e decisões técnicas](stack-e-decisoes-tecnicas.md) para as versões observadas e adaptações.
 
@@ -52,6 +52,8 @@ O novo site combina **a linguagem de frontend da referência do Behance** com **
 | [Git e contribuição](git-e-contribuicao.md) | Para branches, commits, revisões e manutenção conjunta de código/docs |
 | [Deploy e operação](deploy-e-operacao.md) | Para build, hospedagem, URLs diretas, publicação e rollback |
 | [Publicação HostGator/FileZilla](publicacao-hostgator-filezilla.md) | Gerar o pacote FTP, localizar a pasta do domínio, fazer backup, enviar e testar; [evidências locais](evidencias/ftp-hostgator-2026-10-27.md) |
+| [Checklist após a publicação](checklist-pos-publicacao.md) | Passo a passo de URLs, navegação, GA4, Ads/GTM, consentimento e Search Console, com responsáveis e resultado esperado |
+| [GA4 e consentimento](analytics-e-consentimento.md) | Integração com `G-6Z7JD1757Y`, consentimento, eventos e conferência após o envio; [política técnica](politica-de-rastreamento.md) |
 | [Solução de problemas](solucao-de-problemas.md) | Para diagnosticar ambiente, rotas, estilos, animações e contato |
 | [Decisões e pendências](decisoes-e-pendencias.md) | Para conhecer escolhas registradas e decisões futuras com seus impactos |
 | [Roteiro de implementação](roteiro-de-implementacao.md) | Para consultar os marcos do MVP e sua evolução |

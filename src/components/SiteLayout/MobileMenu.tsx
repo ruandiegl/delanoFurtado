@@ -25,7 +25,7 @@ export function MobileMenu() {
         <Link to="/localizacao" onClick={() => setOpen(false)}>Localização</Link>
         <Link to="/contate-nos" onClick={() => setOpen(false)}>Contate-nos</Link>
       </Nav>
-      <ContactCta label="Fale comigo" />
+      <ContactCta location="header" label="Fale comigo" />
     </SheetContent>
   </Sheet>
 }

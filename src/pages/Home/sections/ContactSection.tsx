@@ -11,5 +11,5 @@ const Wrap = styled(Section)`
   @media (max-width: 47.99rem) { .contact-panel { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; } }
 `
 export function ContactSection() {
-  return <Wrap id="contato"><Container><div className="contact-panel" data-reveal="contact"><div><SmallLabel>Vamos conversar</SmallLabel><h2>O primeiro passo é entender a sua demanda.</h2><p className="contact-intro">Entre em contato para apresentar seu caso e conhecer as possibilidades de atendimento.</p><ContactCta label="Fale comigo pelo WhatsApp" /></div><ContactChannels /></div></Container></Wrap>
+  return <Wrap id="contato"><Container><div className="contact-panel" data-reveal="contact"><div><SmallLabel>Vamos conversar</SmallLabel><h2>O primeiro passo é entender a sua demanda.</h2><p className="contact-intro">Entre em contato para apresentar seu caso e conhecer as possibilidades de atendimento.</p><ContactCta location="contact_section" label="Fale comigo pelo WhatsApp" /></div><ContactChannels location="contact_section" /></div></Container></Wrap>
 }

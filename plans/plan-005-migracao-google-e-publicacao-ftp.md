@@ -10,7 +10,7 @@
 
 **Spec:** pedido de 27/10/2026 para analisar `Desktop/delanoAntigo`, reaproveitar integrações Google e considerar envio por FTP; [Deploy](../docs/deploy-e-operacao.md), [Segurança](../docs/seguranca-e-privacidade.md), [plan-003](plan-003-seo-previas-sociais-analytics-e-descoberta-ia.md), [auditoria local](../docs/evidencias/auditoria-site-antigo-2026-10-27.json) e [fontes Google](../docs/referencias-migracao-google-analytics-ads.md).
 
-**Data:** 27/10/2026. **Estado:** auditoria e pacote local FTP implementados e verificados; publicação remota e integrações Google pendentes. Usuário confirmou o mesmo domínio, HostGator/cPanel e FileZilla, e informou que ainda solicitará acesso às contas Google. Baseline: `51e7cf3`, com alterações textuais locais preservadas. [Evidência da execução, decisões e limites](../docs/evidencias/ftp-hostgator-2026-10-27.md).
+**Data:** 27/10/2026. **Estado:** auditoria e pacote local FTP implementados e verificados; usuário informou a publicação no domínio final. A [conferência HTTP](../docs/evidencias/publicacao-hostgator-2026-10-27.md) confirmou os 31 arquivos públicos do último pacote e identificou redirects de barra final em localização/contato que divergem do contrato. Validação completa da tarefa 4 e integrações Google permanecem pendentes. Usuário confirmou HostGator/cPanel e FileZilla e informou que ainda solicitará acesso às contas Google. Baseline: `51e7cf3`, com alterações textuais locais preservadas. [Evidência da preparação, decisões e limites](../docs/evidencias/ftp-hostgator-2026-10-27.md).
 
 ## Global Constraints
 
@@ -37,6 +37,8 @@
 - [x] Ler 13 arquivos na raiz da cópia antiga, incluindo arquivos ocultos, quatro HTMLs e quatro bundles JS; registrar tamanhos e SHA-256 na evidência JSON.
 - [x] Identificar `UA-199542592-1` nos quatro HTMLs, com `gtag('config', ...)` e `googleAnalyticsKey` nos dados do construtor.
 - [x] Não encontrar IDs literais `G-`, `AW-`, `GT-` ou `GTM-` nos arquivos analisados. Isso não comprova ausência de configurações remotas, tags conectadas ou medição na conta.
+- [x] Em investigação posterior na configuração pública da tag UA, identificar o destino GA4 `G-6Z7JD1757Y`, referenciado como contêiner filho. [Evidência](../docs/evidencias/tag-google-conectada-2026-10-27.json). Nenhuma execução da tag ou coleta enviada; propriedade, ingestão e conversões ainda não foram verificadas na conta.
+- [x] Registrar o ID Google Ads `AW-622649331`, fornecido em captura pelo usuário. Ação, origem e rótulo da conversão permanecem pendentes; o código Ads/Meta não foi instalado a partir dessa captura.
 - [x] Identificar uma meta `google-site-verification` nos quatro HTMLs. Seu valor público está preservado na evidência; restaurá-lo no host correspondente depende da verificação da propriedade e do método usado.
 - [x] Identificar o `robots.txt` local com `User-agent: *` e `Disallow: /`. Não copiar esse bloqueio para produção; a cópia não comprova o arquivo servido hoje nem bloqueio do AdsBot.
 - [x] Identificar sitemap com `/`, `/galeria`, `/localizacao` e `/contate-nos`, em HTTP sem `www`.
@@ -114,6 +116,8 @@
 **Aceite:** três páginas corretas antes de JavaScript, destinos antigos tratados, canais funcionando e restauração conhecida. Só este gate libera a implementação de Analytics conforme a decisão já registrada.
 
 ## 6. Tarefa 5 — reinstalar a medição moderna correta
+
+**Atualização em 27/10/2026:** [implementação GA4/consentimento e eventos preparada e validada localmente](../docs/evidencias/ga4-2026-10-27.md), com o destino existente `G-6Z7JD1757Y` e confirmação do usuário sobre medição otimizada. Novo pacote pronto; upload/ingestão e inventário das conversões Ads continuam pendentes. Não foi instalada uma tag UA nem criada propriedade Google pelo agente.
 
 **Responsáveis:** Frontend + Segurança + QA + gestor das campanhas. **Depende de:** publicação definitiva validada e inventário da tarefa 1.
 

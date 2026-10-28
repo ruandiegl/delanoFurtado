@@ -21,6 +21,7 @@ async function fixture() {
     'dist/sitemap.xml': `<urlset>${['/', '/localizacao', '/contate-nos'].map(route => `<url><loc>${origin}${route}</loc></url>`).join('')}</urlset>`,
     'dist/assets/index-AbCd1234.js': 'console.log("site")',
     'dist/media/photo.webp': 'fixture-image',
+    'dist/favicon.ico': 'fixture-favicon',
   }
   for (const [file, route] of Object.entries({ 'index.html': '/', 'localizacao/index.html': '/localizacao', 'contate-nos/index.html': '/contate-nos', '404.html': '/404' })) {
     files[`dist/${file}`] = `<html><head><link rel="canonical" href="${origin}${route}"></head><body>${route}</body></html>`
@@ -52,6 +53,7 @@ describe('FTP package', () => {
     expect(await readFile(path.join(root, 'dist/index.html'), 'utf8')).toBe(before)
     await access(path.join(result.siteDirectory, '.htaccess'))
     await access(path.join(result.siteDirectory, 'assets/.htaccess'))
+    await access(path.join(result.siteDirectory, 'favicon.ico'))
     expect(await readdir(result.releaseDirectory)).toEqual(expect.arrayContaining(['site', 'manifest.json', 'LEIA-ME.md']))
     const manifest = JSON.parse(await readFile(path.join(result.releaseDirectory, 'manifest.json'), 'utf8'))
     expect(manifest.origin).toBe(origin)

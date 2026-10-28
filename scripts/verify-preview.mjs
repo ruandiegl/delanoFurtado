@@ -28,6 +28,8 @@ for (const [path, status, heading] of cases) {
 for (const [path, canonical] of [['/index.html', '/'], ['/localizacao/index.html', '/localizacao'], ['/contate-nos/index.html', '/contate-nos']]) {
   const response = await fetch(`${origin}${path}`, { redirect: 'manual' })
   assert.equal(response.status, 308)
-  assert.equal(response.headers.get('location'), canonical)
+  const location = response.headers.get('location')
+  assert(location, `${path}: redirect destination`)
+  assert.equal(new URL(location, origin).href, new URL(canonical, origin).href, `${path}: canonical redirect`)
 }
 console.log(`Documents verified: ${cases.length} document requests and 3 canonical redirects.`)

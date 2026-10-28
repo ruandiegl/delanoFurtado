@@ -64,7 +64,6 @@ export const services: readonly Service[] = [
       'Inventário judicial e extrajudicial com assessoria completa', 'Planejamento sucessório e elaboração de testamentos',
       'Avaliação de bens e sobrepartilha patrimonial', 'Mediação entre herdeiros e acordos familiares',
       'Solicitação de alvarás e liberação de valores', 'Conversão de inventário judicial em extrajudicial',
-      'Atendimento 100% digital, com atuação em todo o Brasil e exterior',
     ],
   },
   {

@@ -9,7 +9,7 @@ const pages = new Map([
   ['index.html', '/'], ['localizacao/index.html', '/localizacao'],
   ['contate-nos/index.html', '/contate-nos'], ['404.html', '/404'],
 ])
-const rootFiles = new Set([...pages.keys(), 'robots.txt', 'sitemap.xml'])
+const rootFiles = new Set([...pages.keys(), 'robots.txt', 'sitemap.xml', 'favicon.ico'])
 const digest = data => createHash('sha256').update(data).digest('hex')
 
 async function rejectLink(file) {
@@ -90,7 +90,7 @@ export async function packageFtp({ root = projectRoot } = {}) {
   }
   const manifest = { version: 1, releaseId, createdAt: new Date().toISOString(), origin, searchConsolePreserved: true, analyticsInstalledByPackager: false, files: inventory }
   await writeFile(path.join(releaseDirectory, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`, { flag: 'wx' })
-  await writeFile(path.join(releaseDirectory, 'LEIA-ME.md'), `# Publicação HostGator\n\nEnvie somente o CONTEÚDO da pasta site para a raiz do domínio ${origin}, incluindo .htaccess e assets/.htaccess. Não envie a pasta site, este arquivo ou manifest.json.\n\nAntes: consulte docs/publicacao-hostgator-filezilla.md no projeto, confirme a raiz no cPanel e faça backup dos arquivos e configurações remotos. Preserve .well-known, configurações do provedor e arquivos da galeria antiga enquanto usados nas campanhas. Faça a conferência e a troca em uma janela combinada com o responsável pelo tráfego.\n\nEste pacote preserva a verificação HTML existente do Search Console. Não instala Analytics ou Google Ads. As contas, destinos e conversões ainda precisam ser conferidos. O Apache da hospedagem não foi testado por este empacotamento local.\n`, { flag: 'wx' })
+  await writeFile(path.join(releaseDirectory, 'LEIA-ME.md'), `# Publicação HostGator\n\nEnvie somente o CONTEÚDO da pasta site para a raiz do domínio ${origin}, incluindo .htaccess e assets/.htaccess. Não envie a pasta site, este arquivo ou manifest.json.\n\nAntes: consulte docs/publicacao-hostgator-filezilla.md no projeto, confirme a raiz no cPanel e faça backup dos arquivos e configurações remotos. Preserve .well-known, configurações do provedor e arquivos da galeria antiga enquanto usados nas campanhas. Faça a conferência e a troca em uma janela combinada com o responsável pelo tráfego.\n\nEste pacote preserva a verificação HTML existente do Search Console. O empacotador não injeta tags Analytics ou Google Ads; eventual integração pertence ao frontend da versão. Consulte docs/analytics-e-consentimento.md para o ID GA4, estado de ativação e ajustes pendentes no painel. As contas, ingestão e conversões ainda precisam ser conferidas. O Apache da hospedagem não foi testado por este empacotamento local.\n`, { flag: 'wx' })
   return { releaseDirectory, siteDirectory, files: inventory.length, bytes: inventory.reduce((sum, file) => sum + file.bytes, 0) }
 }
 

@@ -17,13 +17,13 @@ export const siteData = {
   education: [
     { title: 'Graduação em Direito', institution: 'UniFOA — Centro Universitário de Volta Redonda' },
     { title: 'Pós-graduação em Direito Processual Civil', institution: 'PUC/RS — Pontifícia Universidade Católica do Rio Grande do Sul' },
-    { title: 'Pós-graduação em Direito Civil', institution: 'Universidade Presbiteriana Mackenzie — São Paulo' },
+    { title: 'Pós-graduação em Direito Civil', institution: 'Universidade Presbiteriana Mackenzie de São Paulo' },
   ],
   biography: [
-    'Sou Delano Santos Furtado, advogado inscrito na OAB/RJ sob o nº 235.314, com atuação presencial em Volta Redonda e região e atendimento online para clientes de todo o Brasil.',
-    'Graduado em Direito pelo Centro Universitário de Volta Redonda (UniFOA), pós-graduado em Direito Processual Civil pela PUC/RS e em Direito Civil pela Universidade Presbiteriana Mackenzie, atuo de forma estratégica e personalizada na condução de demandas judiciais e extrajudiciais.',
-    'Meu trabalho é pautado pela transparência, proximidade e comprometimento com cada cliente, buscando soluções eficientes e alinhadas às particularidades de cada caso.',
-    'Comprometido com uma atuação técnica, ética e personalizada, busco oferecer segurança, clareza e suporte jurídico qualificado em cada atendimento.',
+    'Sou Delano Santos Furtado, advogado inscrito na OAB/RJ sob o nº 235.314, com atuação presencial em Volta Redonda e região, além de atendimento online em todo o Brasil.',
+    'Graduado em Direito pelo Centro Universitário de Volta Redonda (UniFOA), pós-graduado em Direito Processual Civil pela PUC/RS e em Direito Civil pelo Mackenzie/SP, reúno formação acadêmica e experiência prática na condução de demandas judiciais e extrajudiciais.',
+    'Acredito que uma atuação jurídica eficaz começa pela compreensão das necessidades de cada cliente. Por isso, meu trabalho combina análise criteriosa, planejamento jurídico e comunicação clara, permitindo que cada decisão seja tomada com informação e segurança.',
+    'Com uma advocacia pautada pela ética, transparência e atenção às particularidades de cada caso, busco oferecer orientação jurídica qualificada e soluções fundamentadas na legislação e nas circunstâncias de cada demanda.',
   ],
   source: 'docs/02-conteudo-site-delano-furtado.md; docs/rotas-e-conteudo.md (atualizações editoriais de 23/10/2026 e 27/10/2026)',
 } as const

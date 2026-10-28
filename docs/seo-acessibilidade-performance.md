@@ -14,6 +14,10 @@ Uma tela React de não encontrado não prova status HTTP 404. O provedor precisa
 
 Dados estruturados descrevem somente fatos confirmados. Não preencher `aggregateRating`, depoimentos, horário, geolocalização ou títulos profissionais a partir de suposição. A imagem social tem derivado próprio e dimensões reais, sem repetir a inconsistência coletada no site antigo.
 
+### Favicon nos resultados da busca
+
+O head inicial compartilhado aponta para `/media/favicon-96.png`, quadrado e com o monograma DF da marca atual. Há ícone Apple de 180px e `/favicon.ico` com múltiplas dimensões. O build confere os PNGs e o ICO, e o pacote FTP inclui o arquivo da raiz. Manter as URLs estáveis e rastreáveis, sem bloqueio no robots. A troca no Google depende do novo rastreamento da Home/ícone; solicitar inspeção/indexação da Home no Search Console após publicar pode ajudar a descoberta, sem garantir exibição ou prazo. O Google informa que o processamento pode levar dias a semanas. [Documentação oficial](https://developers.google.com/search/docs/appearance/favicon-in-search?hl=pt-br).
+
 ## Acessibilidade
 
 Meta de projeto: **WCAG 2.2 nível AA**, a ser avaliada por critérios pertinentes, testes automáticos e inspeção manual. Esta é uma meta de engenharia, não uma certificação. A referência normativa é a [visão geral WCAG do W3C](https://www.w3.org/WAI/standards-guidelines/wcag/).

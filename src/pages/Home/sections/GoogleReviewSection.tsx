@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { ArrowUpRight, Star } from 'lucide-react'
 import { Container, SmallLabel } from '@/styles/primitives'
+import { getAnalyticsClient } from '@/analytics/client'
 import { siteData } from '@/content/siteData'
 import { media } from '@/content/media'
 import { googleReviews, googleReviewsMeta, wrapCarouselOffset } from '@/content/reviews'
@@ -178,11 +179,6 @@ const Wrap = styled.section`
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-  }
-
-  .card-time {
-    font-size: 11px;
-    color: var(--muted-foreground);
   }
 
   .card-quote {
@@ -458,6 +454,7 @@ export function GoogleReviewSection() {
             </div>
             <a
               className="review-cta"
+              onClick={() => getAnalyticsClient().track('review_click', 'reviews')}
               href={siteData.googleReviewUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -497,7 +494,6 @@ export function GoogleReviewSection() {
                           <Star key={i} aria-hidden="true" />
                         ))}
                       </span>
-                      <span className="card-time">{review.relativeTime}</span>
                     </div>
                     <blockquote className="card-quote" style={{ marginTop: 14 }}>
                       “{review.text}”

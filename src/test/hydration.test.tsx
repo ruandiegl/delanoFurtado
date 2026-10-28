@@ -1,6 +1,5 @@
-import { act } from 'react'
 import { hydrateRoot } from 'react-dom/client'
-import { within } from '@testing-library/react'
+import { act, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { expect, it, vi } from 'vitest'

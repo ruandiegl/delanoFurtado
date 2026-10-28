@@ -5,6 +5,8 @@ export const GlobalStyles = createGlobalStyle`
   html { scroll-behavior: smooth; scroll-padding-top: 112px; }
   body { margin: 0; color: var(--foreground); background: var(--background); font-family: var(--brand-font); -webkit-font-smoothing: antialiased; }
   body { font-size: 16px; line-height: 1.65; }
+  #root { display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh; }
+  #main-content { flex: 1; }
   h1, h2, h3, p { margin: 0; }
   h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
   @layer base { a { color: inherit; text-decoration: none; } }

@@ -23,6 +23,8 @@ DelanoFurtado/
       homeContent.ts            organização e sínteses editoriais da Home
       seo.ts                    metadados por rota
     hooks/                      hooks reutilizados por consumidores reais
+    analytics/                  configuração, transporte GA4 e ponte com o Router
+    consent/                    preferência versionada, store, provider e controles
     lib/                        utilitários pequenos, incluindo cn quando usado
     motion/                     registro GSAP e motores com cleanup
     pages/
@@ -81,6 +83,8 @@ Os dados não devem depender de React. Componentes visuais recebem dados por pro
 ## Estado e falhas
 
 Usar estado local para menu, accordion e eventual envio. Dados institucionais são estáticos; não precisam de cache remoto ou estado global.
+
+As preferências de análise usam um store externo sincronizado com o navegador e `useSyncExternalStore`, com snapshot SSR determinístico. O provider publica a escolha para a ponte do Router; o transporte GA4 tem uma instância por documento, guard de origem/consentimento e payloads permitidos. Nenhuma mensagem de atendimento entra nesse estado. [Contrato e operação](analytics-e-consentimento.md).
 
 Estados de envio só existem com integração real e distinguem edição, envio, sucesso e erro. Rotas desconhecidas exibem página própria; o servidor precisa de estratégia adicional se o status HTTP 404 for necessário. A ausência de conteúdo opcional não deve produzir espaços vazios ou promessas na UI.
 

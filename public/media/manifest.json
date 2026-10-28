@@ -106,5 +106,23 @@
     "width": 512,
     "height": 342,
     "bytes": 21106
+  },
+  {
+    "file": "favicon-32.png",
+    "width": 32,
+    "height": 32,
+    "bytes": 1017
+  },
+  {
+    "file": "favicon-96.png",
+    "width": 96,
+    "height": 96,
+    "bytes": 3658
+  },
+  {
+    "file": "favicon-180.png",
+    "width": 180,
+    "height": 180,
+    "bytes": 9141
   }
 ]

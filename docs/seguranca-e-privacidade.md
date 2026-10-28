@@ -32,7 +32,7 @@ Requisitos jurídicos de privacidade e publicidade profissional devem ser confir
 
 WhatsApp, redes e mapa abrem serviços externos. Uma incorporação tem consequências diferentes de um simples link: ela pode carregar recursos do terceiro antes de um clique. Registrar essa escolha em [Integrações](integracoes-e-formularios.md).
 
-Analytics não é requisito inicial. Caso seja acrescentado, definir finalidade, eventos, dados coletados e tratamento de preferências antes de habilitá-lo. Conteúdo da mensagem, e-mail, telefone e descrição do caso não devem compor eventos de navegação.
+Em 27/10/2026 foi implementada a [integração GA4 com consentimento](analytics-e-consentimento.md). Após o usuário confirmar a desativação da medição otimizada, o novo pacote habilita o loader somente no domínio canônico e após permissão. Publicação e ingestão real ainda precisam ser conferidas. Eventos próprios usam metadados públicos e posições fixas dos canais; conteúdo de mensagem, e-mail, telefone e descrição do caso não compõem os payloads. A [política técnica](politica-de-rastreamento.md) descreve os bloqueios e limites.
 
 ## Hospedagem
 

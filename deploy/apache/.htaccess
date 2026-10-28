@@ -1,6 +1,9 @@
 # Delano Furtado — HostGator/cPanel, installed at the domain document root.
 # Merge provider-specific PHP/AutoSSL settings before replacing a remote file.
 Options -Indexes -MultiViews
+# Known page directories are served through explicit rewrites below.
+# Disable mod_dir's automatic slash redirect; keep directory listings disabled.
+DirectorySlash Off
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 
@@ -24,7 +27,7 @@ RewriteRule ^localizacao(?:/index)?\.html$ /localizacao [R=308,END,NC]
 RewriteCond %{THE_REQUEST} \s/+contate-nos(?:/index)?\.html(?:[?\s]) [NC]
 RewriteRule ^contate-nos(?:/index)?\.html$ /contate-nos [R=308,END,NC]
 
-# Resolve known pages before mod_dir can add a trailing-slash redirect.
+# Serve both known path forms; canonical URLs and internal links omit the slash.
 RewriteRule ^localizacao/?$ localizacao/index.html [END,NC]
 RewriteRule ^contate-nos/?$ contate-nos/index.html [END,NC]
 

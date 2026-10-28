@@ -2,7 +2,7 @@
 
 ## Estado atual
 
-Nenhuma integração foi implementada no novo frontend. Os links oficiais foram extraídos do site atual; o envio do formulário antigo não foi testado. A configuração daquele serviço não é transferida para este projeto por copiar seu HTML.
+O frontend oferece os canais oficiais e possui uma [integração GA4 com consentimento](analytics-e-consentimento.md), habilitada no novo pacote após o usuário confirmar a desativação da medição otimizada. A execução exige domínio canônico e permissão do visitante; envio do pacote e ingestão real ainda precisam ser conferidos. O envio do formulário antigo não foi transferido nem testado. Não há endpoint de envio por servidor no novo site.
 
 ## Canais de contato
 

@@ -16,6 +16,7 @@
     "test:run": "vitest run",
     "preview": "vite preview --host 127.0.0.1",
     "assets:prepare": "node scripts/prepare-assets.mjs",
+    "assets:favicons": "node scripts/prepare-favicons.mjs",
     "build:client": "vite build",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir .prerender",
     "prerender": "node scripts/prerender.mjs",

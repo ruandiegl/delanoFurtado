@@ -3,7 +3,6 @@ export interface GoogleReviewItem {
   author: string
   initials: string
   roleOrBadge: string
-  relativeTime: string
   rating: 5
   text: string
 }
@@ -21,7 +20,6 @@ export const googleReviews: readonly GoogleReviewItem[] = [
     author: 'Marcelo Barros',
     initials: 'MB',
     roleOrBadge: 'Avaliação no Google',
-    relativeTime: '2 meses atrás',
     rating: 5,
     text: 'Excelente profissional! Muito atencioso, didático e extremamente competente. Explicou todo o processo de forma clara e objetiva, esclarecendo todas as minhas dúvidas com muita paciência. Atendimento de altíssima qualidade. Recomendo com total confiança!',
   },
@@ -30,7 +28,6 @@ export const googleReviews: readonly GoogleReviewItem[] = [
     author: 'Jéssica Lopes',
     initials: 'JL',
     roleOrBadge: 'Avaliação no Google',
-    relativeTime: '2 semanas atrás',
     rating: 5,
     text: 'Na condição de advogada, recorri aos serviços do Dr. Delano para uma demanda em área jurídica não abrangida pelo meu escritório. Fui muito bem atendida, e os serviços foram prestados com excelência técnica, agilidade e competência. Recomendo sua atuação profissional.',
   },
@@ -39,7 +36,6 @@ export const googleReviews: readonly GoogleReviewItem[] = [
     author: 'Higor Siqueira',
     initials: 'HS',
     roleOrBadge: 'Avaliação no Google',
-    relativeTime: '2 meses atrás',
     rating: 5,
     text: 'Excelente profissional! Muito prestativo me atendendo no final de semana e no atendimento presencial tirando minhas dúvidas de forma clara e positiva.',
   },
@@ -48,7 +44,6 @@ export const googleReviews: readonly GoogleReviewItem[] = [
     author: 'Rodrigo Fernandes Ribeiro',
     initials: 'RF',
     roleOrBadge: 'Avaliação no Google',
-    relativeTime: '3 meses atrás',
     rating: 5,
     text: 'Excelente atendimento, rápido, me atendeu no mesmo momento que enviei minha dúvida e seguimos juntos na resolução dos problemas que tínhamos.',
   },
@@ -57,7 +52,6 @@ export const googleReviews: readonly GoogleReviewItem[] = [
     author: 'Esley Silva',
     initials: 'ES',
     roleOrBadge: 'Avaliação no Google',
-    relativeTime: '3 meses atrás',
     rating: 5,
     text: 'Excelente atendimento, valor justo e dedicação total pela causa para o melhor resultado para o cliente.',
   },
@@ -66,7 +60,6 @@ export const googleReviews: readonly GoogleReviewItem[] = [
     author: 'Vanessa Pontes',
     initials: 'VP',
     roleOrBadge: 'Avaliação no Google',
-    relativeTime: '2 semanas atrás',
     rating: 5,
     text: 'Excelente atendimento, muito esclarecedor e competente.',
   },
@@ -75,7 +68,6 @@ export const googleReviews: readonly GoogleReviewItem[] = [
     author: 'Joyce Labio de Mattos',
     initials: 'JM',
     roleOrBadge: 'Avaliação no Google',
-    relativeTime: '2 meses atrás',
     rating: 5,
     text: 'Realizei uma consulta com Dr. Delano Furtado e fui bem atendida nas minhas dúvidas.',
   },

@@ -10,7 +10,15 @@ A busca local em `C:/Users/Rv22/Desktop/delanoAntigo` encontrou `UA-199542592-1`
 
 Dados históricos do UA não são importáveis no GA4. Reaproveitar o site antigo ou seu ID não restaura esse histórico; eventuais exportações anteriores são um acervo separado. [Perguntas sobre a migração](https://support.google.com/analytics/answer/14196937?hl=en).
 
+### Destino encontrado na configuração pública — 27/10/2026
+
+Após o usuário esclarecer que a instalação antiga funcionava, foi lido como texto o JavaScript público servido para `UA-199542592-1`. Sua configuração contém um contêiner filho com ID **`G-6Z7JD1757Y`**; a solicitação direta da tag desse ID também retornou 200. [URLs, trechos de referência e hashes consultados](evidencias/tag-google-conectada-2026-10-27.json).
+
+Isso identifica um destino GA4 associado à tag antiga e explica como a instalação com prefixo UA pode manter um caminho de envio ao GA4. A troca de frontend não impede reaproveitar esse destino. O ID não havia aparecido no export local porque está na configuração remota carregada pela tag. A leitura não executou o JavaScript nem enviou eventos; propriedade/fluxo na conta, recebimento real, consentimento e ações Ads ainda precisam ser conferidos. A ausência de IDs Ads nos dois scripts consultados não exclui importação de eventos GA4 ou outra configuração na conta. Nenhuma tag foi instalada no novo site por esta investigação.
+
 ## Identificadores que precisam ser conferidos
+
+**ID Ads informado pelo usuário:** `AW-622649331`, visto na captura de “Detalhes da tag” e “Destinos” enviada em 27/10/2026 (`codex-clipboard-0f1b2b64-dfa7-44cc-8fc6-839812c3c4b2.png`). A tela identifica Google Ads. O usuário chamou o material de “metra ads”; não foi fornecido um identificador de Pixel da Meta. A captura não mostra ação/rótulo de conversão nem comprova se WhatsApp é medido diretamente pelo Ads ou importado do GA4. Registrar o ID não instala a tag: consentimentos publicitários e o código atual continuam sem alteração.
 
 | Identificador | Significado | Aplicação na migração |
 | --- | --- | --- |

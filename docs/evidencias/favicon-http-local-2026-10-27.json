@@ -1,0 +1,48 @@
+{
+  "responses": [
+    {
+      "route": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 146073
+    },
+    {
+      "route": "/localizacao",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 20554
+    },
+    {
+      "route": "/contate-nos",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 24195
+    },
+    {
+      "route": "/media/favicon-96.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 3658,
+      "width": 96,
+      "height": 96,
+      "alpha": false
+    },
+    {
+      "route": "/media/favicon-180.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 9141,
+      "width": 180,
+      "height": 180,
+      "alpha": false
+    },
+    {
+      "route": "/favicon.ico",
+      "status": 200,
+      "type": "image/x-icon",
+      "bytes": 18754
+    }
+  ],
+  "release": "release-ftp/20261028T005424408Z-6126b027",
+  "hashesChecked": 35
+}

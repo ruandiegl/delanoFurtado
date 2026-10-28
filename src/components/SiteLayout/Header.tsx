@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Container } from '@/styles/primitives'
 import { media } from '@/content/media'
@@ -21,12 +21,12 @@ const Bar = styled.header`
 `
 export function Header() {
   return <Bar><Container>
-    <Link to="/" className="brand" aria-label="Delano Furtado — início"><img {...media.logo} /></Link>
+    <SectionLink section="main-content" className="brand" aria-label="Delano Furtado — início"><img {...media.logo} /></SectionLink>
     <nav className="desktop-nav" aria-label="Navegação principal">
       <SectionLink section="areas">Áreas de atuação</SectionLink><SectionLink section="sobre">Sobre</SectionLink>
       <NavLink to="/localizacao">Localização</NavLink><NavLink to="/contate-nos">Contato</NavLink>
     </nav>
-    <ContactCta label="Fale comigo" className="header-cta" />
+    <ContactCta location="header" label="Fale comigo" className="header-cta" />
     <div className="mobile-nav"><MobileMenu /></div>
   </Container></Bar>
 }

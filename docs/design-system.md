@@ -20,6 +20,7 @@ Valores vivem uma única vez em `src/styles/tokens.css`. styled-components usa e
 | `--muted-foreground` | `#5C655F` | Texto secundário sujeito a teste de contraste |
 | `--border` | `#D5D6D1` | Contornos suaves |
 | `--brand-gold` | `#AD955F` | Aproximação decorativa do dourado; não substitui as cores do arquivo |
+| `--whatsapp` | `#25D366` | Fundo do botão flutuante do WhatsApp; hover `--whatsapp-hover: #1EBE5D` |
 | `--hero-bg-deep` | `#071914` | Fundo verde-floresta profundo da Hero |
 | `--hero-bg-ambient` | `#0F2921` | Camada esmeralda de ambientação na Hero |
 | `--hero-gold-title` | `#D8BD84` | Destaque dourado no título principal sobre fundo escuro |
@@ -46,11 +47,12 @@ Breakpoints de referência: 48rem para expansão da navegação/colunas e 64rem 
 
 ## Componentes de marca
 
-- CTA principal: verde, texto claro e ícone/seta em círculo; hover e foco visíveis, com área de toque confortável.
+- CTA principal: verde, texto claro e ícone em círculo; hover e foco visíveis, com área de toque confortável. Os CTAs diretos de WhatsApp usam o ícone de WhatsApp; somente “Fale comigo” do cabeçalho/menu mantém a seta. O botão flutuante usa o verde `--whatsapp` e símbolo branco, preservando os demais fundos dos CTAs.
 - Rótulo de seção: contorno fino, escala pequena e espaçamento consistente do título.
 - Serviço: título, descrição, ícone coerente e destino existente. A fonte tem sete blocos; não forçar apenas quatro para imitar o desenho.
 - Card: borda sutil e sombra mínima; aplicar quando o agrupamento justificar.
 - Selo: usar o monograma DF disponível, evitando o monograma do advogado de referência e textos circulares com alegações não publicadas.
+- Localização: o ícone no bloco “Volta Redonda” da seção de abrangência tem preenchimento vermelho `#DC2626` e círculo interno na cor do fundo, conforme pedido do usuário em 27/10/2026; o tratamento fica restrito a esse ícone.
 - Painel de contato: fundo claro sobre área escura, canais reais e CTA único reconhecível.
 - Percurso de atendimento: SVG decorativo acompanhado de uma lista semântica, somente quando houver etapas definidas.
 
@@ -62,6 +64,8 @@ Alternar seções centralizadas e de duas colunas, conservando espaço vazio e l
 
 O caminho sinuoso do processo vira uma lista vertical no mobile. Selos e marcas-d'água ficam atrás do conteúdo e deixam de aparecer quando prejudicarem a leitura. WhatsApp flutuante deve respeitar safe areas e não cobrir rodapé, foco ou ações.
 
+A composição compartilhada usa coluna flexível com altura mínima de tela (`100dvh`, com fallback `100vh`), e o conteúdo principal ocupa o espaço disponível. Em páginas curtas, o rodapé termina no limite inferior da tela; em páginas longas, acompanha o conteúdo no fluxo normal. Não fixar o rodapé sobre o conteúdo. [Validação em telas altas e mobile](evidencias/urls-footer-2026-10-27.md).
+
 ## Mídia
 
 Os originais ficam preservados em `docs/assets/delano-furtado/`, conforme [manifesto](assets/delano-furtado/manifesto.json). Não reduzir ou substituir esses originais para otimizar o frontend. O recorte fornecido para a Hero (`retrato-delano-furtado-sem-fundo.jpg`) é mantido como ativo adicional verificado por hash na mesma pasta.
@@ -71,6 +75,8 @@ Em **27/10/2026**, o usuário forneceu o retrato `retrato-delano-furtado-sobre-2
 A composição ativa mantém a imagem ocupando a coluna disponível, altura máxima de 650px, `object-fit: cover`, posição superior e bordas `8px 100px 8px 8px`. O selo DF sobrepõe a lateral esquerda em 24px, a 36px da base, acompanhado do traço verde acima da imagem. O recorte experimental `retrato-delano-furtado-sobre-sem-fundo-v1.png` e seus WebPs continuam preservados, registrados em `edited_assets` e disponíveis em `media.portraitCutout`, sem uso na seção. O retrato da Hero continua independente. Histórico e validação estão na [evidência do teste e retorno ao original](evidencias/retrato-sobre-sem-fundo-2026-10-27.md).
 
 Criar derivados em `src/assets/` ou `public/`, registrar origem, dimensão e uso (`delano-hero-480.webp`, `delano-hero-686.webp` e `delano-hero-1024.webp` com transparência e super-resolução para a Hero; `hero-office-bg.webp` para o cenário de fundo da Hero; variantes Sobre descritas acima). Os derivados anteriores `delano-480/800/1200.webp` permanecem preservados para as referências existentes, inclusive dados estruturados. Usar `srcset`/`sizes` quando necessário, dimensões explícitas e recorte apropriado por viewport. A imagem principal deve carregar cedo; mídia abaixo da dobra pode usar lazy loading.
+
+Favicons usam o **monograma DF da mesma logo atual**, preservado no original `favicon-monograma-df.png`, sobre fundo branco opaco para conservar o D preto em interfaces escuras. Derivados PNG 32/96/180 e ICO 16/32/48/256; a referência principal do head é `/media/favicon-96.png`. A marca horizontal do cabeçalho e o monograma do selo permanecem independentes. Regenerar com `npm run assets:favicons`; [origem e validação](evidencias/favicon-marca-2026-10-27.md).
 
 Corrigir os textos alternativos incorretos encontrados no site antigo. Imagem decorativa usa alt vazio; retrato e logo recebem descrição adequada ao contexto. Uma imagem temática de Justiça não representa uma fotografia do escritório.
 

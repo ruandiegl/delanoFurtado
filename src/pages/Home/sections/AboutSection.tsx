@@ -33,8 +33,8 @@ const Portrait = styled.div`
   }
 `
 export function AboutSection() {
-  return <Section id="sobre"><Container><TwoColumns><Copy><div data-reveal="text"><SmallLabel>Conheça o advogado</SmallLabel><h2>Proximidade para entender.<br />Estratégia para atuar.</h2></div>
-    {siteData.biography.map(paragraph => <p key={paragraph} data-reveal="section">{paragraph}</p>)}<div data-reveal="card"><ContactCta label="Converse sobre o seu caso" /></div>
+  return <Section id="sobre"><Container><TwoColumns><Copy><div data-reveal="text"><SmallLabel>Conheça o advogado</SmallLabel><h2>Proximidade para compreender.<br />Conhecimento para atuar.</h2></div>
+    {siteData.biography.map(paragraph => <p key={paragraph} data-reveal="section">{paragraph}</p>)}<div data-reveal="card"><ContactCta location="about" label="Converse sobre o seu caso" /></div>
     </Copy><Portrait data-reveal="section"><img {...media.portrait} className="photo" loading="lazy" sizes="(max-width: 767px) calc(100vw - 64px), (max-width: 1023px) 42vw, 540px" /><span className="seal"><img {...media.monogram} alt="" loading="lazy" /></span></Portrait>
   </TwoColumns></Container></Section>
 }

@@ -7,7 +7,8 @@ import { Copy, TwoColumns } from '../homeStyles'
 const Wrap = styled(Section)`
   background: var(--secondary); border-radius: 32px;
   .geography { padding: 42px; border: 1px solid #cbd0c7; border-radius: 8px; position: relative; }
-  .geography > svg { color: #657a61; width: 36px; height: 36px; stroke-width: 1; margin-bottom: 32px; }
+  .geography > svg { color: #dc2626; fill: currentColor; width: 36px; height: 36px; stroke-width: 1; margin-bottom: 32px; }
+  .geography > svg circle { fill: var(--secondary); stroke: none; }
   .geography .place { font-size: clamp(44px, 5vw, 70px); line-height: 1.05; letter-spacing: -.06em; font-weight: 400; }
   .geography .state { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted-foreground); margin-top: 20px; }
   .regions { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 24px; list-style: none; }

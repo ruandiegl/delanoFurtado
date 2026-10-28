@@ -257,6 +257,8 @@ Todos os itens desta tabela são trabalho futuro, salvo os documentos desta entr
 
 ## 7. Marco B — Consentimento e Analytics próprios
 
+**Execução parcial em 27/10/2026:** consentimento, transporte e eventos implementados com o destino `G-6Z7JD1757Y`, após o usuário confirmar a desativação da medição otimizada. O novo pacote está habilitado somente para origem canônica e consentimento. [93 testes, revisão e evidência](../docs/evidencias/ga4-2026-10-27.md); [operação](../docs/analytics-e-consentimento.md). Não foram criadas as duas políticas públicas planejadas, não houve upload pelo agente nem comprovação de ingestão/retencão/metas na conta. Os checkboxes abaixo preservam a extensão do plano original e não significam que todo o Marco B foi concluído.
+
 Este marco não bloqueia a entrega do Marco A. Por definição do responsável, sua implementação começa somente após a hospedagem definitiva e o domínio final estarem publicados e validados no gate de VERIFY-01. Propriedade GA4 do Delano, textos aprovados e demais decisões da seção 10 continuam necessários. Durante a homologação, manter somente o planejamento dos eventos; não instalar tag, ativar coleta ou implementar este marco antecipadamente. Não colocar um ID fictício para satisfazer testes ou transportar o da Bravite.
 
 ### CONSENT-01 — Preferências e informações de privacidade (P1 condicionado)

@@ -139,6 +139,8 @@ const Hero = styled.section`
   .intro {
     font-size: 15px;
     line-height: 1.8;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
     color: var(--hero-text-muted);
     max-width: 490px;
     margin-bottom: 30px;
@@ -308,7 +310,7 @@ export function HeroSection() {
             </h1>
             <p className="intro" data-reveal="hero">{homeContent.heroDescription}</p>
             <div data-reveal="hero">
-              <ContactCta tone="hero" />
+              <ContactCta location="hero" tone="hero" />
             </div>
             <p className="hero-caption" data-reveal="hero">
               <MapPin aria-hidden="true" />
@@ -325,7 +327,7 @@ export function HeroSection() {
           </div>
         </div>
         <div className="scroll-hint" data-reveal="hero">
-          <span>Atuação técnica. Atendimento próximo.</span>
+          <span>Atuação técnica. Atendimento personalizado.</span>
           <SectionLink section="areas">
             Conheça a atuação
             <ArrowDown aria-hidden="true" />

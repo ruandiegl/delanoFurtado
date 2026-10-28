@@ -23,6 +23,7 @@ Com npm 11.21.1 já configurado, use npm ci diretamente. Uma mudança deliberada
 | --- | --- |
 | npm run dev | Vite de desenvolvimento em 127.0.0.1 |
 | npm run assets:prepare | Confere hashes dos arquivos de mídia registrados e prepara os derivados otimizados |
+| npm run assets:favicons | Gera somente os favicons DF, sem reprocessar retratos; confere o hash do monograma original |
 | npm run test / npm run test:run | Vitest interativo / execução única |
 | npm run lint | ESLint e regras de hooks |
 | npm run build | Type-check, cliente, renderizador e HTML por rota |

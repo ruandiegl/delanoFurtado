@@ -31,6 +31,12 @@ O usuário confirmou a substituição no mesmo domínio `https://www.delanofurta
 
 ## Limites
 
+Avaliações em 27/10/2026: removidos o campo `relativeTime`, sua exibição e os estilos do tempo relativo; sete textos, autores e estrelas preservados. Os 12 testes existentes de carrossel/prerender, lint e `build:ftp` passaram. O HTML inicial foi conferido sem “meses atrás”/“semanas atrás” ou `card-time`. Novo pacote: `release-ftp/20261027T191948134Z-1ed358c8/site`, 33 arquivos e 2.695.281 bytes.
+
+Refinamento visual em 27/10/2026: o ícone passou a ter **preenchimento vermelho**, com círculo interno na cor do fundo. Lint e `build:ftp` aprovados; CSS do HTML de produção conferido. Pacote correspondente: `release-ftp/20261027T191405363Z-3c1f075e/site`, 33 arquivos e 2.696.683 bytes.
+
+Atualização em 27/10/2026: ícone do bloco “Volta Redonda” alterado para vermelho `#DC2626`, conferido no CSS do HTML de produção. Novo pacote: `release-ftp/20261027T191115670Z-0adf5e76/site`, 33 arquivos e 2.696.515 bytes, com as alterações textuais locais existentes incluídas. Foi corrigido o escopo do ESLint: `release-ftp/` também é saída gerada e precisa ser ignorada, como `dist/`; a primeira análise após a geração dos pacotes havia incluído os bundles minificados. Build FTP e verificação do artefato aprovados.
+
 Sem Apache/Docker/PHP disponíveis localmente e sem publicação nesta execução. Redirects, 404, MIME, cache, compressão, permissões `.htaccess`, galeria e preservação de parâmetros ainda precisam de validação HTTP na HostGator. A existência da meta Search Console não comprova verificação ativa. GA4, Google Ads, conversões, consentimento e ingestão real continuam pendentes de acesso e do gate de publicação definitiva.
 
 Fontes de servidor: [Apache — flags de rewrite](https://httpd.apache.org/docs/2.4/rewrite/flags.html), [compressão](https://httpd.apache.org/docs/2.4/mod/mod_deflate.html), [HostGator — mod_rewrite](https://suporte.hostgator.com.br/hc/pt-br/articles/30819431599891-Como-ativar-o-mod-rewrite-e-o-mod-speling) e [envio FileZilla](https://suporte.hostgator.com.br/hc/pt-br/articles/30817062131091-Como-enviar-arquivos-para-a-hospedagem-com-o-FileZilla).

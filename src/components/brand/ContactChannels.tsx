@@ -3,6 +3,8 @@ import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { siteData } from '@/content/siteData'
 import { buildPhoneHref } from '@/lib/contactLinks'
+import { getAnalyticsClient } from '@/analytics/client'
+import type { LinkLocation } from '@/analytics/config'
 const Channels = styled.div`
   display: grid; gap: 0; min-width: 0;
   .channel { display: flex; align-items: flex-start; gap: 18px; padding-block: 22px; border-bottom: 1px solid var(--border); min-width: 0; }
@@ -13,9 +15,9 @@ const Channels = styled.div`
   .channel p { font-size: 12px; line-height: 1.8; margin-top: 4px; color: var(--muted-foreground); }
   .channel a svg { display: inline; width: 13px; height: 13px; margin-left: 8px; }
 `
-export function ContactChannels({ includeAddress = true }: { includeAddress?: boolean }) {
-  return <Channels><div className="channel"><Phone aria-hidden="true" /><div><small>Telefone</small><a href={buildPhoneHref(siteData.phoneInternational)}>{siteData.phoneDisplay}</a></div></div>
-    <div className="channel"><Mail aria-hidden="true" /><div><small>E-mail</small><a href={`mailto:${siteData.email}`}>{siteData.email}</a></div></div>
+export function ContactChannels({ includeAddress = true, location }: { includeAddress?: boolean; location: LinkLocation }) {
+  return <Channels><div className="channel"><Phone aria-hidden="true" /><div><small>Telefone</small><a href={buildPhoneHref(siteData.phoneInternational)} onClick={() => getAnalyticsClient().track('phone_click', location)}>{siteData.phoneDisplay}</a></div></div>
+    <div className="channel"><Mail aria-hidden="true" /><div><small>E-mail</small><a href={`mailto:${siteData.email}`} onClick={() => getAnalyticsClient().track('email_click', location)}>{siteData.email}</a></div></div>
     {includeAddress && <div className="channel"><MapPin aria-hidden="true" /><div><small>Escritório</small><Link to="/localizacao">{siteData.addressLine}<ArrowUpRight aria-hidden="true" /></Link><p>{siteData.cityLine}</p></div></div>}
   </Channels>
 }

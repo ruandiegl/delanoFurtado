@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-28T00:39:56.078Z",
+  "url": "https://www.googletagmanager.com/gtag/js?id=G-6Z7JD1757Y",
+  "status": 200,
+  "sha256": "f3984b3a6571aa9060dc54df9d136d2a96f7ed19d44ff6f16795734cadce13ab",
+  "settings": [
+    {
+      "function": "__ogt_auto_events",
+      "priority": 17,
+      "vtp_enableOutboundClick": true,
+      "vtp_enableScroll": true,
+      "vtp_enableDownload": true,
+      "vtp_enableHistoryEvents": true,
+      "vtp_enableForm": true,
+      "vtp_enableVideo": true,
+      "vtp_enablePageView": true,
+      "vtp_enableInPageEventsHidden": false,
+      "vtp_hidePageViewToggle": false,
+      "tag_id": 14
+    },
+    {
+      "function": "__ogt_ga_send",
+      "priority": 7,
+      "vtp_value": true,
+      "tag_id": 11
+    },
+    {
+      "function": "__ogt_1p_data_v2",
+      "priority": 7,
+      "vtp_isAutoEnabled": true,
+      "vtp_isManualEnabled": false,
+      "vtp_autoPhoneEnabled": true,
+      "vtp_autoCollectExclusionSelectors": [
+        "list",
+        [
+          "map",
+          "exclusionSelector",
+          ""
+        ]
+      ],
+      "vtp_isEnabled": true,
+      "vtp_autoAddressEnabled": true,
+      "vtp_autoEmailEnabled": true,
+      "vtp_isAutoCollectPiiEnabledFlag": true,
+      "tag_id": 15
+    },
+    {
+      "function": "__ccd_ga_first",
+      "priority": 6,
+      "vtp_instanceDestinationId": "G-6Z7JD1757Y",
+      "tag_id": 22
+    }
+  ],
+  "method": "Public JavaScript read as text only, no execution or events. User confirmed disabling Enhanced Measurement."
+}

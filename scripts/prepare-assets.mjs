@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import sharp from 'sharp'
+import { prepareFavicons } from './prepare-favicons.mjs'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
 const originals = path.join(root, 'docs/assets/delano-furtado')
@@ -415,15 +416,13 @@ for (const width of [480, 800, 1023]) {
     .toFile(path.join(output, `delano-sobre-recorte-${width}.webp`))
 }
 await sharp(input('logo-delano-furtado-original.png')).resize({ width: 1200 }).png().toFile(path.join(output, 'logo-delano.png'))
-for (const size of [32, 180]) {
-  await sharp(input('favicon-monograma-df.png')).resize(size, size).png().toFile(path.join(output, `favicon-${size}.png`))
-}
+await prepareFavicons()
 await sharp(input('favicon-monograma-df.png')).resize(240, 240).png().toFile(path.join(output, 'monograma-df.png'))
 await sharp(input('imagem-compartilhamento-delano-furtado.png')).resize(1200, 630, { fit: 'contain', background: '#ffffff' }).png().toFile(path.join(output, 'social-delano.png'))
 await sharp(input('icone-google-maps.png')).resize(96, 96).png().toFile(path.join(output, 'google-maps.png'))
 await sharp(input('estatua-justica-localizacao.jpg')).resize({ width: 512 }).webp({ quality: 84 }).toFile(path.join(output, 'justica.webp'))
 const metadata = []
-for (const filename of ['delano-hero-480.webp','delano-hero-686.webp','delano-hero-1024.webp','hero-office-bg.webp','delano-480.webp','delano-800.webp','delano-1200.webp','delano-sobre-480.webp','delano-sobre-800.webp','delano-sobre-1200.webp','delano-sobre-recorte-480.webp','delano-sobre-recorte-800.webp','delano-sobre-recorte-1023.webp','logo-delano.png','monograma-df.png','social-delano.png','google-maps.png','justica.webp']) {
+for (const filename of ['delano-hero-480.webp','delano-hero-686.webp','delano-hero-1024.webp','hero-office-bg.webp','delano-480.webp','delano-800.webp','delano-1200.webp','delano-sobre-480.webp','delano-sobre-800.webp','delano-sobre-1200.webp','delano-sobre-recorte-480.webp','delano-sobre-recorte-800.webp','delano-sobre-recorte-1023.webp','logo-delano.png','monograma-df.png','social-delano.png','google-maps.png','justica.webp','favicon-32.png','favicon-96.png','favicon-180.png']) {
   const data = await readFile(path.join(output, filename))
   const image = await sharp(data).metadata()
   metadata.push({ file: filename, width: image.width, height: image.height, bytes: data.length })

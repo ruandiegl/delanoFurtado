@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-28T00:20:14.567Z",
+  "method": "Read public tag JavaScript as text. No code execution, measurement events, browser cookies or account access.",
+  "results": [
+    {
+      "requestedId": "UA-199542592-1",
+      "url": "https://www.googletagmanager.com/gtag/js?id=UA-199542592-1",
+      "status": 200,
+      "bytes": 384014,
+      "sha256": "42c494e3568f0a7ba3747e4a28bd9375840f70923a2227f8be6f538cf1e43053",
+      "ids": [
+        "UA-199542592-1",
+        "G-6Z7JD1757Y"
+      ],
+      "references": [
+        {
+          "id": "G-6Z7JD1757Y",
+          "context": "fig\":[\"map\"],\"tag_id\":1},{\"function\":\"__zone\",\"vtp_childContainers\":[\"list\",[\"map\",\"publicId\",\"G-6Z7JD1757Y\"]],\"vtp_enableConfiguration\":false,\"tag_id\":3},{\"function\":\"__ccd_ga_last\",\"priority\":0,\"vtp_i"
+        }
+      ]
+    },
+    {
+      "requestedId": "G-6Z7JD1757Y",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-6Z7JD1757Y",
+      "status": 200,
+      "bytes": 530492,
+      "sha256": "1ce6438aa36cea6732c5e02e4991ed289815841e143ad1e3d1f621683666bdd6",
+      "ids": [
+        "G-6Z7JD1757Y"
+      ],
+      "references": []
+    }
+  ],
+  "conclusion": "The UA tag configuration references G-6Z7JD1757Y as a child container. This identifies a GA4 destination associated with the legacy tag; actual receipt, property ownership and Ads conversion configuration remain unverified. No tags were installed in the new application."
+}

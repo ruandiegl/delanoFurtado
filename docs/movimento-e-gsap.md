@@ -53,6 +53,10 @@ Para cada efeito, registrar elemento, gatilho, duração, fallback e cleanup. Ve
 
 Testes cobrem outra raiz intacta, teardown idempotente, foco, callback tardio, StrictMode, mudança de preferência e navegação repetida. O navegador conferiu o scroll real; os limites da ferramenta para emular preferência do sistema constam em [mvp-001](evidencias/mvp-001.md).
 
+## Retorno ao início pelo rodapé e pela logo
+
+Desde 27/10/2026, “Início” no rodapé e a logo do cabeçalho usam `SectionLink` com destino `main-content`, reutilizando `RouteEffects` e `scrollToSection`. A rolagem nativa suave leva ao topo da Home e o foco vai ao h1 sem salto antecipado; movimento reduzido usa comportamento imediato. O href permanece `/`, sem fragmentos, e a ação funciona novamente em cliques sucessivos ou ao sair de outra página. Nenhum plugin ou efeito global novo foi acrescentado. [Testes e navegador](evidencias/footer-inicio-2026-10-27.md).
+
 ## Cascata nas áreas de atuação
 
 `ServiceDisclosure` mantém `details`/`summary` nativos e conecta `useDisclosureMotion` por uma ref local. A melhoria também atende à assessoria mensal. Todos os textos continuam no HTML inicial e a abertura funciona sem JavaScript.

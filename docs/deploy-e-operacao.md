@@ -2,9 +2,11 @@
 
 ## Estado e destino
 
-O **Netlify é a hospedagem temporária de homologação**, conforme esclarecimento do responsável em **23/10/2026**. Em **27/10/2026**, confirmou substituir o site no mesmo domínio `https://www.delanofurtado.adv.br`, na **HostGator/cPanel pelo FileZilla**. O pacote local está preparado; a publicação definitiva ainda não ocorreu nesta execução. O código está em [ruandiegl/delanoFurtado](https://github.com/ruandiegl/delanoFurtado), com deploy automático de `main` no Netlify e configuração em `netlify.toml`. O artefato `dist/` contém três HTMLs públicos e 404. A URL temporária é [delano-furtado.netlify.app](https://delano-furtado.netlify.app/). Datas, versão e smoke tests históricos ficam nas [evidências do release](evidencias/release-003.md).
+O **Netlify é a hospedagem temporária de homologação**, conforme esclarecimento do responsável em **23/10/2026**. Em **27/10/2026**, o usuário confirmou a publicação por FileZilla no mesmo domínio `https://www.delanofurtado.adv.br`, na **HostGator/cPanel**. A [conferência pública](evidencias/publicacao-hostgator-2026-10-27.md) confirmou os 31 arquivos públicos do release `20261027T193136138Z-b3c6e65c` por SHA-256. O gate HTTP ainda tem uma pendência: localização e contato recebem 301 para a barra final, enquanto o contrato do projeto usa URLs sem barra. O código está em [ruandiegl/delanoFurtado](https://github.com/ruandiegl/delanoFurtado), com deploy automático de `main` no Netlify e configuração em `netlify.toml`. O artefato `dist/` contém três HTMLs públicos e 404. A URL temporária é [delano-furtado.netlify.app](https://delano-furtado.netlify.app/). Datas, versão e smoke tests históricos ficam nas [evidências do release](evidencias/release-003.md).
 
 O domínio atual continua como origem canônica registrada. Publicar uma URL `netlify.app` não troca DNS nem substitui automaticamente o site existente no domínio profissional.
+
+Em 27/10/2026 foi preparado o pacote `20261027T234714203Z-6c91610f` com `DirectorySlash Off` e layout que completa a altura da tela. Os [79 testes e a inspeção visual local](evidencias/urls-footer-2026-10-27.md) passaram; envio desse novo pacote e validação Apache no domínio final ainda estão pendentes. A publicação anteriormente conferida permanece sendo a versão anterior até essa atualização.
 
 O destino deve suportar o build estático Vite e a estratégia de HTML por rota definida em [SEO](seo-acessibilidade-performance.md). API de envio, se houver, tem ambiente e segredos próprios.
 
@@ -15,7 +17,11 @@ O destino deve suportar o build estático Vite e a estratégia de HTML por rota 
 3. Publicar no domínio final com HTTPS e validar navegação, contatos, mídia e metadados.
 4. Somente depois dessa validação, executar a implementação de consentimento, GA4 próprio e eventos dos botões, conforme o [Marco B do plan-003](../plans/plan-003-seo-previas-sociais-analytics-e-descoberta-ia.md#7-marco-b--consentimento-e-analytics-próprios).
 
-Até a conclusão das três primeiras etapas, Analytics permanece sem implementação e desativado. O dicionário de eventos pode continuar documentado. O provedor e domínio foram confirmados; não houve mudança de DNS ou publicação definitiva. O usuário ainda vai solicitar acesso às contas Google antes da conferência de IDs/conversões.
+Até a validação das três primeiras etapas, Analytics permanece sem implementação e desativado nas páginas novas. O dicionário de eventos pode continuar documentado. O usuário realizou a publicação; a conferência HTTP deixou pendente o alinhamento das URLs e a inspeção de interações no domínio final. Não houve alteração de DNS pelo agente. O usuário ainda vai solicitar acesso às contas Google antes da conferência de IDs/conversões. A galeria antiga preservada contém a tag UA anterior; ela não foi migrada nem validada como medição ativa.
+
+Atualização da investigação de tags em 27/10/2026: o destino **`G-6Z7JD1757Y`** foi encontrado na configuração pública de `UA-199542592-1`. O ID associado à instalação anterior está identificado; falta confirmar propriedade/fluxo, ingestão real e ações Ads. A [evidência](evidencias/tag-google-conectada-2026-10-27.json) foi obtida sem executar a tag ou instalar coleta. Não é necessário criar uma propriedade nova por causa da troca de frontend.
+
+Execução posterior no mesmo dia: [código GA4, consentimento e eventos preparados](analytics-e-consentimento.md), com `streamConfigured: true` após o usuário informar que desativou a medição otimizada. O próximo pacote carrega a tag somente no domínio canônico e após consentimento; é necessário conferir ingestão e diagnóstico da conta depois do envio. O estado público atual ainda precisa ser conferido após o envio dos pacotes preparados pelo agente. Nenhuma coleta ou publicação remota foi ativada nesta execução.
 
 ## Requisitos do provedor
 

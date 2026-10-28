@@ -6,6 +6,8 @@ O projeto possui scripts e suíte próprios. A execução do MVP e seus limites 
 
 Além de test:run/lint/build/verify:build, `npm run verify:preview` confere o HTML inicial e status de onze URLs mais três redirects, incluindo variações de caixa nas páginas conhecidas. Usa uma prévia na porta 4173 por padrão e aceita outra origem como argumento, inclusive a URL pública do Netlify. Isso detecta fallback que só parece correto depois de o JavaScript substituir a página. Testes de hidratação defendem os aliases de documento atendidos diretamente pelo CDN.
 
+O verificador aceita `Location` relativo ou absoluto somente quando resolve para o destino canônico exato na origem esperada. Os seis testes HTTP em `scripts/verify-preview.test.mjs` cobrem essas formas, destinos incorretos e o redirecionamento indevido de uma página canônica. A prévia Vite não executa `.htaccess`: alterações Apache também exigem teste na hospedagem depois do envio.
+
 ## Matriz por mudança
 
 | Mudança | Verificação necessária |

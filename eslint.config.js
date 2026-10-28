@@ -5,7 +5,7 @@ import refresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['dist', '.prerender', '.superpowers', 'node_modules', 'public'] },
+  { ignores: ['dist', 'release-ftp', '.prerender', '.superpowers', 'node_modules', 'public'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   { files: ['**/*.{ts,tsx,js,mjs}'], languageOptions: { globals: { ...globals.browser, ...globals.node } } },
