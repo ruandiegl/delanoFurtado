@@ -1,3 +1,4 @@
+# Dependências e artefatos gerados
 node_modules/
 dist/
 release-ftp/
@@ -6,7 +7,84 @@ release-ftp/
 .netlify/
 *.tsbuildinfo
 *.log
+
+# Ambiente local; o exemplo permitido nunca deve conter valores privados
 .env
 .env.*
 !.env.example
+.envrc
+.dev.vars
+.dev.vars.*
+
+# Credenciais de provedores, pacotes e acesso remoto
+.npmrc
+.pypirc
+.netrc
+_netrc
+.git-credentials
+.aws/
+.azure/
+.config/gcloud/
+.ssh/
+credentials.json
+credentials/
+secrets/
+.secrets/
+service-account*.json
+service_account*.json
+client_secret*.json
+sftp.json
+sftp-config.json
+ftp-config.json
+ftpconfig.json
+.ftpconfig
+.vscode/ftp-sync.json
+sitemanager.xml
+recentservers.xml
+filezilla.xml
+
+# Chaves privadas e cofres
+*.pem
+*.key
+*.p12
+*.pfx
+*.ppk
+*.jks
+*.keystore
+*.kdbx
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# Sessões autenticadas, exportações e backups com possíveis dados privados
+.auth/
+storageState*.json
+storage-state*.json
+auth-state*.json
+cookies.json
+cookies.txt
+*.har
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.bak
+backup/
+backups/
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Evidências privadas ficam locais, fora de public/, dist/ e Git
+/.private/
+
+# Caches e arquivos da máquina
+coverage/
+.cache/
+.vite/
+.idea/
 .DS_Store
+Thumbs.db
+Desktop.ini

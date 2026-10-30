@@ -29,6 +29,30 @@ Usar o template do repositório quando existir. O texto de uma PR não precisa r
 
 Dependências instaladas, `dist/`, `.prerender/`, caches, logs, segredos e o vínculo pessoal `.netlify/` ficam fora do versionamento pelo `.gitignore` existente.
 
+## Conferência de segredos
+
+Antes de preparar um envio, conferir os arquivos rastreados e os novos candidatos; o `.gitignore` só exclui arquivos ainda não rastreados. Estes comandos mostram caminhos e estatísticas, sem despejar possíveis credenciais no terminal:
+
+```text
+git status --short --untracked-files=all
+git ls-files -ci --exclude-standard
+git diff --cached --stat
+git diff --check
+```
+
+`git ls-files -ci --exclude-standard` deve retornar vazio. Se houver arquivo privado já rastreado, remover apenas esse caminho com `git rm --cached -- <caminho>` preserva a cópia local; revisar a exclusão antes de commit/push. Isso não apaga versões anteriores do histórico. Não executar `git rm -r --cached .` nem force push como limpeza genérica.
+
+Para procurar segredos no histórico, usar o [Gitleaks oficial](https://github.com/gitleaks/gitleaks), com versão e checksum conferidos. A ferramenta foi executada localmente na auditoria; não é dependência npm nem um bloqueio automático instalado neste projeto:
+
+```text
+gitleaks git . --log-opts="--all --full-history" --redact=100 --no-banner
+gitleaks git . --staged --redact=100 --no-banner
+```
+
+A segunda chamada examina o conteúdo preparado para commit. Alterações não preparadas e arquivos novos também precisam de varredura local, sem incluir dependências ou builds; a auditoria usou uma cópia dos candidatos retornados por Git. Não publicar relatórios brutos ou fornecer credenciais a validadores externos. A redação reduz a exposição dos valores no resultado, mas caminhos e metadados ainda podem ser privados.
+
+Um segredo confirmado exige revogação/rotação no provedor e avaliação dos commits afetados. Reescrita de histórico e limpeza de cópias remotas são operações separadas, com coordenação explícita. Uma verificação sem achados não garante ausência de qualquer segredo. Ver [Segurança](seguranca-e-privacidade.md#repositório-e-evidências-privadas) e [evidência da auditoria](evidencias/auditoria-repositorio-segredos-2026-10-30.md).
+
 ## Revisão e autorização
 
 Antes de integrar, verificar o diff, os checks de [Qualidade](qualidade-e-validacao.md) e a consistência com o escopo. Operações externas, publicação e alterações de acesso seguem a autorização concreta do usuário e as regras do ambiente; o papel do agente, por si só, não concede essa autorização.

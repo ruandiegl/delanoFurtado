@@ -14,6 +14,16 @@ Esta guideline define cuidados de engenharia para um site institucional. O proje
 
 Revisar o diff e os artefatos antes de versionar. Se um segredo for exposto, interromper seu uso, revogar/rotacionar e seguir o procedimento do provedor; apagar uma linha do código não invalida uma chave vazada.
 
+### Repositório e evidências privadas
+
+O `.gitignore` exclui ambientes locais, chaves privadas, credenciais de pacotes/provedores/FTP, sessões autenticadas, backups e a pasta local `.private/`. A exceção `.env.example` serve apenas para nomes e valores fictícios. Não usar `git add -f` nesses arquivos. O ignore não remove arquivos já rastreados nem identifica senhas escritas em código; conferir também o índice e o histórico conforme [Git e contribuição](git-e-contribuicao.md#conferência-de-segredos).
+
+Capturas de contas, relatórios internos e material de clientes ficam em `.private/`, fora de `public/` e dos artefatos de publicação. Versionar somente um resumo sem dados privados; capturas do frontend público podem continuar nas evidências. A pasta local não é um cofre criptografado nem substitui controle de acesso no computador.
+
+Os IDs de medição GA4 (`G-*`), destinos Ads (`AW-*`) e a verificação HTML do Search Console usados neste site são identificadores públicos, não credenciais de acesso. Mantê-los quando necessários ao funcionamento; tokens de API, senhas FTP, chaves privadas, segredos OAuth e credenciais de serviço nunca entram no frontend ou no Git.
+
+A [auditoria de 30/10/2026](evidencias/auditoria-repositorio-segredos-2026-10-30.md) registra o escopo inspecionado, os resultados e seus limites, sem publicar valores secretos ou relatórios brutos.
+
 ## Conteúdo e dependências
 
 Renderizar texto com o escaping padrão do React. Conteúdo HTML vindo de CMS ou terceiros exige validação e sanitização apropriadas antes de sua adoção; a transcrição em Markdown não precisa virar HTML arbitrário em runtime.

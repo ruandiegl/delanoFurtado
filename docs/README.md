@@ -1,6 +1,6 @@
 # Documentação do projeto — Delano Furtado
 
-Atualização: **27 de outubro de 2026**. Este é o índice principal das guidelines, decisões e padrões do projeto.
+Atualização: **30 de outubro de 2026**. Este é o índice principal das guidelines, decisões e padrões do projeto.
 
 ## Identificação e estado
 
@@ -43,7 +43,7 @@ O novo site combina **a linguagem de frontend da referência do Behance** com **
 | [shadcn/ui](shadcn-ui.md) | Ao inicializar ou alterar primitives, tokens, aliases e preset Base UI |
 | [Movimento e GSAP](movimento-e-gsap.md) | Ao acrescentar animações, ScrollTrigger ou transições |
 | [Integrações e formulários](integracoes-e-formularios.md) | Para WhatsApp, contato, mapa e eventual envio por servidor |
-| [Segurança e privacidade](seguranca-e-privacidade.md) | Para dados pessoais, segredos, terceiros e integrações |
+| [Segurança e privacidade](seguranca-e-privacidade.md) | Para dados pessoais, segredos, terceiros e integrações; [auditoria do repositório em 30/10/2026](evidencias/auditoria-repositorio-segredos-2026-10-30.md) |
 | [SEO, acessibilidade e performance](seo-acessibilidade-performance.md) | Para indexação, navegação assistiva, carregamento e metadados |
 | [Referências de SEO e busca por IA](referencias-seo-busca-ia.md) | Fontes primárias de crawlers, dados estruturados e limites de llms.txt consultadas para o plan-003 |
 | [Referências de migração Google](referencias-migracao-google-analytics-ads.md) | Continuidade de GA4/Ads, tags UA conectadas, conversões e parâmetros de campanha; [auditoria da cópia antiga](evidencias/auditoria-site-antigo-2026-10-27.json) e [plan-005 de migração/FTP](../plans/plan-005-migracao-google-e-publicacao-ftp.md) |
