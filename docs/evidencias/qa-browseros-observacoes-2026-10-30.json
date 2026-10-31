@@ -1,0 +1,902 @@
+{
+  "date": "2026-10-30",
+  "origin": "https://www.delanofurtado.adv.br",
+  "surface": "BrowserOS neo via MCP",
+  "productionBundle": "index-BnjnBzn8.js",
+  "localLatestBundle": "index-meCSV9g9.js",
+  "notes": [
+    "Somente auditoria; sem alterar codigo de aplicacao ou publicar.",
+    "Eventos de page_view de QA podem aparecer na propriedade real. Nenhum contato ou conversao de lead foi disparado.",
+    "Sem valores de cookies, client_id ou credenciais nesta evidencia.",
+    "Zoom real a 200% e JavaScript desativado nao foram validados; veja o relatorio."
+  ],
+  "observations": {
+    "qa_reject": {
+      "after": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "banner": false,
+          "cookieNames": [],
+          "dialog": false,
+          "record": {
+            "decidedAt": 1793387187883,
+            "expiresAt": 1808939187883,
+            "policyVersion": "analytics-v1",
+            "preferences": {
+              "advertising": "denied",
+              "analytics": "denied"
+            },
+            "version": 2
+          },
+          "tags": []
+        }
+      },
+      "reload": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "banner": false,
+          "cookieNames": [],
+          "google": [
+            "https://www.delanofurtado.adv.br/media/google-maps.png"
+          ],
+          "record": {
+            "decidedAt": 1793387187883,
+            "expiresAt": 1808939187883,
+            "policyVersion": "analytics-v1",
+            "preferences": {
+              "advertising": "denied",
+              "analytics": "denied"
+            },
+            "version": 2
+          }
+        }
+      },
+      "tabs": [
+        {
+          "data": {
+            "changed": true,
+            "page": 3,
+            "settled": false,
+            "value": {
+              "banner": false,
+              "googleCount": 1
+            }
+          },
+          "url": "https://www.delanofurtado.adv.br/"
+        },
+        {
+          "data": {
+            "changed": false,
+            "page": 4,
+            "settled": false,
+            "value": {
+              "banner": false,
+              "googleCount": 0
+            }
+          },
+          "url": "https://www.delanofurtado.adv.br/localizacao"
+        },
+        {
+          "data": {
+            "changed": false,
+            "page": 5,
+            "settled": false,
+            "value": {
+              "banner": false,
+              "googleCount": 0
+            }
+          },
+          "url": "https://www.delanofurtado.adv.br/contate-nos"
+        },
+        {
+          "data": {
+            "changed": false,
+            "page": 6,
+            "settled": false,
+            "value": {
+              "banner": false,
+              "googleCount": 0
+            }
+          },
+          "url": "https://www.delanofurtado.adv.br/politica-de-privacidade"
+        },
+        {
+          "data": {
+            "changed": false,
+            "page": 7,
+            "settled": false,
+            "value": {
+              "banner": false,
+              "googleCount": 0
+            }
+          },
+          "url": "https://www.delanofurtado.adv.br/politica-de-cookies"
+        }
+      ]
+    },
+    "qa_accept": {
+      "changed": true,
+      "page": 3,
+      "settled": false,
+      "value": {
+        "cookieNames": [
+          "_ga",
+          "app_key",
+          "app_ses_key",
+          "_ga_6Z7JD1757Y"
+        ],
+        "dataLayer": [
+          {
+            "cmd": "consent",
+            "name": "default",
+            "params": {
+              "ad_personalization": "denied",
+              "ad_storage": "denied",
+              "ad_user_data": "denied",
+              "analytics_storage": "denied"
+            }
+          },
+          {
+            "cmd": "set",
+            "name": {
+              "ads_data_redaction": true,
+              "allow_ad_personalization_signals": false,
+              "allow_google_signals": false,
+              "url_passthrough": false
+            },
+            "params": null
+          },
+          {
+            "cmd": "js",
+            "name": {},
+            "params": null
+          },
+          {
+            "cmd": "consent",
+            "name": "update",
+            "params": {
+              "ad_personalization": "denied",
+              "ad_storage": "denied",
+              "ad_user_data": "denied",
+              "analytics_storage": "granted"
+            }
+          },
+          {
+            "cmd": "config",
+            "name": "G-6Z7JD1757Y",
+            "params": {
+              "send_page_view": false
+            }
+          },
+          {
+            "cmd": "set",
+            "name": {
+              "page_location": "https://www.delanofurtado.adv.br/",
+              "page_path": "/",
+              "page_referrer": "",
+              "page_title": "Delano Furtado | Advogado em Volta Redonda"
+            },
+            "params": null
+          },
+          {
+            "cmd": "event",
+            "name": "page_view",
+            "params": {}
+          }
+        ],
+        "google": [],
+        "record": {
+          "decidedAt": 1793387397872,
+          "expiresAt": 1808939397872,
+          "policyVersion": "analytics-v1",
+          "preferences": {
+            "advertising": "denied",
+            "analytics": "granted"
+          },
+          "version": 2
+        },
+        "scripts": [
+          "https://www.googletagmanager.com/gtag/js?id=G-6Z7JD1757Y"
+        ]
+      }
+    },
+    "qa_revoke": [
+      {
+        "state": {
+          "changed": false,
+          "page": 3,
+          "settled": false,
+          "value": {
+            "cookieNames": [
+              "app_key",
+              "app_ses_key"
+            ],
+            "record": {
+              "decidedAt": 1793387466692,
+              "expiresAt": 1808939466692,
+              "policyVersion": "analytics-v1",
+              "preferences": {
+                "advertising": "denied",
+                "analytics": "denied"
+              },
+              "version": 2
+            },
+            "requests": 0,
+            "tags": []
+          }
+        },
+        "url": "https://www.delanofurtado.adv.br/"
+      },
+      {
+        "state": {
+          "changed": false,
+          "page": 5,
+          "settled": false,
+          "value": {
+            "cookieNames": [
+              "app_key",
+              "app_ses_key"
+            ],
+            "record": {
+              "decidedAt": 1793387466692,
+              "expiresAt": 1808939466692,
+              "policyVersion": "analytics-v1",
+              "preferences": {
+                "advertising": "denied",
+                "analytics": "denied"
+              },
+              "version": 2
+            },
+            "requests": 0,
+            "tags": []
+          }
+        },
+        "url": "https://www.delanofurtado.adv.br/contate-nos"
+      }
+    ],
+    "qa_gallery": {
+      "page": 8,
+      "state": {
+        "changed": false,
+        "page": 8,
+        "settled": false,
+        "value": {
+          "consent": {
+            "decidedAt": 1793387187883,
+            "expiresAt": 1808939187883,
+            "policyVersion": "analytics-v1",
+            "preferences": {
+              "advertising": "denied",
+              "analytics": "denied"
+            },
+            "version": 2
+          },
+          "consentUI": 1,
+          "cookieNames": [
+            "_ga_6Z7JD1757Y",
+            "_ga"
+          ],
+          "h1": [],
+          "links": [
+            {
+              "path": "/galeria",
+              "text": "shared.ada.skipToMainContent"
+            },
+            {
+              "path": "/",
+              "text": ""
+            },
+            {
+              "path": "/",
+              "text": "Início"
+            },
+            {
+              "path": "/localizacao",
+              "text": "Localização"
+            },
+            {
+              "path": "/contate-nos",
+              "text": "Contate-nos"
+            },
+            {
+              "path": "/",
+              "text": "Início"
+            },
+            {
+              "path": "/localizacao",
+              "text": "Localização"
+            },
+            {
+              "path": "/contate-nos",
+              "text": "Contate-nos"
+            },
+            {
+              "path": "/",
+              "text": ""
+            }
+          ],
+          "scripts": [
+            {
+              "host": "www.googletagmanager.com",
+              "id": "G-6Z7JD1757Y",
+              "path": "/gtag/js"
+            },
+            {
+              "host": "www.googletagmanager.com",
+              "id": "UA-199542592-1",
+              "path": "/gtag/js"
+            }
+          ],
+          "title": "Advogado Volta Redonda - Delano Furtado Advogado em Volta Redonda",
+          "tracking": [
+            {
+              "event": null,
+              "host": "www.googletagmanager.com",
+              "id": "UA-199542592-1",
+              "path": "/gtag/js",
+              "status": 0,
+              "tid": null
+            },
+            {
+              "event": null,
+              "host": "www.googletagmanager.com",
+              "id": "G-6Z7JD1757Y",
+              "path": "/gtag/js",
+              "status": 0,
+              "tid": null
+            }
+          ],
+          "url": "https://www.delanofurtado.adv.br/galeria"
+        }
+      }
+    },
+    "qa_gallery_network": [
+      {
+        "state": {
+          "changed": false,
+          "page": 3,
+          "settled": false,
+          "value": {
+            "cookieNames": [
+              "_ga_6Z7JD1757Y",
+              "_ga",
+              "app_key",
+              "app_ses_key"
+            ],
+            "tags": [],
+            "tracking": []
+          }
+        },
+        "url": "https://www.delanofurtado.adv.br/"
+      },
+      {
+        "state": {
+          "changed": false,
+          "page": 4,
+          "settled": false,
+          "value": {
+            "cookieNames": [
+              "_ga_6Z7JD1757Y",
+              "_ga",
+              "app_key",
+              "app_ses_key"
+            ],
+            "tags": [],
+            "tracking": []
+          }
+        },
+        "url": "https://www.delanofurtado.adv.br/localizacao"
+      },
+      {
+        "state": {
+          "changed": false,
+          "page": 5,
+          "settled": false,
+          "value": {
+            "cookieNames": [
+              "_ga_6Z7JD1757Y",
+              "_ga",
+              "app_key",
+              "app_ses_key"
+            ],
+            "tags": [],
+            "tracking": []
+          }
+        },
+        "url": "https://www.delanofurtado.adv.br/contate-nos"
+      },
+      {
+        "state": {
+          "changed": false,
+          "page": 7,
+          "settled": false,
+          "value": {
+            "cookieNames": [
+              "_ga_6Z7JD1757Y",
+              "_ga",
+              "app_key",
+              "app_ses_key"
+            ],
+            "tags": [],
+            "tracking": []
+          }
+        },
+        "url": "https://www.delanofurtado.adv.br/politica-de-cookies"
+      },
+      {
+        "state": {
+          "changed": false,
+          "page": 8,
+          "settled": false,
+          "value": {
+            "cookieNames": [
+              "_ga_6Z7JD1757Y",
+              "_ga",
+              "app_key",
+              "app_ses_key"
+            ],
+            "tags": [
+              "https://www.googletagmanager.com/gtag/js?id=G-6Z7JD1757Y&cx=c&gtm=4e6as1",
+              "https://www.googletagmanager.com/gtag/js?id=UA-199542592-1"
+            ],
+            "tracking": [
+              {
+                "event": null,
+                "host": "stats.g.doubleclick.net",
+                "path": "/g/collect",
+                "status": 0,
+                "tid": "G-6Z7JD1757Y"
+              }
+            ]
+          }
+        },
+        "url": "https://www.delanofurtado.adv.br/galeria"
+      }
+    ],
+    "qa_navigation_tracking": {
+      "back": {
+        "changed": true,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "pageViews": [
+            {
+              "path": "/"
+            },
+            {
+              "path": "/localizacao"
+            },
+            {
+              "path": "/"
+            }
+          ],
+          "title": "Delano Furtado | Advogado em Volta Redonda",
+          "url": "https://www.delanofurtado.adv.br/",
+          "y": 0
+        }
+      },
+      "nav": {
+        "changed": true,
+        "page": 3,
+        "settled": true,
+        "value": {
+          "canonical": "https://www.delanofurtado.adv.br/localizacao",
+          "h1": "Escritório em Volta Redonda",
+          "network": [
+            {
+              "event": null,
+              "host": "www.googletagmanager.com",
+              "path": "/gtag/js",
+              "status": 0,
+              "tid": null
+            },
+            {
+              "event": "page_view",
+              "host": "www.google-analytics.com",
+              "path": "/g/collect",
+              "status": 0,
+              "tid": "G-6Z7JD1757Y"
+            }
+          ],
+          "pageViews": [
+            {
+              "location": "https://www.delanofurtado.adv.br/",
+              "path": "/"
+            },
+            {
+              "location": "https://www.delanofurtado.adv.br/localizacao",
+              "path": "/localizacao"
+            }
+          ],
+          "title": "Localização | Delano Furtado — Volta Redonda",
+          "url": "https://www.delanofurtado.adv.br/localizacao",
+          "y": 0
+        }
+      }
+    },
+    "qa_navigation_settled": {
+      "back": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "url": "https://www.delanofurtado.adv.br/",
+          "y": 5892
+        }
+      },
+      "before": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": 5892
+      },
+      "logo": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "focus": "H1",
+          "url": "https://www.delanofurtado.adv.br/",
+          "y": 0
+        }
+      },
+      "top": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "active": "H1",
+          "url": "https://www.delanofurtado.adv.br/",
+          "y": 0
+        }
+      }
+    },
+    "qa_accordion_final": {
+      "closed": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": true
+      },
+      "results": [
+        {
+          "name": "Ver atuações — Direito de Família",
+          "open": {
+            "changed": false,
+            "page": 3,
+            "settled": false,
+            "value": true
+          }
+        },
+        {
+          "name": "Ver atuações — Direito do Consumidor",
+          "open": {
+            "changed": false,
+            "page": 3,
+            "settled": false,
+            "value": true
+          }
+        },
+        {
+          "name": "Ver atuações — Direito Imobiliário",
+          "open": {
+            "changed": false,
+            "page": 3,
+            "settled": false,
+            "value": true
+          }
+        },
+        {
+          "name": "Ver atuações — Direito Contratual",
+          "open": {
+            "changed": false,
+            "page": 3,
+            "settled": false,
+            "value": true
+          }
+        },
+        {
+          "name": "Ver atuações — Direito das Sucessões",
+          "open": {
+            "changed": false,
+            "page": 3,
+            "settled": false,
+            "value": true
+          }
+        },
+        {
+          "name": "Ver atuações — Direito Civil",
+          "open": {
+            "changed": false,
+            "page": 3,
+            "settled": false,
+            "value": true
+          }
+        },
+        {
+          "name": "Ver detalhes — Assessoria jurídica mensal",
+          "open": {
+            "changed": false,
+            "page": 3,
+            "settled": false,
+            "value": true
+          }
+        }
+      ]
+    },
+    "qa_carousel": {
+      "movement": {
+        "changed": true,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "final": "matrix(1, 0, 0, 1, -3072.2, 0)",
+          "initial": "matrix(1, 0, 0, 1, -2818.96, 0)",
+          "seconds": 5.5000000000007425
+        }
+      },
+      "normal": {
+        "changed": true,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "buttons": [],
+          "links": [
+            "Avaliar no Google"
+          ],
+          "tabIndex": null,
+          "transform": "matrix(1, 0, 0, 1, -2788.29, 0)",
+          "viewport": {
+            "bottom": 617.203125,
+            "height": 337.734375,
+            "left": 0,
+            "right": 375,
+            "top": 279.46875,
+            "width": 375,
+            "x": 0,
+            "y": 279.46875
+          }
+        }
+      },
+      "reduced": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "all": 7,
+          "final": "matrix(1, 0, 0, 1, -3103.13, 0)",
+          "first": "matrix(1, 0, 0, 1, -3103.13, 0)",
+          "visible": 2
+        }
+      }
+    },
+    "qa_narrow_landscape": {
+      "landscape": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "dialog": {
+            "bottom": 359,
+            "height": 343,
+            "left": 73.5,
+            "right": 593.5,
+            "top": 16,
+            "width": 520,
+            "x": 73.5,
+            "y": 16
+          },
+          "overflow": false,
+          "scrollable": 522,
+          "viewport": [
+            667,
+            375
+          ]
+        }
+      },
+      "narrow": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "h1": {
+            "bottom": 301.765625,
+            "height": 144.625,
+            "left": 20,
+            "right": 300,
+            "top": 157.140625,
+            "width": 280,
+            "x": 20,
+            "y": 157.140625
+          },
+          "heroCTA": {
+            "bottom": 678.828125,
+            "height": 58,
+            "left": 20,
+            "right": 245.96875,
+            "top": 620.828125,
+            "width": 225.96875,
+            "x": 20,
+            "y": 620.828125
+          },
+          "outside": [
+            {
+              "cls": "carousel-track",
+              "tag": "DIV",
+              "text": "“Excelente profissional! Muito atencioso"
+            },
+            {
+              "cls": "review-set",
+              "tag": "DIV",
+              "text": "“Excelente profissional! Muito atencioso"
+            },
+            {
+              "cls": "review-card",
+              "tag": "ARTICLE",
+              "text": "“Excelente profissional! Muito atencioso"
+            },
+            {
+              "cls": "",
+              "tag": "DIV",
+              "text": "“Excelente profissional! Muito atencioso"
+            },
+            {
+              "cls": "card-top",
+              "tag": "DIV",
+              "text": ""
+            },
+            {
+              "cls": "stars",
+              "tag": "SPAN",
+              "text": ""
+            },
+            {
+              "cls": {},
+              "tag": "svg",
+              "text": ""
+            },
+            {
+              "cls": {},
+              "tag": "path",
+              "text": ""
+            },
+            {
+              "cls": {},
+              "tag": "svg",
+              "text": ""
+            },
+            {
+              "cls": {},
+              "tag": "path",
+              "text": ""
+            }
+          ],
+          "overflow": false,
+          "reduced": true,
+          "viewport": [
+            320,
+            568
+          ]
+        }
+      },
+      "snapshot": "- dialog \"Preferências de cookies\"\n  - heading \"Preferências de cookies\" [level=2]\n  - form\n    - group \"Categorias de armazenamento\"\n      - switch \"Análise\" [ref=e30]\n    - navigation \"Políticas de privacidade\"\n      - link \"Política de Cookies\" [ref=e31] [url=\"https://www.delanofurtado.adv.br/politica-de-cookies\"]\n      - link \"Privacidade\" [ref=e32] [url=\"https://www.delanofurtado.adv.br/politica-de-privacidade\"]\n    - button \"Salvar preferências\" [ref=e33]\n    - button \"Rejeitar todos\" [ref=e34]\n    - button \"Aceitar todos\" [ref=e35]\n  - button \"Fechar preferências\" [ref=e36]"
+    },
+    "qa_assets_ssr": {
+      "changed": false,
+      "page": 9,
+      "settled": false,
+      "value": {
+        "assets": [
+          {
+            "bytes": 18754,
+            "path": "/favicon.ico",
+            "sha256": "b371e084aea43ac0399bb26fc7d2ca206715227367e572c3fb783e3ea1a63dc6",
+            "status": 200
+          },
+          {
+            "bytes": 3658,
+            "path": "/media/favicon-96.png",
+            "sha256": "0bc9afed8a1902c34459f7df184a9478266037cacb3b51fd6b26e71d15cf9c75",
+            "status": 200
+          },
+          {
+            "bytes": 423339,
+            "path": "https://www.delanofurtado.adv.br/media/social-delano.png",
+            "sha256": "2b1ec578191c20f92dfae350713630aea1c29553485c0cb3ed576bf5c6e179cd",
+            "status": 200
+          }
+        ],
+        "headers": {
+          "netlify": false,
+          "server": "Apache"
+        },
+        "ld": [
+          {
+            "name": "Delano Furtado",
+            "type": "LegalService"
+          }
+        ],
+        "ssr": {
+          "biography": true,
+          "details": 7,
+          "h1": true,
+          "placeholder": false
+        },
+        "tablet": {
+          "height": 1024,
+          "overflow": false,
+          "width": 768
+        }
+      }
+    },
+    "qa_location_final": {
+      "changed": false,
+      "page": 9,
+      "settled": false,
+      "value": {
+        "bodyBottom": 1200,
+        "canonical": "https://www.delanofurtado.adv.br/localizacao",
+        "footer": {
+          "bottom": 1200,
+          "height": 210.84375,
+          "left": 0,
+          "right": 1440,
+          "top": 989.15625,
+          "width": 1440,
+          "x": 0,
+          "y": 989.15625
+        },
+        "h1": "Escritório em Volta Redonda",
+        "overflow": false,
+        "title": "Localização | Delano Furtado — Volta Redonda",
+        "url": "https://www.delanofurtado.adv.br/localizacao/",
+        "viewport": [
+          1440,
+          1200
+        ]
+      }
+    },
+    "qa_contrast": {
+      "changed": false,
+      "page": 3,
+      "settled": false,
+      "value": []
+    },
+    "qa_cleanup": {
+      "final": {
+        "changed": true,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "cookieNames": [],
+          "record": {
+            "decidedAt": 1793387466692,
+            "expiresAt": 1808939466692,
+            "policyVersion": "analytics-v1",
+            "preferences": {
+              "advertising": "denied",
+              "analytics": "denied"
+            },
+            "version": 2
+          },
+          "tags": []
+        }
+      },
+      "images": {
+        "changed": false,
+        "page": 3,
+        "settled": false,
+        "value": {
+          "broken": [],
+          "failedResources": [],
+          "missingAlt": [],
+          "pending": []
+        }
+      }
+    }
+  }
+}

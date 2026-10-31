@@ -1,0 +1,12 @@
+{
+  "hasConsentControls": false,
+  "inlineUa": true,
+  "scripts": [
+    "https://www.googletagmanager.com/gtag/js?id=G-6Z7JD1757Y&cx=c&gtm=4e6as1",
+    "https://www.googletagmanager.com/gtag/js?id=UA-199542592-1"
+  ],
+  "title": "Advogado Volta Redonda - Delano Furtado Advogado em Volta Redonda",
+  "scope": "DOM only; network and cookie storage not available through this browser surface.",
+  "checkedOn": "2026-10-30",
+  "url": "https://www.delanofurtado.adv.br/galeria"
+}

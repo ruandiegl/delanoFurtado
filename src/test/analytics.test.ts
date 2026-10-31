@@ -28,6 +28,7 @@ it('loads once and only measures the current canonical page after consent', () =
   expect(commands.filter(item => item[0] === 'config')).toHaveLength(1)
   expect(commands.filter(item => item[0] === 'event')).toEqual([['event', 'page_view', expect.objectContaining({ page_path: '/localizacao', page_location: `${window.location.origin}/localizacao`, page_referrer: '', send_to: config.measurementId })]])
   expect(commands.find(item => item[0] === 'config')?.[2]).toMatchObject({ send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false })
+  expect(commands.find(item => item[0] === 'set')?.[1]).toMatchObject({ ads_data_redaction: true, url_passthrough: false })
 })
 
 it('records real route changes and allowed contact metadata without personal information', () => {
@@ -61,6 +62,18 @@ it('a blocked tag cannot interrupt site navigation or start sending later', () =
   expect(window.dataLayer).toHaveLength(0)
 })
 
+it('blocks a running SDK without reload if a denial cannot be remembered safely', () => {
+  const reload = vi.fn()
+  const client = createAnalyticsClient(config, reload)
+  client.grant('/')
+  client.revoke(false)
+  client.track('whatsapp_click', 'hero')
+  expect(Reflect.get(window, `ga-disable-${config.measurementId}`)).toBe(true)
+  expect(window.dataLayer).toHaveLength(0)
+  expect(document.querySelector('[data-delano-analytics]')).toBeNull()
+  expect(reload).not.toHaveBeenCalled()
+})
+
 it('allows a new explicit grant after revocation when no SDK ever started', () => {
   const reload = vi.fn()
   const client = createAnalyticsClient(config, reload)
@@ -69,6 +82,17 @@ it('allows a new explicit grant after revocation when no SDK ever started', () =
   expect(reload).not.toHaveBeenCalled()
   client.grant('/')
   expect(document.querySelectorAll('[data-delano-analytics]')).toHaveLength(1)
+})
+
+it('does not overwrite or send events through an unknown preexisting tag', () => {
+  const externalCommands: unknown[][] = []
+  const external = (...args: unknown[]) => { externalCommands.push(args) }
+  window.gtag = external
+  const client = createAnalyticsClient(config)
+  client.grant('/'); client.track('whatsapp_click', 'hero')
+  expect(document.querySelector('[data-delano-analytics]')).toBeNull()
+  expect(externalCommands).toHaveLength(0)
+  expect(window.gtag).toBe(external)
 })
 
 it('invalidates the previous page through the bridge grant path on unknown URLs', () => {

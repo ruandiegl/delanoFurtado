@@ -18,6 +18,8 @@ Dados estruturados descrevem somente fatos confirmados. Não preencher `aggregat
 
 O head inicial compartilhado aponta para `/media/favicon-96.png`, quadrado e com o monograma DF da marca atual. Há ícone Apple de 180px e `/favicon.ico` com múltiplas dimensões. O build confere os PNGs e o ICO, e o pacote FTP inclui o arquivo da raiz. Manter as URLs estáveis e rastreáveis, sem bloqueio no robots. A troca no Google depende do novo rastreamento da Home/ícone; solicitar inspeção/indexação da Home no Search Console após publicar pode ajudar a descoberta, sem garantir exibição ou prazo. O Google informa que o processamento pode levar dias a semanas. [Documentação oficial](https://developers.google.com/search/docs/appearance/favicon-in-search?hl=pt-br).
 
+Em 28/10/2026, a auditoria pública confirmou os metadados novos nas três páginas atuais e os redirects dos aliases `.html`. A galeria legada continua retornando HTML antigo. O [procedimento de atualização dos resultados](atualizacao-indexacao-google.md) registra evidências, inspeção/indexação no Search Console e a migração ainda necessária da galeria para atender ao pedido de preservar resultados com a identidade nova. A conferência HTTP não comprova o estado do índice do Google.
+
 ## Acessibilidade
 
 Meta de projeto: **WCAG 2.2 nível AA**, a ser avaliada por critérios pertinentes, testes automáticos e inspeção manual. Esta é uma meta de engenharia, não uma certificação. A referência normativa é a [visão geral WCAG do W3C](https://www.w3.org/WAI/standards-guidelines/wcag/).

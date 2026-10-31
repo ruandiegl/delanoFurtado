@@ -18,12 +18,12 @@ async function fixture() {
     'deploy/apache/assets.htaccess': 'Header set Cache-Control "public, max-age=31536000, immutable"\n',
     'deploy/apache/search-console.html': verification,
     'dist/robots.txt': `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`,
-    'dist/sitemap.xml': `<urlset>${['/', '/localizacao', '/contate-nos'].map(route => `<url><loc>${origin}${route}</loc></url>`).join('')}</urlset>`,
+    'dist/sitemap.xml': `<urlset>${['/', '/localizacao', '/contate-nos', '/politica-de-privacidade', '/politica-de-cookies'].map(route => `<url><loc>${origin}${route}</loc></url>`).join('')}</urlset>`,
     'dist/assets/index-AbCd1234.js': 'console.log("site")',
     'dist/media/photo.webp': 'fixture-image',
     'dist/favicon.ico': 'fixture-favicon',
   }
-  for (const [file, route] of Object.entries({ 'index.html': '/', 'localizacao/index.html': '/localizacao', 'contate-nos/index.html': '/contate-nos', '404.html': '/404' })) {
+  for (const [file, route] of Object.entries({ 'index.html': '/', 'localizacao/index.html': '/localizacao', 'contate-nos/index.html': '/contate-nos', 'politica-de-privacidade/index.html': '/politica-de-privacidade', 'politica-de-cookies/index.html': '/politica-de-cookies', '404.html': '/404' })) {
     files[`dist/${file}`] = `<html><head><link rel="canonical" href="${origin}${route}"></head><body>${route}</body></html>`
   }
   for (const [file, content] of Object.entries(files)) {

@@ -19,7 +19,7 @@ afterEach(async () => {
 async function serve({ absolute = false, destination, pageRedirect = false } = {}) {
   const server = createServer((request, response) => {
     const url = new URL(request.url, origin)
-    const aliases = { '/index.html': '/', '/localizacao/index.html': '/localizacao', '/contate-nos/index.html': '/contate-nos' }
+    const aliases = { '/index.html': '/', '/localizacao/index.html': '/localizacao', '/contate-nos/index.html': '/contate-nos', '/politica-de-privacidade/index.html': '/politica-de-privacidade', '/politica-de-cookies/index.html': '/politica-de-cookies' }
     if (aliases[url.pathname]) {
       response.writeHead(308, { Location: destination ?? (absolute ? new URL(aliases[url.pathname], origin).href : aliases[url.pathname]) })
       response.end()
@@ -33,7 +33,9 @@ async function serve({ absolute = false, destination, pageRedirect = false } = {
     const path = url.pathname.toLowerCase().replace(/\/$/, '')
     const heading = path === '' ? 'Advocacia e consultoria jurídica em Volta Redonda'
       : path === '/localizacao' ? 'Escritório em Volta Redonda'
-        : path === '/contate-nos' ? 'Vamos conversar sobre o seu caso?' : 'Página não encontrada'
+        : path === '/contate-nos' ? 'Vamos conversar sobre o seu caso?'
+          : path === '/politica-de-privacidade' ? 'Política de Privacidade'
+            : path === '/politica-de-cookies' ? 'Política de Cookies' : 'Página não encontrada'
     const notFound = heading === 'Página não encontrada'
     response.writeHead(notFound ? 404 : 200, { 'Content-Type': 'text/html' })
     response.end(`<html><head><link rel="canonical" href="${origin}${path}"><style data-styled></style>${notFound ? '<meta name="robots" content="noindex,follow">' : ''}</head><body><h1>${heading}</h1></body></html>`)
@@ -51,7 +53,7 @@ async function serve({ absolute = false, destination, pageRedirect = false } = {
 it.each([false, true])('accepts the exact canonical destination with absolute Location = %s', async absolute => {
   const origin = await serve({ absolute })
   const result = await execute(process.execPath, [script, origin])
-  expect(result.stdout).toContain('Documents verified: 11 document requests and 3 canonical redirects.')
+  expect(result.stdout).toContain('Documents verified: 17 document requests and 5 canonical redirects.')
 })
 
 it.each(['https://outside.example/', '/wrong-page', '/?unexpected=value'])('rejects an incorrect redirect destination: %s', async destination => {

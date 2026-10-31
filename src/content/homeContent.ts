@@ -8,7 +8,7 @@ export const homeContent = {
   heroDescription: 'Soluções jurídicas desenvolvidas com estratégia, transparência e atenção às particularidades de cada caso. Atendimento personalizado para pessoas físicas e empresas, com atuação presencial em Volta Redonda, Barra Mansa, Pinheiral e demais municípios do Estado do Rio de Janeiro, além de atendimento jurídico online em todo o Brasil.\n\nCNPJ: 50.791.942/0001-03',
   sectionOrder: ['hero', 'credentials', 'areas', 'sobre', 'atendimento', 'differentials', 'google', 'contato'],
   differentials: [
-    { title: 'Formação e conhecimento técnico', text: 'Pós-graduação em Direito Processual Civil pela PUC/RS e em Direito Civil pela Universidade Presbiteriana Mackenzie.' },
+    { title: 'Formação e conhecimento técnico', text: 'Pós-graduação em Direito Processual Civil pela PUC/RS e em Direito Civil pela Universidade Presbiteriana Mackenzie/SP.' },
     { title: 'Estratégia para cada caso', text: 'Uma atuação próxima e personalizada, alinhada às particularidades da sua demanda.' },
     { title: 'Atuação judicial e extrajudicial', text: 'Consultoria, assessoria e condução de demandas, com foco em soluções jurídicas e prevenção de conflitos.' },
   ],

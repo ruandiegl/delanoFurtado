@@ -9,6 +9,12 @@ const cases = [
   ['/LOCALIZACAO', 200, 'Escritório em Volta Redonda'],
   ['/LoCaLiZaCaO/', 200, 'Escritório em Volta Redonda'],
   ['/CONTATE-NOS', 200, 'Vamos conversar sobre o seu caso?'],
+  ['/politica-de-privacidade', 200, 'Política de Privacidade'],
+  ['/politica-de-privacidade/', 200, 'Política de Privacidade'],
+  ['/POLITICA-DE-PRIVACIDADE', 200, 'Política de Privacidade'],
+  ['/politica-de-cookies', 200, 'Política de Cookies'],
+  ['/politica-de-cookies/', 200, 'Política de Cookies'],
+  ['/POLITICA-DE-COOKIES', 200, 'Política de Cookies'],
   ['/ROTA-INEXISTENTE', 404, 'Página não encontrada'],
   ['/pagina-inexistente', 404, 'Página não encontrada'],
   ['/pagina-inexistente.html', 404, 'Página não encontrada'],
@@ -25,11 +31,12 @@ for (const [path, status, heading] of cases) {
   if (status === 404) assert(html.includes('noindex,follow'))
   console.log(`${status} ${path}: initial HTML/CSS/SEO correct`)
 }
-for (const [path, canonical] of [['/index.html', '/'], ['/localizacao/index.html', '/localizacao'], ['/contate-nos/index.html', '/contate-nos']]) {
+const aliases = [['/index.html', '/'], ['/localizacao/index.html', '/localizacao'], ['/contate-nos/index.html', '/contate-nos'], ['/politica-de-privacidade/index.html', '/politica-de-privacidade'], ['/politica-de-cookies/index.html', '/politica-de-cookies']]
+for (const [path, canonical] of aliases) {
   const response = await fetch(`${origin}${path}`, { redirect: 'manual' })
   assert.equal(response.status, 308)
   const location = response.headers.get('location')
   assert(location, `${path}: redirect destination`)
   assert.equal(new URL(location, origin).href, new URL(canonical, origin).href, `${path}: canonical redirect`)
 }
-console.log(`Documents verified: ${cases.length} document requests and 3 canonical redirects.`)
+console.log(`Documents verified: ${cases.length} document requests and ${aliases.length} canonical redirects.`)

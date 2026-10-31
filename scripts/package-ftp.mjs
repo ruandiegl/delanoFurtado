@@ -8,6 +8,7 @@ const origin = 'https://www.delanofurtado.adv.br'
 const pages = new Map([
   ['index.html', '/'], ['localizacao/index.html', '/localizacao'],
   ['contate-nos/index.html', '/contate-nos'], ['404.html', '/404'],
+  ['politica-de-privacidade/index.html', '/politica-de-privacidade'], ['politica-de-cookies/index.html', '/politica-de-cookies'],
 ])
 const rootFiles = new Set([...pages.keys(), 'robots.txt', 'sitemap.xml', 'favicon.ico'])
 const digest = data => createHash('sha256').update(data).digest('hex')
@@ -28,7 +29,7 @@ async function collectBuild(directory, prefix = '') {
     const file = path.join(directory, entry.name)
     if (entry.isSymbolicLink()) throw new Error(`Symbolic link/junction not allowed: ${relative}`)
     if (entry.isDirectory()) {
-      if (!/^(assets|media)(\/[^.][^/]*)?$/.test(relative) && !['localizacao', 'contate-nos'].includes(relative)) throw new Error(`Unexpected build directory: ${relative}`)
+      if (!/^(assets|media)(\/[^.][^/]*)?$/.test(relative) && !['localizacao', 'contate-nos', 'politica-de-privacidade', 'politica-de-cookies'].includes(relative)) throw new Error(`Unexpected build directory: ${relative}`)
       files.push(...await collectBuild(file, relative))
     } else if (entry.isFile()) {
       const asset = /^assets\/[^/]+-[A-Za-z0-9_-]{8,}\.(js|css|woff2)$/.test(relative)
@@ -52,7 +53,7 @@ function validateProduction(files) {
   const robots = byPath.get('robots.txt')
   if (/^\s*Disallow:\s*\/\s*$/im.test(robots) || !robots.includes(`Sitemap: ${origin}/sitemap.xml`)) throw new Error('Invalid production robots.txt')
   const locations = [...byPath.get('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]).sort()
-  const expected = ['/', '/localizacao', '/contate-nos'].map(route => `${origin}${route}`).sort()
+  const expected = ['/', '/localizacao', '/contate-nos', '/politica-de-privacidade', '/politica-de-cookies'].map(route => `${origin}${route}`).sort()
   if (JSON.stringify(locations) !== JSON.stringify(expected)) throw new Error('Invalid production sitemap.xml')
 }
 

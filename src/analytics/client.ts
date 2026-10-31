@@ -43,7 +43,7 @@ export function createAnalyticsClient(config: AnalyticsConfig, reload = () => wi
         window.gtag = function () { window.dataLayer?.push(arguments) }
         const denied = { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }
         send('consent', 'default', denied)
-        send('set', { allow_google_signals: false, allow_ad_personalization_signals: false })
+        send('set', { allow_google_signals: false, allow_ad_personalization_signals: false, ads_data_redaction: true, url_passthrough: false })
         send('js', new Date())
         send('consent', 'update', { ...denied, analytics_storage: 'granted' })
         send('config', config.measurementId, { ...context(route), send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false, cookie_expires: 180 * 86400, cookie_flags: 'SameSite=Lax;Secure' })
@@ -60,7 +60,7 @@ export function createAnalyticsClient(config: AnalyticsConfig, reload = () => wi
       if (!current) return
       send('event', event, { ...context(current), link_location: location, send_to: config.measurementId })
     },
-    revoke() {
+    revoke(reloadPage = true) {
       authorized = false
       current = null
       if (!started) return
@@ -76,7 +76,7 @@ export function createAnalyticsClient(config: AnalyticsConfig, reload = () => wi
         if (!/^_ga(?:_|$)/.test(name)) continue
         for (const domain of domains) document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax${domain ? `; Domain=${domain}` : ''}`
       }
-      reload()
+      if (reloadPage) reload()
     },
   }
 }

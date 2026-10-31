@@ -82,4 +82,10 @@ Corrigir os textos alternativos incorretos encontrados no site antigo. Imagem de
 
 ## Conferência
 
+### Cookies e preferências — 30/10/2026
+
+A faixa usa tokens próprios `--cookie-surface: #101814`, `--cookie-text: #f5f7f4`, `--cookie-muted: #c8d1ca` e `--cookie-border: #ffffff24`, sem modificar o tema das seções. Ajuste solicitado em 30/10: posicionada à direita, acima do WhatsApp, com largura máxima de 480px, padding de 14px e texto de 12,5px. Desktop mantém três ações em linha; mobile tem margem de 16px, preferências na primeira linha e aceitar/rejeitar equivalentes na segunda. Os botões continuam com área de toque mínima de 44px. Altura natural e rolagem quando necessário; nenhum título grande ou backdrop na faixa.
+
+Preferências abre o Dialog Base UI com campos shadcn, rascunho até salvar e retorno de foco ao acionador. Se o acionador da faixa desaparecer após salvar, o foco retorna ao controle permanente de preferências. Um foco de teclado completamente encoberto pela faixa faz apenas a faixa ser dispensada, sem gravar consentimento. A categoria publicitária não aparece enquanto não configurada. [Evidências](evidencias/cookies-006.md).
+
 Comparar hierarquia, proporções, espaçamento e consistência com a referência, usando os textos reais. Os critérios de acessibilidade e performance estão no [documento dedicado](seo-acessibilidade-performance.md); os registros visuais ficam na evidência da entrega.

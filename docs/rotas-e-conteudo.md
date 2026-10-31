@@ -24,6 +24,8 @@ Validação posterior do teste de CNPJ na descrição da Hero: os mesmos checks 
 
 Validação da substituição da biografia em 27/10/2026: lint, build, verify:build e os nove testes de pré-renderização aprovados. Os quatro parágrafos foram conferidos no DOM e visualmente em desktop e mobile 375×812, sem rolagem horizontal ou erros de console; [captura desktop](evidencias/capturas/biografia-desktop-2026-10-27.png) e [mobile](evidencias/capturas/biografia-mobile-2026-10-27.png). Nenhuma publicação ou geração de novo pacote FTP nesta alteração.
 
+Na preparação posterior para FTP, o estado real de `homeContent.heroDescription` já contém `CNPJ: 50.791.942/0001-03` após a linha em branco. O novo pacote usa esse valor real e a biografia atualizada; foi verificada a ausência do placeholder de teste no HTML da Home. [Pacote e validação](evidencias/release-ftp-conteudo-2026-10-27.md).
+
 ## Rotas iniciais
 
 | URL | Responsabilidade | Estado |
@@ -31,6 +33,8 @@ Validação da substituição da biografia em 27/10/2026: lint, build, verify:bu
 | `/` | Landing page institucional e canais oficiais | Implementada e pré-renderizada |
 | `/localizacao` | Endereço, abrangência e acesso ao mapa | Implementada e pré-renderizada |
 | `/contate-nos` | WhatsApp, telefone, e-mail e redes | Implementada e pré-renderizada; sem formulário |
+| `/politica-de-privacidade` | Política factual de privacidade e contato do escritório | Implementada no plan-006; HTML próprio, canonical e link no rodapé |
+| `/politica-de-cookies` | Inventário de armazenamento e escolhas | Implementada no plan-006; HTML próprio, canonical e link no rodapé |
 | Outras URLs | Tela de não encontrado e retorno | 404.html gerado; status em produção depende do provedor |
 
 Seções identificadas na Home: `areas`, `sobre`, `atendimento` e `contato`. Desde **26/10/2026**, por escolha do usuário, os links internos rolam até esses blocos mantendo a URL da página inicial sem fragmentos (`#nome`). `SectionLink` usa a rota `/` e o estado de navegação `scrollTarget`; `RouteEffects` valida o destino, rola e leva o foco ao título da seção. Não foram criadas páginas individuais para esses blocos. Os sete serviços preservam seus itens completos no HTML, com details/summary nativo; isso não é um FAQ.
@@ -41,9 +45,9 @@ Em 27/10/2026, o usuário solicitou rolagem animada ao clicar em “Início” n
 
 No mesmo dia, o usuário solicitou o mesmo comportamento para a logo do cabeçalho. Ela também usa `SectionLink` para `main-content`, mantendo imagem, estilo, nome acessível e href originais.
 
-Política de URL: os caminhos canônicos usam minúsculas. O manifest também reconhece variações de caixa, barra final e `index.html` das três páginas existentes, acompanhando a entrega de arquivos estáticos do Netlify. Router, HTML e SEO usam a mesma resolução; caminhos realmente desconhecidos continuam em 404. O preview redireciona aliases de documento para os caminhos canônicos; no Netlify, aliases com caixa diferente podem ser atendidos como 200, preservando o conteúdo e o canonical corretos. Navegação nova de página vai ao topo/foca o h1; histórico restaura a posição por entrada; selecionar a mesma seção novamente repete a rolagem. A rolagem respeita movimento reduzido. Consulte o contrato em [Deploy](deploy-e-operacao.md).
+Política de URL: os caminhos canônicos usam minúsculas. O manifest também reconhece variações de caixa, barra final e `index.html` das cinco páginas existentes, acompanhando a entrega de arquivos estáticos do Netlify. Router, HTML e SEO usam a mesma resolução; caminhos realmente desconhecidos continuam em 404. O preview redireciona aliases de documento para os caminhos canônicos; no Netlify, aliases com caixa diferente podem ser atendidos como 200, preservando o conteúdo e o canonical corretos. Navegação nova de página vai ao topo/foca o h1; histórico restaura a posição por entrada; selecionar a mesma seção novamente repete a rolagem. A rolagem respeita movimento reduzido. Consulte o contrato em [Deploy](deploy-e-operacao.md).
 
-Páginas individuais de serviços, blog, política de privacidade ou agendamento são evoluções. Uma rota nova só entra na navegação e no sitemap quando existir. Se uma URL antiga mudar, registrar redirecionamento 301 específico na hospedagem, sem transformar todas as URLs em redirecionamentos para a Home.
+Páginas individuais de serviços, blog ou agendamento são evoluções. Uma rota nova só entra na navegação e no sitemap quando existir. Se uma URL antiga mudar, registrar redirecionamento 301 específico na hospedagem, sem transformar todas as URLs em redirecionamentos para a Home.
 
 ## Adaptação das seções da referência
 
@@ -87,3 +91,6 @@ O texto de Sucessões menciona exterior; o texto geral menciona Brasil. A extens
 ## Datas e manutenção
 
 Se uma nova coleta alterar dados, registrar data, página e mudança. O documento 02 continua sendo o registro da coleta indicada no seu cabeçalho. Horário de funcionamento, número de casos, anos de experiência, taxas e estatísticas não foram coletados e não devem ser preenchidos por dedução.
+
+
+Atualização de 30/10/2026: [plan-006](evidencias/cookies-006.md) acrescenta as duas políticas em `privacyContent.ts`, sem alterar a biografia, a Hero ou os dados profissionais. Os textos descrevem a implementação conhecida e devem ser revisados pelo responsável antes da publicação; não apresentam contato como encarregado formal nem inventam prazos da conta Google.

@@ -15,4 +15,4 @@ for (const pathname of [...publicRoutes, '/404']) {
 }
 await writeFile(resolve(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${publicRoutes.map(route => `<url><loc>${publicOrigin}${route === '/' ? '/' : route}</loc></url>`).join('')}</urlset>`)
 await writeFile(resolve(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${publicOrigin}/sitemap.xml\n`)
-console.log('Prerendered 3 public routes and 404, with collected styles, sitemap and robots.')
+console.log(`Prerendered ${publicRoutes.length} public routes and 404, with collected styles, sitemap and robots.`)

@@ -13,6 +13,10 @@ export function getSeo(pathname: string): SeoMetadata {
   } : route === '/contate-nos' ? {
     title: 'Contato | Delano Furtado — Advocacia',
     description: 'Entre em contato com Delano Furtado pelo WhatsApp, telefone ou e-mail. Atendimento jurídico presencial em Volta Redonda e região e online em todo o Brasil.',
+  } : route === '/politica-de-privacidade' ? {
+    title: 'Política de Privacidade | Delano Furtado', description: 'Saiba como o site Delano Furtado utiliza dados de navegação, análise opcional e canais de contato, e como gerenciar suas preferências.',
+  } : route === '/politica-de-cookies' ? {
+    title: 'Política de Cookies | Delano Furtado', description: 'Entenda os cookies de análise e o armazenamento das preferências do site Delano Furtado. Saiba como aceitar, recusar ou retirar sua autorização.',
   } : { title: 'Página não encontrada | Delano Furtado', description: 'O endereço solicitado não está disponível. Conheça a atuação de Delano Furtado ou entre em contato.' }
   return { ...content, canonical: `${publicOrigin}${route === '/' ? '/' : route ?? '/404'}`, image: `${publicOrigin}/media/social-delano.png`, noindex: !route }
 }

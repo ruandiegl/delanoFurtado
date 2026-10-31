@@ -28,8 +28,15 @@ RewriteCond %{THE_REQUEST} \s/+contate-nos(?:/index)?\.html(?:[?\s]) [NC]
 RewriteRule ^contate-nos(?:/index)?\.html$ /contate-nos [R=308,END,NC]
 
 # Serve both known path forms; canonical URLs and internal links omit the slash.
+RewriteCond %{THE_REQUEST} \s/+politica-de-privacidade(?:/index)?\.html(?:[?\s]) [NC]
+RewriteRule ^politica-de-privacidade(?:/index)?\.html$ /politica-de-privacidade [R=308,END,NC]
+RewriteCond %{THE_REQUEST} \s/+politica-de-cookies(?:/index)?\.html(?:[?\s]) [NC]
+RewriteRule ^politica-de-cookies(?:/index)?\.html$ /politica-de-cookies [R=308,END,NC]
+
 RewriteRule ^localizacao/?$ localizacao/index.html [END,NC]
 RewriteRule ^contate-nos/?$ contate-nos/index.html [END,NC]
+RewriteRule ^politica-de-privacidade/?$ politica-de-privacidade/index.html [END,NC]
+RewriteRule ^politica-de-cookies/?$ politica-de-cookies/index.html [END,NC]
 
 # Temporary compatibility only when the old gallery remains on the server.
 # The FTP package does not ship or create this legacy page or its bundles.

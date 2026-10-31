@@ -1,0 +1,211 @@
+{
+  "observedAtUtc": "2026-10-28T13:17:40.4827956Z",
+  "scope": "Public HTTP HTML, metadata, legacy routes, robots and sitemap; no Search Console access",
+  "results": [
+    {
+      "requestedPath": "/",
+      "chain": [
+        {
+          "url": "https://www.delanofurtado.adv.br/",
+          "status": 200,
+          "location": ""
+        }
+      ],
+      "finalUrl": "https://www.delanofurtado.adv.br/",
+      "status": 200,
+      "contentType": "text/html",
+      "xRobotsTag": null,
+      "title": "Delano Furtado | Advogado em Volta Redonda",
+      "description": "<meta data-site-seo name=\"description\" content=\"Advocacia e consultoria jurídica com Delano Furtado. Atendimento presencial em Volta Redonda e região e online em todo o Brasil. Conheça as áreas de atuação.\">",
+      "robotsMeta": "<meta data-site-seo name=\"robots\" content=\"index,follow\">",
+      "canonical": "<link data-site-seo rel=\"canonical\" href=\"https://www.delanofurtado.adv.br/\">",
+      "icons": [
+        "<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"/media/favicon-96.png\" />",
+        "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/media/favicon-180.png\" />"
+      ],
+      "text": null
+    },
+    {
+      "requestedPath": "/localizacao",
+      "chain": [
+        {
+          "url": "https://www.delanofurtado.adv.br/localizacao",
+          "status": 200,
+          "location": ""
+        }
+      ],
+      "finalUrl": "https://www.delanofurtado.adv.br/localizacao",
+      "status": 200,
+      "contentType": "text/html",
+      "xRobotsTag": null,
+      "title": "Localização | Delano Furtado — Volta Redonda",
+      "description": "<meta data-site-seo name=\"description\" content=\"Encontre o escritório de Delano Furtado na Vila Santa Cecília, em Volta Redonda, RJ. Consulte o endereço e abra a localização no Google Maps.\">",
+      "robotsMeta": "<meta data-site-seo name=\"robots\" content=\"index,follow\">",
+      "canonical": "<link data-site-seo rel=\"canonical\" href=\"https://www.delanofurtado.adv.br/localizacao\">",
+      "icons": [
+        "<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"/media/favicon-96.png\" />",
+        "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/media/favicon-180.png\" />"
+      ],
+      "text": null
+    },
+    {
+      "requestedPath": "/contate-nos",
+      "chain": [
+        {
+          "url": "https://www.delanofurtado.adv.br/contate-nos",
+          "status": 200,
+          "location": ""
+        }
+      ],
+      "finalUrl": "https://www.delanofurtado.adv.br/contate-nos",
+      "status": 200,
+      "contentType": "text/html",
+      "xRobotsTag": null,
+      "title": "Contato | Delano Furtado — Advocacia",
+      "description": "<meta data-site-seo name=\"description\" content=\"Entre em contato com Delano Furtado pelo WhatsApp, telefone ou e-mail. Atendimento jurídico presencial em Volta Redonda e região e online em todo o Brasil.\">",
+      "robotsMeta": "<meta data-site-seo name=\"robots\" content=\"index,follow\">",
+      "canonical": "<link data-site-seo rel=\"canonical\" href=\"https://www.delanofurtado.adv.br/contate-nos\">",
+      "icons": [
+        "<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"/media/favicon-96.png\" />",
+        "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/media/favicon-180.png\" />"
+      ],
+      "text": null
+    },
+    {
+      "requestedPath": "/localizacao.html",
+      "chain": [
+        {
+          "url": "https://www.delanofurtado.adv.br/localizacao.html",
+          "status": 308,
+          "location": "https://www.delanofurtado.adv.br/localizacao"
+        },
+        {
+          "url": "https://www.delanofurtado.adv.br/localizacao",
+          "status": 200,
+          "location": ""
+        }
+      ],
+      "finalUrl": "https://www.delanofurtado.adv.br/localizacao",
+      "status": 200,
+      "contentType": "text/html",
+      "xRobotsTag": null,
+      "title": "Localização | Delano Furtado — Volta Redonda",
+      "description": "<meta data-site-seo name=\"description\" content=\"Encontre o escritório de Delano Furtado na Vila Santa Cecília, em Volta Redonda, RJ. Consulte o endereço e abra a localização no Google Maps.\">",
+      "robotsMeta": "<meta data-site-seo name=\"robots\" content=\"index,follow\">",
+      "canonical": "<link data-site-seo rel=\"canonical\" href=\"https://www.delanofurtado.adv.br/localizacao\">",
+      "icons": [
+        "<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"/media/favicon-96.png\" />",
+        "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/media/favicon-180.png\" />"
+      ],
+      "text": null
+    },
+    {
+      "requestedPath": "/contate-nos.html",
+      "chain": [
+        {
+          "url": "https://www.delanofurtado.adv.br/contate-nos.html",
+          "status": 308,
+          "location": "https://www.delanofurtado.adv.br/contate-nos"
+        },
+        {
+          "url": "https://www.delanofurtado.adv.br/contate-nos",
+          "status": 200,
+          "location": ""
+        }
+      ],
+      "finalUrl": "https://www.delanofurtado.adv.br/contate-nos",
+      "status": 200,
+      "contentType": "text/html",
+      "xRobotsTag": null,
+      "title": "Contato | Delano Furtado — Advocacia",
+      "description": "<meta data-site-seo name=\"description\" content=\"Entre em contato com Delano Furtado pelo WhatsApp, telefone ou e-mail. Atendimento jurídico presencial em Volta Redonda e região e online em todo o Brasil.\">",
+      "robotsMeta": "<meta data-site-seo name=\"robots\" content=\"index,follow\">",
+      "canonical": "<link data-site-seo rel=\"canonical\" href=\"https://www.delanofurtado.adv.br/contate-nos\">",
+      "icons": [
+        "<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"/media/favicon-96.png\" />",
+        "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/media/favicon-180.png\" />"
+      ],
+      "text": null
+    },
+    {
+      "requestedPath": "/galeria",
+      "chain": [
+        {
+          "url": "https://www.delanofurtado.adv.br/galeria",
+          "status": 200,
+          "location": ""
+        }
+      ],
+      "finalUrl": "https://www.delanofurtado.adv.br/galeria",
+      "status": 200,
+      "contentType": "text/html",
+      "xRobotsTag": null,
+      "title": "Advogado Volta Redonda - Delano Furtado Advogado em Volta Redonda",
+      "description": "<meta name=\"description\" content=\"Advogado Volta Redonda | Cível, Trabalhista, Previdenciário, Consumidor, Imobiliário, Família | Advogado Barra Mansa, Pinheiral, Resende | lista advogado em Volta Redonda\">",
+      "robotsMeta": null,
+      "canonical": null,
+      "icons": null,
+      "text": null
+    },
+    {
+      "requestedPath": "/galeria.html",
+      "chain": [
+        {
+          "url": "https://www.delanofurtado.adv.br/galeria.html",
+          "status": 200,
+          "location": ""
+        }
+      ],
+      "finalUrl": "https://www.delanofurtado.adv.br/galeria.html",
+      "status": 200,
+      "contentType": "text/html",
+      "xRobotsTag": null,
+      "title": "Advogado Volta Redonda - Delano Furtado Advogado em Volta Redonda",
+      "description": "<meta name=\"description\" content=\"Advogado Volta Redonda | Cível, Trabalhista, Previdenciário, Consumidor, Imobiliário, Família | Advogado Barra Mansa, Pinheiral, Resende | lista advogado em Volta Redonda\">",
+      "robotsMeta": null,
+      "canonical": null,
+      "icons": null,
+      "text": null
+    },
+    {
+      "requestedPath": "/robots.txt",
+      "chain": [
+        {
+          "url": "https://www.delanofurtado.adv.br/robots.txt",
+          "status": 200,
+          "location": ""
+        }
+      ],
+      "finalUrl": "https://www.delanofurtado.adv.br/robots.txt",
+      "status": 200,
+      "contentType": "text/plain",
+      "xRobotsTag": null,
+      "title": "",
+      "description": null,
+      "robotsMeta": null,
+      "canonical": null,
+      "icons": null,
+      "text": "User-agent: *\nAllow: /\nSitemap: https://www.delanofurtado.adv.br/sitemap.xml\n"
+    },
+    {
+      "requestedPath": "/sitemap.xml",
+      "chain": [
+        {
+          "url": "https://www.delanofurtado.adv.br/sitemap.xml",
+          "status": 200,
+          "location": ""
+        }
+      ],
+      "finalUrl": "https://www.delanofurtado.adv.br/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml",
+      "xRobotsTag": null,
+      "title": "",
+      "description": null,
+      "robotsMeta": null,
+      "canonical": null,
+      "icons": null,
+      "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><url><loc>https://www.delanofurtado.adv.br/</loc></url><url><loc>https://www.delanofurtado.adv.br/localizacao</loc></url><url><loc>https://www.delanofurtado.adv.br/contate-nos</loc></url></urlset>"
+    }
+  ]
+}

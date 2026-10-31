@@ -28,6 +28,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-destructive: var(--destructive);
+  --color-cookie-surface: var(--cookie-surface);
+  --color-cookie-text: var(--cookie-text);
+  --color-cookie-muted: var(--cookie-muted);
+  --color-cookie-border: var(--cookie-border);
   --font-sans: var(--brand-font);
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: var(--radius);

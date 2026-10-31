@@ -90,6 +90,12 @@ Estados de envio só existem com integração real e distinguem edição, envio,
 
 ## Evolução
 
+### Plan-006 implementado localmente
+
+`consent/config.ts` define finalidade, prazo e serviços disponíveis. `storage.ts` valida o registro v2 e migra v1 sem renovar datas; `store.ts` aplica escolhas e revoga antes dos efeitos. `CookieBanner` é não modal e dispensável sem decisão; `CookiePreferencesDialog` usa os primitives Base UI/shadcn e mantém rascunho até salvar. O provider fornece o acionador ao `finalFocus` do Dialog, sem outro gerenciador de foco modal.
+
+`privacyContent.ts` alimenta `pages/Privacy` e `pages/Cookies`; a composição editorial é compartilhada em `PolicyPage`. Manifest, Router, SEO, preview, prerender e empacotador reconhecem cinco páginas públicas e um 404. A integração Ads e a extração para runtime Google compartilhado continuam ausentes: a ação real ainda não foi identificada. [Estado e validação](evidencias/cookies-006.md).
+
 CMS, API e novas páginas de serviços exigem decisão localizada em [Decisões](decisoes-e-pendencias.md). A pré-renderização já existe: build cliente → renderizador StaticRouter/ServerStyleSheet → HTML e metadados por rota → hidratação. `.prerender/` é intermediário e não deve ser publicado.
 
 O [plan-004](../plans/plan-004-area-administrativa-gestao-conteudo-e-secoes.md), de 23/10/2026, planeja a área administrativa para editar conteúdo/mídia e reordenar as seções existentes, mantendo o design. Propõe CMS gerenciado, entrada administrativa separada e snapshot publicado compartilhado pelo cliente/SSR, com rebuild e promoção do artefato. Fornecedor/plano e infraestrutura de publicação ainda precisam de confirmação; nenhum CMS, login, API ou banco foi implementado por esse planejamento. Os contratos estáticos acima continuam descrevendo o estado instalado.

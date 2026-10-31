@@ -42,7 +42,11 @@ Requisitos jurídicos de privacidade e publicidade profissional devem ser confir
 
 WhatsApp, redes e mapa abrem serviços externos. Uma incorporação tem consequências diferentes de um simples link: ela pode carregar recursos do terceiro antes de um clique. Registrar essa escolha em [Integrações](integracoes-e-formularios.md).
 
-Em 27/10/2026 foi implementada a [integração GA4 com consentimento](analytics-e-consentimento.md). Após o usuário confirmar a desativação da medição otimizada, o novo pacote habilita o loader somente no domínio canônico e após permissão. Publicação e ingestão real ainda precisam ser conferidas. Eventos próprios usam metadados públicos e posições fixas dos canais; conteúdo de mensagem, e-mail, telefone e descrição do caso não compõem os payloads. A [política técnica](politica-de-rastreamento.md) descreve os bloqueios e limites.
+Em 27/10/2026 foi implementada a [integração GA4 com consentimento](analytics-e-consentimento.md); o usuário observou recebimento em 28/10. O plan-006, executado localmente em 30/10, preserva origem canônica, medição otimizada desligada, permissão expressa e eventos sem mensagens, e-mail, telefone ou tema jurídico. A nova interface e suas políticas ainda dependem do envio do pacote; [evidências](evidencias/cookies-006.md).
+
+O modelo v2 separa finalidades; Ads permanece indisponível, com os três sinais publicitários negados. Fechar ou navegar não autoriza coleta. Revogar bloqueia imediatamente o cliente, a fila e os cookies `_ga` acessíveis. Se a nova escolha não puder ser gravada, o site tenta remover autorizações antigas e mantém a decisão em memória, sem recarregar para um aceite antigo; o diálogo explica a limitação. Se o navegador impedir toda gravação e remoção, nenhuma aplicação somente cliente pode garantir persistência entre visitas: orientar exclusão dos dados pelo navegador, sem apresentar sucesso de gravação.
+
+As páginas legadas `/galeria` e `/galeria.html` não pertencem ao runtime React. A inspeção DOM de 30/10 encontrou tags UA/GA4 na galeria e nenhum controle próprio desta aplicação; não foi comprovado o transporte de eventos dessa página. Não declarar cobertura de consentimento para todo o domínio até tratar essa fronteira em tarefa própria.
 
 ## Hospedagem
 

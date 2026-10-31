@@ -22,6 +22,8 @@ release-ftp/<versão>/
     index.html
     localizacao/index.html
     contate-nos/index.html
+    politica-de-privacidade/index.html
+    politica-de-cookies/index.html
     404.html
     robots.txt
     sitemap.xml
@@ -37,7 +39,9 @@ Atualização de 27/10/2026: o pacote `20261027T234714203Z-6c91610f` inclui o aj
 
 Atualização posterior: o pacote `20261028T005424408Z-6126b027` inclui [GA4/consentimento](analytics-e-consentimento.md) e os [favicons da marca](evidencias/favicon-marca-2026-10-27.md), totalizando 35 arquivos. Enviar também `favicon.ico` da raiz e os PNGs de `media/`; enviar apenas as imagens não atualiza a referência do head nos HTMLs. O prefixo de data do pacote usa UTC; esta alteração foi registrada em 27/10 no fuso do responsável.
 
-Pacote mais recente: `20261028T010256584Z-82beb66a`, com os [botões de WhatsApp atualizados](evidencias/whatsapp-botoes-2026-10-27.md), GA4/consentimento e favicons. Conferência de integridade antes do envio: 35 arquivos e 2.729.512 bytes, todos correspondentes ao manifesto SHA-256. Envio à hospedagem ainda não executado pelo agente.
+Pacote anterior: `20261028T010256584Z-82beb66a`, com os [botões de WhatsApp atualizados](evidencias/whatsapp-botoes-2026-10-27.md), GA4/consentimento e favicons; 35 arquivos e 2.729.512 bytes.
+
+**Pacote anterior:** `release-ftp/20261028T022139680Z-8704af0c/site`, com a descrição da Hero seguida do CNPJ real e a nova biografia em quatro parágrafos. Contém 35 arquivos e 2.729.786 bytes, todos conferidos contra o manifesto SHA-256. Mantém GA4 com consentimento, ícones de WhatsApp, favicons e ajustes de URLs/rodapé. [Evidências da preparação](evidencias/release-ftp-conteudo-2026-10-27.md). O agente preparou o pacote, sem enviar à hospedagem.
 
 ## Preparar a troca
 
@@ -81,3 +85,12 @@ O ambiente local não tem Apache disponível: a inspeção da configuração e o
 Restaurar o `.htaccess`, HTMLs e demais arquivos substituídos usando o backup remoto anterior; manter os bundles exigidos por essa versão. Não remover `.well-known` nem alterar o DNS de e-mail. Se houver erro 500 após trocar o `.htaccess`, restaurar a configuração anterior e consultar o log da hospedagem antes de ajustar diretivas.
 
 Depois da publicação validada e com acesso às contas, executar a medição prevista no [plan-005](../plans/plan-005-migracao-google-e-publicacao-ftp.md) e no [Marco B do plan-003](../plans/plan-003-seo-previas-sociais-analytics-e-descoberta-ia.md#7-marco-b--consentimento-e-analytics-próprios). Campanhas e conversões permanecem pendentes de conferência até essa etapa.
+
+
+## Publicação do plan-006
+
+**Pacote mais recente:** `release-ftp/20261030T184845712Z-08a8f716/site`, com 37 arquivos e 2.820.115 bytes. Inventário e checks na [evidência cookies-006](evidencias/cookies-006.md). O site passa a ter cinco páginas públicas e seis HTMLs contando o 404. Envie também os dois diretórios de políticas, o sitemap atualizado, o bundle e os dois `.htaccess`; recursos/diretórios primeiro, HTMLs depois e `index.html` por último. Preserve arquivos da hospedagem e a galeria antiga até tratamento próprio.
+
+Antes da publicação, o responsável deve revisar os textos factuais das políticas e o estado das configurações remotas do Google. Ads continua desativado neste frontend. O aviso novo controla as páginas React, não o runtime da galeria legada; sua presença de tags foi registrada na evidência. Depois do envio, testar rotas/aliases no Apache real e a matriz de rede/consentimento com SDK real.
+
+Para rollback, mantenha backup dos HTMLs e configurações. A versão v2 grava uma negativa v1 com a mesma validade ao recusar, quando o navegador permite, para evitar que uma restauração recupere um aceite antigo. Se houve falha de persistência, a interface informa a limitação e mantém o bloqueio sem reload automático; não prometer que restaurar arquivos consegue corrigir armazenamento bloqueado no dispositivo. Antes de restaurar uma versão que desconhece v2, conferir o tratamento das negativas e nunca reinserir uma tag incondicional.

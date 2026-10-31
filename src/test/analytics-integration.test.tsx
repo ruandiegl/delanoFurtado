@@ -15,7 +15,7 @@ vi.mock('@/analytics/config', async importOriginal => {
 })
 
 it('restores a saved grant in StrictMode, sends one view per page and one contact event for an icon click', async () => {
-  localStorage.setItem(CONSENT_KEY, JSON.stringify(createConsent('granted', Date.now())))
+  localStorage.setItem(CONSENT_KEY, JSON.stringify(createConsent({ analytics: 'granted', advertising: 'denied' }, Date.now())))
   try {
     render(<StrictMode><MemoryRouter initialEntries={['/?email=private#unknown']} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}><ConsentProvider><AnalyticsBridge /><nav aria-label="Navegação"><Link to="/contate-nos">Contato</Link></nav><Routes><Route path="/" element={<ContactCta location="hero" />} /><Route path="/contate-nos" element={<h1>Contato</h1>} /></Routes><PrivacyPreferencesButton /><ConsentControls /></ConsentProvider></MemoryRouter></StrictMode>)
     const commands = () => Array.from(window.dataLayer ?? [], item => Array.from(item as ArrayLike<unknown>))
@@ -30,7 +30,7 @@ it('restores a saved grant in StrictMode, sends one view per page and one contac
     await waitFor(() => expect(commands().filter(item => item[1] === 'page_view')).toHaveLength(2))
     expect(JSON.stringify(commands())).not.toContain('private')
     expect(JSON.stringify(commands())).not.toContain('?email')
-    fireEvent.click(screen.getByRole('button', { name: 'Preferências de privacidade' }))
-    expect(screen.getByRole('region', { name: 'Preferências de privacidade' })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Preferências de cookies' }))
+    expect(screen.getByRole('dialog', { name: 'Preferências de cookies' })).toBeInTheDocument()
   } finally { localStorage.clear(); document.querySelector('[data-delano-analytics]')?.remove(); delete window.gtag; delete window.dataLayer }
 })

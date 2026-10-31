@@ -45,15 +45,18 @@ O novo site combina **a linguagem de frontend da referência do Behance** com **
 | [Integrações e formulários](integracoes-e-formularios.md) | Para WhatsApp, contato, mapa e eventual envio por servidor |
 | [Segurança e privacidade](seguranca-e-privacidade.md) | Para dados pessoais, segredos, terceiros e integrações; [auditoria do repositório em 30/10/2026](evidencias/auditoria-repositorio-segredos-2026-10-30.md) |
 | [SEO, acessibilidade e performance](seo-acessibilidade-performance.md) | Para indexação, navegação assistiva, carregamento e metadados |
+| [Atualizar os resultados no Google](atualizacao-indexacao-google.md) | Conferência pública de 28/10/2026, atualização de favicon/textos no Search Console, preservação de URLs e pendência da galeria legada |
 | [Referências de SEO e busca por IA](referencias-seo-busca-ia.md) | Fontes primárias de crawlers, dados estruturados e limites de llms.txt consultadas para o plan-003 |
 | [Referências de migração Google](referencias-migracao-google-analytics-ads.md) | Continuidade de GA4/Ads, tags UA conectadas, conversões e parâmetros de campanha; [auditoria da cópia antiga](evidencias/auditoria-site-antigo-2026-10-27.json) e [plan-005 de migração/FTP](../plans/plan-005-migracao-google-e-publicacao-ftp.md) |
 | [Qualidade e validação](qualidade-e-validacao.md) | Para critérios de conclusão e evidências antes da entrega |
+| [QA em produção com BrowserOS — 30/10/2026](evidencias/qa-browseros-2026-10-30.md) | Achados reproduzidos, matriz HTTP, consentimento real, responsividade, capturas e limites da auditoria |
 | [Skills e fluxo de IA](skills-e-fluxo-de-ia.md) | Para selecionar habilidades, agentes e o contexto de cada tarefa |
 | [Git e contribuição](git-e-contribuicao.md) | Para branches, commits, revisões e manutenção conjunta de código/docs |
 | [Deploy e operação](deploy-e-operacao.md) | Para build, hospedagem, URLs diretas, publicação e rollback |
 | [Publicação HostGator/FileZilla](publicacao-hostgator-filezilla.md) | Gerar o pacote FTP, localizar a pasta do domínio, fazer backup, enviar e testar; [evidências locais](evidencias/ftp-hostgator-2026-10-27.md) |
 | [Checklist após a publicação](checklist-pos-publicacao.md) | Passo a passo de URLs, navegação, GA4, Ads/GTM, consentimento e Search Console, com responsáveis e resultado esperado |
 | [GA4 e consentimento](analytics-e-consentimento.md) | Integração com `G-6Z7JD1757Y`, consentimento, eventos e conferência após o envio; [política técnica](politica-de-rastreamento.md) |
+| [Cookies minimalistas — plan-006](../plans/plan-006-cookies-consentimento-minimalista-e-integracoes-google.md) | Implementado localmente em 30/10/2026: faixa discreta, diálogo, migração v2 e políticas; [evidências e pacote FTP](evidencias/cookies-006.md). Ads condicionado e galeria legada fora da cobertura |
 | [Solução de problemas](solucao-de-problemas.md) | Para diagnosticar ambiente, rotas, estilos, animações e contato |
 | [Decisões e pendências](decisoes-e-pendencias.md) | Para conhecer escolhas registradas e decisões futuras com seus impactos |
 | [Roteiro de implementação](roteiro-de-implementacao.md) | Para consultar os marcos do MVP e sua evolução |

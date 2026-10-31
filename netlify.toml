@@ -41,6 +41,30 @@
 
 # Existing assets take priority. Unknown paths retain an actual 404 response.
 [[redirects]]
+  from = "/politica-de-privacidade/index.html"
+  to = "/politica-de-privacidade"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/politica-de-cookies/index.html"
+  to = "/politica-de-cookies"
+  status = 308
+  force = true
+
+[[redirects]]
+  from = "/politica-de-privacidade"
+  to = "/politica-de-privacidade/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/politica-de-cookies"
+  to = "/politica-de-cookies/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404

@@ -19,6 +19,7 @@ const Wrap = styled.footer`
   .social-link svg { width: 17px; height: 17px; }
   .privacy-preferences { background: none; border: 0; color: inherit; font: inherit; text-decoration: underline; min-height: 44px; padding-block: 10px; }
   svg { width: 15px; height: 15px; }
+  @media (max-width: 63.99rem) { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
   @media (max-width: 47.99rem) { .footer-top { flex-direction: column; } nav { gap: 16px; } }
 `
 export function Footer() {
@@ -29,6 +30,6 @@ export function Footer() {
         <a className="social-link" href={siteData.facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Delano Furtado"><FacebookIcon aria-hidden="true" /></a>
       </nav>
     </div>
-    <div className="footer-bottom"><span>© 2026 Delano Furtado. Todos os direitos reservados.</span><span>{siteData.oab} · CNPJ {siteData.cnpj}</span><SectionLink section="contato">Entre em contato <ArrowUpRight style={{ display: 'inline', marginLeft: 3 }} /></SectionLink><PrivacyPreferencesButton /></div>
+    <div className="footer-bottom"><span>© 2026 Delano Furtado. Todos os direitos reservados.</span><span>{siteData.oab} · CNPJ {siteData.cnpj}</span><SectionLink section="contato">Entre em contato <ArrowUpRight style={{ display: 'inline', marginLeft: 3 }} /></SectionLink><Link className="privacy-preferences" to="/politica-de-privacidade">Privacidade</Link><Link className="privacy-preferences" to="/politica-de-cookies">Cookies</Link><PrivacyPreferencesButton /></div>
   </Container></Wrap>
 }

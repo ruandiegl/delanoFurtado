@@ -2,7 +2,7 @@
 
 ## Estado atual
 
-O frontend oferece os canais oficiais e possui uma [integração GA4 com consentimento](analytics-e-consentimento.md), habilitada no novo pacote após o usuário confirmar a desativação da medição otimizada. A execução exige domínio canônico e permissão do visitante; envio do pacote e ingestão real ainda precisam ser conferidos. O envio do formulário antigo não foi transferido nem testado. Não há endpoint de envio por servidor no novo site.
+O frontend oferece os canais oficiais e possui uma [integração GA4 com consentimento](analytics-e-consentimento.md), habilitada no novo pacote após o usuário confirmar a desativação da medição otimizada. A execução exige domínio canônico e permissão do visitante; o recebimento foi observado nas capturas de 28/10/2026. A nova interface do plan-006 foi preparada localmente em 30/10 e depende de publicação e conferência de rede próprias. O envio do formulário antigo não foi transferido nem testado. Não há endpoint de envio por servidor no novo site.
 
 ## Canais de contato
 
@@ -56,3 +56,8 @@ O consentimento antigo está em inglês. Se houver tratamento adicional, a reda�
 ## Verificação
 
 Testar destinos sem disparar mensagens reais desnecessárias. Para integração, usar ambiente e destinatário de teste autorizados, cobrindo validação, sucesso, erro, timeout e repetição. Em publicação, conferir endpoint e configuração sem expor os segredos na evidência.
+
+
+## Consentimento atualizado
+
+[Plan-006 implementado localmente](evidencias/cookies-006.md): preferência v2, diálogo granular e políticas acessíveis sem aceitar. Somente Analytics habilitado; o ID Ads conhecido não instala uma conversão. A galeria legada permanece uma aplicação separada, com tags observadas no DOM e revisão pendente.

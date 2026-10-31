@@ -7,6 +7,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        cookieAction: "bg-cookie-text text-cookie-surface hover:bg-cookie-muted rounded-full focus-visible:ring-cookie-text focus-visible:border-cookie-text",
+        cookieSettings: "border-cookie-border bg-transparent text-cookie-text hover:bg-cookie-text/10 rounded-full focus-visible:ring-cookie-text focus-visible:border-cookie-text",
         brand: "bg-primary text-primary-foreground hover:bg-primary/90 rounded-md font-medium border-primary",
         hero: "bg-[linear-gradient(135deg,#218c53_0%,#16653b_100%)] text-white hover:bg-[linear-gradient(135deg,#279e5e_0%,#1c7a47_100%)] rounded-md font-semibold border border-[#52c484]/40 shadow-[0_12px_32px_rgba(0,0,0,0.36)] focus-visible:ring-[#d8bd84]/80 focus-visible:border-[#d8bd84] [&_.cta-arrow]:bg-white [&_.cta-arrow]:text-[#134e2e]",
         default: "bg-primary text-primary-foreground hover:bg-primary/80",
@@ -21,6 +23,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
+        cookie: "min-h-11 px-3 py-2 text-xs whitespace-normal leading-snug",
         cta: "min-h-14 gap-7 px-5 py-3 text-xs whitespace-normal text-left [&_.cta-arrow]:grid [&_.cta-arrow]:place-items-center [&_.cta-arrow]:size-8 [&_.cta-arrow]:shrink-0 [&_.cta-arrow]:rounded-full [&_.cta-arrow]:bg-primary-foreground [&_.cta-arrow]:text-primary",
         touch: "size-11",
         default:
